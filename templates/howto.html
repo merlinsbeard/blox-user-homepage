@@ -1,0 +1,197 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+
+<link href="{{ url_for('static', filename='css/video-js.css') }}" rel="stylesheet" type="text/css">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="{{ url_for('static', filename='js/video.js') }}"></script>
+
+<style>
+    #how-to { color: #333; }
+</style>
+{% endblock %}
+{% block body %}
+
+
+
+<section id="how-to">
+    <div class="container">
+        <h1>HOW TO</h1>
+    
+        <h2>Getting Started</h2>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+
+        <h3>Accessing Your BLOX using Hostname</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Accessing using IP address</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+
+        <h2>Your Files</h2>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Using Desktops or Laptops</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Using Smartphone</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Other ways to access your files</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Folder Structure</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+
+        <h2>Your Videos and Pictures</h2>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Adding Videos or Pictures</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Accessing your Media Server</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Accessing through Browsers</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Access through Application</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Access through smartphone</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Watching your Videos and Pictures</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+
+        <h2>Your Music</h2>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Adding Music</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Accessing your Music Server</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Access through Application</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Access through smartphone</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+        <h3>Basic Controls</h3>
+        <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="640" height="264"
+            poster="{{ url_for('static', filename='others/image.jpg') }}"
+            data-setup='{"example_option":true}'>
+            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+    </div>
+</section>
+
+{% endblock %}
+
+ 

@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blox</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        body { color: white; }
+        header{
+            height: 20em;
+            background: #2d2d2d;
+        }
+        header center img{ height: 6em; margin-top:4em;  }
+    </style>
     {% block extrahead %}{% endblock %}
 </head>
 
@@ -27,5 +35,7 @@
     </div>
 </header>
 {% block body %}{% endblock %}
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
