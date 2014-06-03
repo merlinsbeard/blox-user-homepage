@@ -1,4 +1,4 @@
 venv
-.pyc
+*.pyc
 files
-.py~
+*.py~
