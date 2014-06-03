@@ -6,191 +6,366 @@
     <script src="{{ url_for('static', filename='js/video.js') }}"></script>
 
 <style>
-    #how-to { color: #333; }
+
+    .how-to { color: #333; }
+
+    .inner{ margin-left: 15px;}
+    .nav>li>a{
+        padding: 2.5px 5px;
+    }
+    .nav-sidebar{ padding-top: 2em;}
 </style>
 {% endblock %}
 {% block body %}
+<section class="how-to">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a href="#getting-started">Getting Started</a>
+                    <ul class="nav inner">
+                        <li><a href="#access-hostname">Accessing your Blox using hostname</a></li>
+                        <li><a href="#access-ip">Accessing your Blox using IP address</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#files">Your Files</a>
+                    <ul class="nav inner">
+                        <li><a href="#files-desktop-laptops">Using Desktops or Laptops to access file server</a></li>
+                        <li><a href="files-smartphone">Using smartphone to access file server</a></li>
+                        <li><a href="#files-others">Other ways to access your files</a></li>
+                        <li><a href="#files-structure">Files and Folder Structure</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#video-pictures">Video and Pictures</a>
+                    <ul class="nav inner">
+                        <li><a href="#video-pictures-adding">Adding Videos or Pictures</a></li>
+                        <li><a href="#video-pictures-access-browser">Accessing through Browsers</a></li>
+                        <li><a href="#video-pictures-applications">Access through application</a></li>
+                        <li><a href="#video-pictures-smartphone">Access through Smartphone</a></li>
+                        <li><a href="#video-pictures-watching">Watching your videos and pictures</a></li>
+                        
 
+                    </ul>
+                </li>
+                <li>
+                    <a href="#music">Your Music</a>
+                    <ul class="nav inner">
+                        <li><a href="#music-adding">Adding Music</a></li>
+                        <li><a href="#music-accessing">Accessing your Music Server</a></li>
+                        <li><a href="#music-application">Access though application</a></li>
+                        <li><a href="#music-smartphone">Access through smartphone</a></li>
+                        <li><a href="#music-controls">Basic Controls</a></li>
+                    </ul>
 
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <section class="top">
+                <ul>
+                    <li>PDF</li>
+                    <li>Print</li>
+                </ul>
+            </section>
+            <section id="how-to-details">
+                <h1 id="how-to">HOW TO</h1>
+                <video src="{{ url_for('static', filename='others/test.mp4') }}" controls></video>
+                <p>Hi and welcome to BLOX. This page contains everything you need to use your Blox media entertainment</p>
+                
+                <article id="getting-started">
+                    <h2 class="page-header">Getting Started</h2>
+                    <video src="{{ url_for('static', filename='others/getting-started.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            Blox's main page is where you can control and play your music, videos, and pictures. It also contains information on how to access your Blox's features. You will also find here tutorials, how tos, and customer/technical support of Blox.
+                        </p>
+                        <p>
+                            Blox main page is already available at the startup of the Blox computer. You can access the Blox's user web site in other browser by using Blox's hostname or IP address.
+                        </p>
+                    </div>
+                </article>
 
-<section id="how-to">
-    <div class="container">
-        <h1>HOW TO</h1>
-    
-        <h2>Getting Started</h2>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+                <article id="access-hostname">
+                    <h3 >Accessing Your BLOX using Hostname</h3>
+                    <video src="{{ url_for('static', filename='others/access-hostname.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>Using hostname to access Blox's user webpage can only be used by Desktops and Laptops.</p>
+                        <ol>
+                            <li>Open your browser(Chrome, Firefox, Etc.)</li>
+                            <li>Type in the address bar: <strong>blox/ or blox.loca/</strong></li>
+                        </ol>
+                        <img src="" alt="Image of blox accessing hostnameurl">
+                    </div>
+                </article>
 
-        <h3>Accessing Your BLOX using Hostname</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Accessing using IP address</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+                <article id="access-ip"> 
+                    <h3 >Accessing using IP address</h3>
+                    <video src="{{ url_for('static', filename='others/access-ip.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            You can access Blox's user website in smartphones or tablets using Blox's IP address.
+                        </p>
+                        <ol>
+                            <li>Open browser on your smartphone</li>
+                            <li>Type in the address bar: <strong>{{ dicts.IP }}:5000</strong></li>
+                        </ol>
+                        <img src="" alt="image of android browser accessing IP address">
+                    </div>
+                </article>
+               
+                <article id="files">
+                    <h2 class="page-header">Your Files</h2>
+                    <video src="{{ url_for('static', filename='others/files.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            One of the main features of blox is its File Server. Blox can store 1TB worth of Documents, Pictures, Videos, and Music.
+                        </p>
+                        <p>There are 2 ways to access you file server</p>
+                    </div>
+                </article>
 
-        <h2>Your Files</h2>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Using Desktops or Laptops</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Using Smartphone</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Other ways to access your files</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Folder Structure</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+                <article id="files-desktop-laptops">
+                    <h3 >Using Desktops or Laptops</h3>
+                    <video src="{{ url_for('static', filename='others/files-desktops-laptops.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            The first one is by using Desktop or Laptop computers.
+                        </p>
+                        <ol>
+                            <li>
+                                On your Desktop press start
+                                <br><img src="" alt="press start">
+                            </li>
+                            <li>
+                                Type <strong>\\blox\ or \\blox.local\</strong>
+                                <br><img src="" alt="type blox">
+                            </li>
+                            <li>
+                                Press start
+                                <br><img src="" alt="image of folder">
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                
+                <article id="files-smartphone">
+                    <h3 >Using Smartphone</h3>
+                    <video src="{{ url_for('static', filename='others/files-smartphone.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            You can also use Blox's file server by using smartphone.
+                        </p>
+                        <ol>
+                            <li>
+                                Download and Install android app <strong><a href="https://play.google.com/store/apps/details?id=com.estrongs.android.pop">ES File Explorer</a></strong>
+                                <br><img src="" alt="Installing app">
+                            </li>
+                            <li>
+                                Open the app and go to <strong>Network > Lan Settings</strong>
+                                <br><img src="" alt="setting up app">
+                            </li>
+                            <li>
+                                In the host field put the IP address of blox <strong> {{ dicts.IP }} </strong>
+                                <br><img src="" alt="filling in the settings app">
+                            </li>
+                            <li>In the username and password put <strong>blox</strong></li>
+                            <li>Click OK</li>
+                        </ol>
+                    </div>
+                </article>
+                <!--
+                <article id="files-others">
+                    <h3 >Other ways to access your files</h3>
+                    <video src="{{ url_for('static', filename='others/files-others.mp4') }}" controls></video>
+                </article>
+                -->
+                <article id="files-structure">
+                    <h3 >Folder Structure</h3>
+                    <video src="{{ url_for('static', filename='others/files-structure.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            Blox file server contains the following:
+                        </p>
+                        <ul>
+                            <li><strong>Documents Folder</strong> where you can store your documents.</li>
+                            <li><strong>Music Folder</strong> where you store you Music collection.</li>
+                            <li><strong>Pictures Folder</strong> where you store your Picture collection.</li>
+                            <li><strong>Video Folder</strong> where you store your video collection sorted by: Movies, Music-Videos, Home-Videos, and others.</li>
+                            <li><strong>Public Folder</strong> this is shared to anyone</li>
+                    
+                        </ul>
+                        <img src="" alt="Screen shot of folder structure">
+                    </div>
+                </article>
+                
+                <article id="video-pictures">
+                    <h2 class="page-header">Your Videos and Pictures</h2>
+                    <video src="{{ url_for('static', filename='others/video-pictures.mp4') }}" controls></video>
+                    <p class="description">
+                        Browse, Play, and Share your Videos and Photos. Watch or view your videos and photos on your smartphone, tablet, or Smart TV.
+                    </p>
+                    <p>
+                        Blox uses Plex media server for its backend in Video and Photo serving. Plex lets you browse play, and share using Internet browser from your computers or desktops.
+                    </p>
+                </article>
+                
+                <article id="video-pictures-storing">
+                    <h3 >Storing Videos or Pictures</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-storing.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>The first thing to do is to store your video or pictures. You can store your Videos and Pictures in the File Server</p>
+                        <ol>
+                            <li>
+                                Open your file server using your desktop or smartphone.
+                                <br><img src="" alt="Image of accessing file server both in computer and smartphone"></br>
+                            </li>
+                            <li>
+                                If you want to store your Picture.
+                                <ol>
+                                    <li>Copy the picture you want to store</li>
+                                    <li>Open the Picture folder in the file server</li>
+                                    <li>Paste the picture</li>
+                                </ol>
+                                <img src="" alt="Image of copy pasting photo in Pictures folder">
+                            </li>
+                            <li>
+                                If you want to store your Videos
+                                <ol>
+                                    <li>Copy the Video you want to store</li>
+                                    <li>Open the Videos Folder in the File Server</li>
+                                    <li>Paste the Video</li>
+                                </ol>
+                                <img src="" alt="Image of pasting Video">
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                
+                <article id="video-pictures-access">
+                    <h3 >Accessing your Media Server</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-access.mp4') }}" controls></video>
+                    <p class="description">
+                        Your Media Server can be access using: Internet browser in desktop and smartphones, and Plex Home Theater
+                    </p>
+                </article>
+                
+                <article id="video-pictures-access">
+                    <h3 >Accessing through Browsers</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-access.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            
+                        </p>
+                        <ol>
+                            <li>
+                                Go to Blox's User Home page<strong>http://blox.local:5000</strong> or <strong>http://{{ dicts.IP }}:5000</strong>
+                                <img src="" alt="Image of accessing BLOX using internet browsers">
+                            </li>
+                            <li>
+                                Click or tap the icon of Video
+                                <br><img src="" alt="tapping or clicking video"></br>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                
+                <article id="video-pictures-applications">  
+                    <h3>Access through Application</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-applications.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            You can use Plex Home Theater in Blox if you dont want to use the browser version.
+                        </p>
+                        <ol>
+                            <li>
+                                On the Blox Computer click on the icon of Plex Home Theater
+                                <br><img src="" alt="Image of opening Plex Home Theater"></br>
+                            </li>
+                        </ol>
+                        <img src="" alt="Image of Plex Home Theater">
+                    </div>
+                </article>
+               
+                <article id="video-pictures-smartphone">
+                    <h3>Android Phone for remote control</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-smartphone.mp4') }}" controls></video>
+                    <div class="description">
+                        <p>
+                            There is an app available that can remote control Plex Home Theater. You can also watch videos simultaneously.
+                        </p>
+                        <ol>
+                            <li>Download the <strong><a href="https://play.google.com/store/apps/details?id=com.plexapp.android">Plex for Android</a></strong></li>
+                        </ol>
+                        <img src="" alt="Plex for android along side tv remote controlling">
+                    </div>
+                </article>
+               
+                <article id="video-pictures-watching">
+                    <h3 >Watching your Videos and Pictures</h3>
+                    <video src="{{ url_for('static', filename='others/video-pictures-watching.mp4') }}" controls></video>
 
-        <h2>Your Videos and Pictures</h2>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Adding Videos or Pictures</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Accessing your Media Server</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Accessing through Browsers</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Access through Application</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Access through smartphone</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Watching your Videos and Pictures</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+                </article>
+                
+                <article id="music">
+                    <h2 class="page-header">Your Music</h2>
+                    <video src="{{ url_for('static', filename='others/music.mp4') }}" controls></video>
+                    <img src="" alt="Music Image Intro">
+                    <p>One of Blox's main feature is playing, organizing, and sharing music. Once your playlist is set up, Blox can automatically play it. You can also remotely control your music using your phone, laptop, or any other computer within your network.</p>
+                    <p>
+                        Blox can be integrated to your audio system. Control it using your android phone, or any other computer within the network.
+                    </p>
+                </article>
+                
+                <article id="music-adding">
+                    <h3>Adding Music</h3>
+                   
+                    <div class="description">
+                        <p>
+                            Blox uses the Music Folder in its File Server to find and play Music.
+                        </p>
+                        <ol>
+                            <li>Go to File Server and open Music Folder</li>
+                            <li>Store your Music here</li>
+                        </ol>
+                    </div>
+                </article>
+                
+                <article id="music-accessing">
+                    <h3>Accessing your Music Server</h3>
+                    <video src="{{ url_for('static', filename='others/music-accessing.mp4') }}" controls></video>
 
-        <h2>Your Music</h2>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Adding Music</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Accessing your Music Server</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Access through Application</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Access through smartphone</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
-        <h3>Basic Controls</h3>
-        <video id="example_video_1" class="video-js vjs-default-skin"
-            controls preload="auto" width="640" height="264"
-            poster="{{ url_for('static', filename='others/image.jpg') }}"
-            data-setup='{"example_option":true}'>
-            <source src="{{ url_for('static', filename='others/portishead.mp4') }}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+                </article>
+                
+                <article id="music-application">
+                    <h3>Access through Application</h3>
+                    <video src="{{ url_for('static', filename='others/music-application.mp4') }}" controls></video>
+                </article>
+               
+                <article id="music-smartphone">
+                    <h3>Access through smartphone</h3>
+                    <video src="{{ url_for('static', filename='others/music-smartphone.mp4') }}" controls></video>
+                </article>
+                
+                <article id="music-controls">
+                    <h3>Basic Controls</h3>
+                    <video src="{{ url_for('static', filename='others/music-controls.mp4') }}" controls></video>
+                </article>  
+                
+            </section>
+        </div>
     </div>
+</div>
 </section>
+
+
+
+
+
+
+
 
 {% endblock %}
 

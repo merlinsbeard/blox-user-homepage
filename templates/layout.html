@@ -23,12 +23,12 @@
         <center>
             <img src="{{ url_for('static', filename='images/logo1.png') }}"></img><br>
             <span class="text-center">Connect using:</br>
-            <strong>
-               http:// {{ dicts.IP }}
+            <strong><a href="{{ url_for('index') }}">http://{{ dicts.IP }}</a>
+               
             </strong>
             or</br>
             <strong>
-            http://blox/
+            <a href="{{ url_for('index') }}">http://blox/</a>
             </strong>
             </span>
         </center>
@@ -37,5 +37,8 @@
 {% block body %}{% endblock %}
 <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+{% block extrascript %}
+{% endblock %}
 </body>
 </html>
