@@ -1,0 +1,23 @@
+<h1>USER_AGENT</h1>
+
+        <strong>Your User-Agent string is:</strong> {{userAgentString}}<br /><br/>
+        We also have available the user agent object (request.user_agent), with the following properties and values:
+<ul>
+<li><strong>user_agent.platform:</strong> {{user_agent.platform}}</li>
+<li><strong>user_agent.browser:</strong> {{user_agent.browser}}</li>
+<li><strong>user_agent.version:</strong> {{user_agent.version}}</li>
+<li><strong>user_agent.language:</strong> {{user_agent.language}}</li>
+<li><strong>user_agent.string:</strong> {{user_agent.string}}</li>
+</ul>    
+
+
+<h3>is mobile: {{ user_agent.is_mobile }}</h3>
+{{ ua }}
+<ul>Platform {{ platform }} {{ linux }}
+	<li>Is Android: {% if linux %}Its linux {% endif %}</li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<h1>Desktops {{ desktops }}</h1>

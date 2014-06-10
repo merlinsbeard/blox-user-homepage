@@ -31,6 +31,7 @@ footer { background: #412b45; }
     {% block body %}
 
 
+
 <section class="main_body">
     <a href="{{ url_for('howto') }}">How to</a>
         <div class="container">
@@ -38,12 +39,12 @@ footer { background: #412b45; }
                 <div class="row text-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         
-                        <img src="{{ url_for('static', filename='images/forsmartphones.png') }}" />
+                        <img src="{{ url_for('static', filename='images/forsmartphones.png') }}" /><img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
                         <p class="description">For Smartphone and Tablet Users</p>
                         <ul>
-                            <li class="music"><a href="https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid"></a></li>
-                            <li class="video"><a href="//{{ dicts.IP }}:32400/web"></a></li>
-                            <li class="files"><a href="//{{ dicts.IP }}/owncloud"></a></li>
+                            <li class="music"><a href="{{ url_for('music') }}"></a></li>
+                            <li class="video"><a href="//{% if dicts.using_desktop %}blackbox.local{% else %}{{ dicts.IP }}{% endif %}:32400/web"></a></li>
+                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
                             
                         </ul>
                     </div>
@@ -52,16 +53,16 @@ footer { background: #412b45; }
                         Download & install the music app 
                         and play music faster and easy.
                         </p>
-                        <a href="https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid" class="btn btn-default btn-lg btn-block download"><span style="display:block; margin:.5em;">Download</span></a>
+                        <a href="{{ url_for('music') }}" class="btn btn-default btn-lg btn-block download"><span style="display:block; margin:.5em;">Download</span></a>
                         <p>
                         Upload your Songs, Videos, and Files 
-                        using Owncloud and play it anytime, 
-                        anywhere in the building.
+                        using Blox's <a href="{{ url_for('howto') }}#files">File server</a> and play it anytime, 
+                        anywhere.
                         </p>
                     </div>
                 </div>
             </section>
-
+<!--
             <section class="desktop">
                 <div class="row text-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -69,9 +70,9 @@ footer { background: #412b45; }
                         <img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
                         <p class="description">For Desktop and Laptop Users</p>
                         <ul>
-                            <li class="music"><a href="https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid"></a></li>
+                            <li class="music"><a href="{{ url_for('music') }}"></a></li>
                             <li class="video"><a href="//blox.local:32400/web"></a></li>
-                            <li class="files"><a href="//blox.local/owncloud"></a></li>
+                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
                            
                         </ul>
                     </div>
@@ -87,7 +88,7 @@ footer { background: #412b45; }
                 </div>
             </section>
             
-
+-->
 
         </div>
     </section>

@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+<style>
+#music { color: #333; }
+</style>
+{% endblock %}
+{% block body %}
+<section id="music">
+	<div class="container">
+		<h1>Music</h1>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div id="configuration">
+					<h2>Configuration</h2>
+					<table class="table">
+						<tr>
+							<td>Host</td>
+							<td><strong>blackbox.local</strong> or <strong>{{ dicts.IP }}</strong></td>
+						</tr>
+						<tr>
+							<td>Port</td>
+							<td><strong>6600</strong></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td><strong>blackbox</strong></td>
+						</tr>
+					</table>
+				</div>
+				<div id="application-links">
+					<h3>Application Links</h3>
+					<ul>
+						
+						<li><a href="https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid">Android Application</a></li>
+						<li><a href="https://itunes.apple.com/en/app/mpod/id285063020?mt=8">IOS Application</a></li>
+						<li><a href="https://code.google.com/p/cantata/wiki/Downloads?tm=2">Windows Application</a></li>
+					</ul>
+				</div>
+				<div id="howtos">
+					<h3>How Tos</h3>
+					<ul>
+						<li><a href="{{ url_for('howto') }}#music">Adding Music in File server</a></li>
+						<li><a href="{{ url_for('howto') }}#music">Playing Music</a></li>
+						<li><a href="{{ url_for('howto') }}#music">Basic Controls</a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="blackbox">
+							<h2>Blackbox</h2>
+							<ol>
+								<li>Close Plex Home Theater</li>
+								<li>Open Cantata Music Player</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div id="android">
+							<h2>Android</h2>
+							<p>
+								Google Play store provides many applications that can remote control the Music Server (MPD).
+							</p>
+							<ol>
+								<li>Go to playstore and download <a href="https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid">MPDroid</a></li>
+								<li>Open the application and go to settings</li>
+								<li>In the settings input the <a href="{{ url_for('music') }}#configuration">configuration</a></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div id="ios">
+							<h2>IOS</h2>
+							<p>Just like android, IOS can also provides applications that can interact with the Music Server.</p>
+							<ol>
+								<li>
+									Go to IOS store and download <a href="https://itunes.apple.com/en/app/mpod/id285063020?mt=8">Mpod</a>
+								</li>
+								<li>
+									Open the application and go to settings
+								</li>
+								<li>
+									In the settings input the <a href="{{ url_for('music') }}#configuration">configuration</a>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div id="windows">
+							<h2>Windows</h2>
+							<p>
+								Windows also have applications that can interact with the Music Server
+							</p>
+							<ol>
+								<li>Download <a href="https://code.google.com/p/cantata/wiki/Downloads?tm=2">Cantata application</a> </li>
+								<li>Open the application and go to the configuration</li>
+								<li>Input the <a href="{{ url_for('music') }}#configuration">configuration</a></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</section> 
+
+{% endblock %}

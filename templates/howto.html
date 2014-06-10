@@ -17,6 +17,8 @@
     .description p { font-size: 18px;}
     video{width:100%;}
     .top p { font-size: 26px;}
+    h1 { font-size: 46px;}
+    h2 { font-size: 36px;}
 </style>
 {% endblock %}
 {% block body %}
@@ -25,6 +27,9 @@
     <div class="row">
         <div class="col-md-4">
             <ul class="nav nav-sidebar">
+                <li>
+                    <a href="#initial-setup">Initial Setup</a>
+                </li>
                 <li>
                     <a href="#getting-started">Getting Started</a>
                     <ul class="nav inner">
@@ -69,7 +74,7 @@
         <div class="col-md-8">
             <section class="top">
                 <ul>
-                    <li>PDF</li>
+                    <li><a href="{{ url_for('static', filename='others/blackbox-how-to.pdf') }}">Download PDF</a></li>
                     <li>Print</li>
                 </ul>
             </section>
@@ -80,7 +85,7 @@
                     
                     <p>Hi and welcome to BLOX. This page contains everything you need to use your Blox media entertainment.</p>
                 </div>
-                <article class="initial">
+                <article id="initial-setup">
                     <h2 class="page-header">Initial Setup</h2>
                     <div class="description">
                         <p>
@@ -147,7 +152,7 @@
                         <p>
                             One of the main features of blox is its File Server. Blox can store 1TB worth of Documents, Pictures, Videos, and Music.
                         </p>
-                        <p>There are 2 ways to access you file server</p>
+                        <p>There are 2 ways to access you file server using <a href="{{ url_for('howto') }}#files-desktop-laptops">desktop/laptops</a> or using your <a href="{{ url_for('howto') }}#files-smartphone">smartphone</a></p>
                     </div>
                 </article>
 
