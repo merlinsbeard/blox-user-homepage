@@ -24,6 +24,9 @@
     #music-smartphone img { height: 400px;}
     .description img { max-height: 400px; max-width: 100%}
     #music img { max-height: 400px;}
+    video{ display:none;}
+    .banner { display:none;}
+    .hidden { display:none;}
 </style>
 {% endblock %}
 {% block body %}
@@ -85,7 +88,7 @@
             </section>
             <section id="how-to-details">
                 <div class="top">
-                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner">
+                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner" class="banner">
                     <h1 id="how-to">User Guide</h1>
                     
                     <p>Hi and welcome to BLOX. This page contains everything you need to use your Blox media entertainment.</p>
@@ -101,7 +104,7 @@
                             <li>1 usb keyboard</li>
                             <li>1 usb mouse</li>
                         </ul>
-                        <br><img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="image of setup"></br>
+                        <br><img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="image of setup" class="banner"></br>
                         <p>Blox needs these equipments to turn on and boot up. Afterwards, these equipement can be removed.</p>
                     </div>
                 </article>
@@ -149,7 +152,7 @@
                
                 <article id="files">
                     <h2 class="page-header">Your Files</h2>
-                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner of your files">
+                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner of your files" class="banner">
                     <div class="description">
                         <p>
                             One of the main features of blox is its File Server. Blox can store 1TB worth of Documents, Pictures, Videos, and Music.
@@ -168,15 +171,14 @@
                         <ol>
                             <li>
                                 On your Desktop press start
-                                <br><img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="press start">
-                            </li>
+                                <br>                            </li>
                             <li>
                                 Type <strong>\\blox\ or \\blox.local\</strong>
-                                <br><img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="type blox">
+                                <br><img src="{{ url_for('static', filename='images/hostname-windows.png') }}" alt="press start">
                             </li>
                             <li>
                                 Press start
-                                <br><img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="image of folder">
+                                <br><img src="{{ url_for('static', filename='images/folder-windows.png') }}" alt="image of folder">
                             </li>
                         </ol>
                     </div>
@@ -198,6 +200,10 @@
                                 Open the app and go to <strong>Network > Lan Settings</strong>
                                 <br><img src="{{ url_for('static', filename='images/ESFILE-lan.jpg') }}" alt="setting up app">
                             </li>
+			<li>
+			Tap New in the bottom
+			<br><img src="{{ url_for('static', filename='images/es1.png') }}">
+			</li>
                             <li>
                                 In the host field put the IP address of blox <strong> {{ dicts.IP }} </strong>
                                 <br><img src="{{ url_for('static', filename='images/es.png') }}" alt="filling in the settings app">
@@ -236,7 +242,7 @@
                 
                 <article id="video-pictures">
                     <h2 class="page-header">Your Videos and Pictures</h2>
-                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner for Videos and Pictures">
+                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Banner for Videos and Pictures" class="banner">
                     <div class="description">
                         <p>
                             Browse, Play, and Share your Videos and Photos. Watch or view your videos and photos on your smartphone, tablet, or Smart TV.
@@ -312,13 +318,14 @@
                     <video src="{{ url_for('static', filename='others/video-pictures-applications.mp4') }}" controls></video>
                     <div class="description">
                         <p>
-                            You can use Plex Home Theater in Blox if you dont want to use the browser version.
+                            You can use <a href="{{ url_for('static', filename='others/pht.exe') }}">Plex Home Theater</a> in Blox if you dont want to use the browser version.
                         </p>
                         <ol>
                             <li>
                                 On the Blox Computer click on the icon of Plex Home Theater
                                 <br><img src="{{ url_for('static', filename='images/plexhometheater.png') }}" alt="Image of opening Plex Home Theater"></br>
                             </li>
+                            <li>If you are using Windows you can download <a href="{{ url_for('static', filename='others/pht.exe') }}">Plex Home Theater</a></li>
                         </ol>
                         
                     </div>
@@ -334,7 +341,7 @@
                         <ol>
                             <li>Download the <strong><a href="https://play.google.com/store/apps/details?id=com.plexapp.android">Plex for Android</a></strong></li>
                         </ol>
-                        <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Plex for android along side tv remote controlling">
+                        <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Plex for android along side tv remote controlling" class="banner">
                     </div>
                 </article>
                
@@ -346,7 +353,7 @@
                 
                 <article id="music">
                     <h2 class="page-header">Your Music</h2>
-                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Lounging person in hand android phone ">
+                    <img src="{{ url_for('static', filename='images/600x300.gif') }}" alt="Lounging person in hand android phone " class="banner">
                     <img src="{{ url_for('static', filename='images/mpd.jpg') }}" alt="Music Image Intro">
                     <p>One of Blox's main feature is playing, organizing, and sharing music. Once your playlist is set up, Blox can automatically play it. You can also remotely control your music using your phone, laptop, or any other computer within your network.</p>
                     <p>
@@ -471,7 +478,7 @@
                 </article>
                 
                 
-                <article id="music-controls">
+                <article id="music-controls " class="hidden">
                     <h3>Basic Controls</h3>
                     <video src="{{ url_for('static', filename='others/music-controls.mp4') }}" controls></video>
                     <div class="descrtiption">
@@ -501,7 +508,7 @@
         $('.go-top').click(function(event) {
             event.preventDefault();
             
-            $('html, body').animate({scrollTop: 0}, 300);
+            $('html, body').animate({scrollTop: 0}, 1000);
         })
     });
 </script>
