@@ -2,6 +2,10 @@ import os
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
 	render_template, request
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = '/home/blox/Music/uploaded'
+ALLOWED_EXTENSIONS = set(['mp3'])
 
 # configuration
 DATABASE = False
@@ -34,7 +38,6 @@ def using_desktop():
         desktop = True
     return desktop
 
-
 @app.route('/')
 def index():
     ALL_IP = ip_addresses()
@@ -44,10 +47,36 @@ def index():
         'using_desktop': using_desktop(),
         }
     return render_template('index.html', dicts=dicts)
-
+#
 desktop = ['bsd','linux','macos','solaris','windows']
 smartphones = ['android','iphone','ipad']
 
+def allowed_file(filename):
+	return '.' in filename and \
+		filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
+
+@app.route('/upload_music', methods=['GET','POST'])
+def upload_file():
+	ALL_IP = ip_addresses()
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		}
+	if request.method == 'POST':
+		files = request.files.getlist('file')
+		for file in files:
+			if file and allowed_file(file.filename):
+				filename = secure_filename(file.filename)
+				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+				#return redirect(url_for('uploaded_file',filename=filename))
+			else:	
+				return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
+		return '<h1>Succesfully uploaded Music</h1>'
+		
+	return render_template('upload_music.html', dicts=dicts)
+    
+			
 
 
 @app.route('/user-agent')
