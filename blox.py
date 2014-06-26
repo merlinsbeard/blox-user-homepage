@@ -4,7 +4,14 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 	render_template, request
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/home/blox/Music/uploaded'
+#UPLOAD_FOLDER = '/home/blox/Music/uploaded'
+
+f = open('config', 'r')
+music_folder = eval(f.read())
+f.close()
+UPLOAD_FOLDER = music_folder['music_upload_folder']
+
+
 ALLOWED_EXTENSIONS = set(['mp3'])
 
 # configuration

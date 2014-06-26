@@ -1,4 +1,5 @@
 {
     'eth':'0.0.0.0',
     'wlan':'192.168.1.253',
+	'music_upload_folder':'/home/blackbox/Music/Uploads'
 }
