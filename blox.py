@@ -3,8 +3,8 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
 	render_template, request
 from werkzeug.utils import secure_filename
+from mpd import MPDClient
 
-#UPLOAD_FOLDER = '/home/blox/Music/uploaded'
 
 f = open('config', 'r')
 music_folder = eval(f.read())
@@ -45,6 +45,15 @@ def using_desktop():
         desktop = True
     return desktop
 
+def connect_mpd():
+    client = MPDClient()
+    IP = ip_addresses()
+    IP = IP['IP']
+    client.connect(IP, 6600)
+    client.password('blox')
+    return client
+
+
 @app.route('/')
 def index():
     ALL_IP = ip_addresses()
@@ -77,13 +86,13 @@ def upload_file():
 				filename = secure_filename(file.filename)
 				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 				#return redirect(url_for('uploaded_file',filename=filename))
-			else:	
+			else:
 				return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
 		return '<h1>Succesfully uploaded Music</h1>'
-		
+
 	return render_template('upload_music.html', dicts=dicts)
-    
-			
+
+
 
 
 @app.route('/user-agent')
@@ -119,6 +128,38 @@ def music():
         }
 
     return render_template('music.html', dicts=dicts)
+
+@app.route('/controlmusic',methods=['GET','POST'])
+def control_music():
+    ALL_IP = ip_addresses()
+    dicts = {
+        'ALL_IP': ALL_IP,
+        'IP': ALL_IP['IP'],
+        }
+
+    client = connect_mpd()
+    if request.method == 'POST':
+        if 'Play' in request.form.values():
+            client.play()
+        elif 'Pause' in request.form.values():
+            client.pause()
+        if 'Next' in request.form.values():
+            client.next()
+        elif 'Previous' in request.form.values():
+            client.previous()
+        elif '+' in request.form.values():
+            original_volume = client.status()['volume']
+            original_volume = int(original_volume)
+            client.setvol(original_volume+2)
+        elif '-' in request.form.values():
+            original_volume = client.status()['volume']
+            original_volume = int(original_volume)
+            client.setvol(original_volume-2)
+
+    STATUS = client.status()
+    CURRENT_SONG = client.currentsong()
+
+    return render_template('control_music.html', dicts=dicts,  STATUS=STATUS, CURRENT_SONG=CURRENT_SONG)
 
 @app.route('/contactus')
 def contactus():

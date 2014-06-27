@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+    <p>Music Control <br>
+        <br>
+        Song: {{ CURRENT_SONG.title }}
+        <br>
+        Artist: {{ CURRENT_SONG.artist}}
+        <br>
+        Status: {{ STATUS.state }}
+        <br>
+        Volume: {{ STATUS.volume}}
+    </p>
+
+    <form action="" method="post">
+
+        <button type="submit" value ="Previous" name="previous"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-step-backward"></span>
+        </button>
+        <button type="submit" value="Play" name="play" class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-play"></span>
+        </button>
+        <button type="submit" value="Pause" name="pause"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-pause"></span>
+        </button>
+        <button type="submit" value ="Next" name="next"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-step-forward"></span>
+        </button>
+        <br>
+        <br>
+        <button type="submit" value ="+" name="+"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+        <button type="submit" value ="-" name="-"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-minus-sign"></span>
+        </button>
+    </form>
+
+
+{% endblock %}
