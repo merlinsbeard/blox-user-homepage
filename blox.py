@@ -140,7 +140,10 @@ def control_music():
     client = connect_mpd()
     if request.method == 'POST':
         if 'Play' in request.form.values():
-            client.play()
+            if client.status()['state'] == 'pause':
+                client.play()
+            elif client.status()['state'] == 'play':
+                client.pause()
         elif 'Pause' in request.form.values():
             client.pause()
         if 'Next' in request.form.values():

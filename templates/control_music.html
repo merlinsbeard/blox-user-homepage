@@ -14,26 +14,28 @@
     </p>
 
     <form action="" method="post">
-
         <button type="submit" value ="Previous" name="previous"class="btn btn-large btn-success">
         <span class="glyphicon glyphicon-step-backward"></span>
         </button>
         <button type="submit" value="Play" name="play" class="btn btn-large btn-success">
+
+        {% if STATUS.state == 'pause' %}
         <span class="glyphicon glyphicon-play"></span>
-        </button>
-        <button type="submit" value="Pause" name="pause"class="btn btn-large btn-success">
+        {% else %}
+
         <span class="glyphicon glyphicon-pause"></span>
+        {% endif %}
         </button>
         <button type="submit" value ="Next" name="next"class="btn btn-large btn-success">
         <span class="glyphicon glyphicon-step-forward"></span>
         </button>
         <br>
         <br>
-        <button type="submit" value ="+" name="+"class="btn btn-large btn-success">
-        <span class="glyphicon glyphicon-plus-sign"></span>
-        </button>
         <button type="submit" value ="-" name="-"class="btn btn-large btn-success">
         <span class="glyphicon glyphicon-minus-sign"></span>
+        </button>
+        <button type="submit" value ="+" name="+"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
     </form>
 
