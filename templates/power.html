@@ -1,0 +1,22 @@
+
+{% extends 'layout.html' %}
+{% block extrahead %}
+<style>
+#music { background: #412b45; }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+	<h1>POWER</h1>
+	<form action="" method=post enctype=multipart/form-data>
+
+        <button type="submit" value ="Power" name="power"class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-off"></span>
+        </button>
+        <button type="submit" value="Reboot" name="reboot" class="btn btn-large btn-success">
+        <span class="glyphicon glyphicon-repeat"></span>
+        </button>
+	</form>
+
+</div>
+{% endblock %}

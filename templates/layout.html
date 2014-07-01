@@ -9,10 +9,17 @@
     <style>
         body { color: white; background: #412b45; }
         header{
-            height: 20em;
             background: #2d2d2d;
         }
-        header center img{ height: 6em; margin-top:4em;  }
+        header center img{ height: 6em; margin-top:4em; margin-bottom:1em;  }
+        #nav-top .nav {
+            padding-left: 0;
+            max-width: 230px;
+            margin: 0 auto;
+        }
+        #top-table table {
+            width: auto;
+        }
     </style>
     {% block extrahead %}{% endblock %}
 </head>
@@ -22,15 +29,41 @@
     <div class="container">
         <center>
             <img src="{{ url_for('static', filename='images/logo1.png') }}"></img><br>
-            <span class="text-center">Connect using:</br>
-            <strong><a href="{{ url_for('index') }}">http://{{ dicts.IP }}/</a>
-               
-            </strong>
-            or</br>
-            <strong>
-            <a href="{{ url_for('index') }}">http://blox/</a> or <br><a href="{{ url_for('index') }}">http://blox.local/</a>
-            </strong>
-            </span>
+            <div id="top-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                Connect using:
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://{{ dicts.IP }}/</a></strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://blox/</a></strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://blox.local/</a></strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="nav-top">
+                <ul class="nav nav-pills">
+                    <li><a href="{{ url_for('static', filename='doc/index.html') }}">How To</a></li>
+                    <li><a href="{{ url_for('powercontrol') }}">Power</a></li>
+                    <li><a href="{{ url_for('music') }}">Music</a></li>
+                </ul>
+            </div>
         </center>
     </div>
 </header>

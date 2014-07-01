@@ -4,6 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 	render_template, request
 from werkzeug.utils import secure_filename
 from mpd import MPDClient
+import subprocess
 
 
 f = open('config', 'r')
@@ -13,16 +14,22 @@ UPLOAD_FOLDER = music_folder['music_upload_folder']
 
 
 ALLOWED_EXTENSIONS = set(['mp3'])
+desktop = ['bsd','linux','macos','solaris','windows']
+smartphones = ['android','iphone','ipad']
 
 # configuration
 DATABASE = False
 
 # create our little application
 app = Flask(__name__)
+
 # pulls in app configuration by looking for UPPERCASE variables
 app.config.from_object(__name__)
 
 def ip_addresses():
+    '''
+        Checks the config file for the IP address of BLOX
+    '''
     f = open('config', 'r')
     ALL_IP = eval(f.read())
     f.close()
@@ -35,6 +42,10 @@ def ip_addresses():
     return ALL_IP
 
 def using_desktop():
+    '''
+        Checks if blox webpage is being browsed in desktops or
+        in smartphones
+    '''
     desktop_os = ['bsd','linux','macos','solaris','windows']
     smartphones = ['android','iphone','ipad']
     userAgentString = request.headers.get('User-Agent')
@@ -46,6 +57,9 @@ def using_desktop():
     return desktop
 
 def connect_mpd():
+    '''
+        Connects to MPD client
+    '''
     client = MPDClient()
     IP = ip_addresses()
     IP = IP['IP']
@@ -56,6 +70,9 @@ def connect_mpd():
 
 @app.route('/')
 def index():
+    '''
+        Index webpage
+    '''
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
@@ -63,43 +80,69 @@ def index():
         'using_desktop': using_desktop(),
         }
     return render_template('index.html', dicts=dicts)
-#
-desktop = ['bsd','linux','macos','solaris','windows']
-smartphones = ['android','iphone','ipad']
+
+@app.route('/powercontrol', methods=['GET', 'POST'])
+def powercontrol():
+    '''
+        Has Power button for shutdown and
+        Reboot button for reboot
+    '''
+    ALL_IP = ip_addresses()
+    dicts = {
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            }
+    if request.method == 'POST':
+        if 'Power' in request.form.values():
+            subprocess.call('poweroff')
+        elif 'Reboot' in request.form.values():
+            subprocess.call('reboot')
+    return render_template('power.html',dicts=dicts)
+
 
 def allowed_file(filename):
-	return '.' in filename and \
-		filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
+    '''
+        Checks if a file uploaded is an mp3 or wav
+    '''
+    return '.' in filename and \
+            filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
 
 @app.route('/uploadmusic', methods=['GET','POST'])
 def upload_file():
-	ALL_IP = ip_addresses()
-	dicts = {
-		'ALL_IP': ALL_IP,
-		'IP': ALL_IP['IP'],
-		'using_desktop': using_desktop(),
-		}
-	if request.method == 'POST':
-		files = request.files.getlist('file')
-		for file in files:
-			if file and allowed_file(file.filename):
-				filename = secure_filename(file.filename)
-                                file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-				file.save(file_path)
-				#return redirect(url_for('uploaded_file',filename=filename))
-                                os.chmod(file_path, 0755)
-                                os.chown(file_path, 1000, 1000)
-			else:
-				return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
-		return '<h1>Succesfully uploaded Music</h1>'
+    '''
+        Upload page for Music
+    '''
+    ALL_IP = ip_addresses()
+    dicts = {
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            }
+    if request.method == 'POST':
+            files = request.files.getlist('file')
+            for file in files:
+                    if file and allowed_file(file.filename):
+                            filename = secure_filename(file.filename)
+                            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                            file.save(file_path)
+                            #return redirect(url_for('uploaded_file',filename=filename))
+                            os.chmod(file_path, 0755)
+                            os.chown(file_path, 1000, 1000)
+                    else:
+                            return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
+            return '<h1>Succesfully uploaded Music</h1>'
 
-	return render_template('upload_music.html', dicts=dicts)
+    return render_template('upload_music.html', dicts=dicts)
 
 
 
 
 @app.route('/user-agent')
 def getUserAgent():
+    '''
+        Gets the useragent of the user
+    '''
     userAgentString = request.headers.get('User-Agent')
     user_agent = request.user_agent
     platform = user_agent.platform
@@ -122,18 +165,27 @@ def getUserAgent():
     return render_template('user-agent.html', userAgentString=userAgentString,
         user_agent=user_agent, platform=platform, linux=linux, ua=ua, desktops=desktops)
 
-@app.route('/music')
+@app.route('/music', methods=['GET','POST'])
 def music():
+    '''
+        contains info in connecting music
+    '''
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
         'IP': ALL_IP['IP'],
         }
 
-    return render_template('music.html', dicts=dicts)
+    client = connect_mpd()
+    STATUS = client.status()
+    CURRENT_SONG = client.currentsong()
+    return render_template('music.html', dicts=dicts, STATUS=STATUS, CURRENT_SONG=CURRENT_SONG)
 
 @app.route('/controlmusic',methods=['GET','POST'])
 def control_music():
+    '''
+        Has basic controls in music
+    '''
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
@@ -169,11 +221,17 @@ def control_music():
 
 @app.route('/contactus')
 def contactus():
+    '''
+        Info in contacts us
+    '''
     ALL_IP = ip_addresses()
     return render_template('contactus.html',dicts=ALL_IP)
 
 @app.route('/howto')
 def howto():
+    '''
+        how to
+    '''
     ALL_IP = ip_addresses()
     dicts = {
         'All_IP': ALL_IP,
