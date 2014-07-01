@@ -71,7 +71,7 @@ def allowed_file(filename):
 	return '.' in filename and \
 		filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
 
-@app.route('/upload_music', methods=['GET','POST'])
+@app.route('/uploadmusic', methods=['GET','POST'])
 def upload_file():
 	ALL_IP = ip_addresses()
 	dicts = {
@@ -84,8 +84,11 @@ def upload_file():
 		for file in files:
 			if file and allowed_file(file.filename):
 				filename = secure_filename(file.filename)
-				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                                file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+				file.save(file_path)
 				#return redirect(url_for('uploaded_file',filename=filename))
+                                os.chmod(file_path, 0755)
+                                os.chown(file_path, 1000, 1000)
 			else:
 				return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
 		return '<h1>Succesfully uploaded Music</h1>'
