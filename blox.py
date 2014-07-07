@@ -30,7 +30,7 @@ def ip_addresses():
     '''
         Checks the config file for the IP address of BLOX
     '''
-    f = open('config', 'r')
+    f = open('config.txt', 'r')
     ALL_IP = eval(f.read())
     f.close()
     IP = False
