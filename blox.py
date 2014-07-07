@@ -7,7 +7,7 @@ from mpd import MPDClient
 import subprocess
 
 
-f = open('config', 'r')
+f = open('config.txt', 'r')
 music_folder = eval(f.read())
 f.close()
 UPLOAD_FOLDER = music_folder['music_upload_folder']
