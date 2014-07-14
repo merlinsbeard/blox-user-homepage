@@ -108,6 +108,33 @@ def allowed_file(filename):
     return '.' in filename and \
             filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
 
+@app.route('/uploadsample', methods=['GET','POST'])
+def upload_sample():
+    '''
+        Upload page for sample
+    '''
+    ALL_IP = ip_addresses()
+    dicts = {
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            }
+    if request.method == 'POST':
+            files = request.files.getlist('file[]')
+            for file in files:
+                    if file and allowed_file(file.filename):
+                            filename = secure_filename(file.filename)
+                            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                            file.save(file_path)
+                            #return redirect(url_for('uploaded_file',filename=filename))
+                            os.chmod(file_path, 0755)
+                            os.chown(file_path, 1000, 1000)
+                    else:
+                            return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
+            return '<h1>Succesfully uploaded Music</h1>'
+
+    return render_template('uploadsample.html', dicts=dicts)
+
 @app.route('/uploadmusic', methods=['GET','POST'])
 def upload_file():
     '''
@@ -120,7 +147,7 @@ def upload_file():
             'using_desktop': using_desktop(),
             }
     if request.method == 'POST':
-            files = request.files.getlist('file')
+            files = request.files.getlist('file[]')
             for file in files:
                     if file and allowed_file(file.filename):
                             filename = secure_filename(file.filename)

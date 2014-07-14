@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js" charset="UTF-8"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/plupload.full.min.js') }}" charset="UTF-8"></script>
+{% endblock %}
+{% block body %}
+<ul id="filelist"></ul>
+<br />
+ 
+<div id="container">
+    <a id="browse" href="javascript:;">[Browse...]</a>
+    <a id="start-upload" href="javascript:;">[Start Upload]</a>
+</div>
+
+
+<script type="text/javascript">
+var uploader = new plupload.Uploader({
+  browse_button: 'browse', // this can be an id of a DOM element or the DOM element itself
+  url: '{{ url_for("upload_sample") }}'
+});
+ 
+uploader.init();
+uploader.bind('FilesAdded', function(up, files) {
+  var html = '';
+  plupload.each(files, function(file) {
+    html += '<li id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></li>';
+  });
+  document.getElementById('filelist').innerHTML += html;
+});
+ 
+uploader.bind('UploadProgress', function(up, file) {
+  document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+});
+ 
+uploader.bind('Error', function(up, err) {
+  document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+});
+ 
+document.getElementById('start-upload').onclick = function() {
+  uploader.start();
+};
+</script>
+
+{% endblock %}
