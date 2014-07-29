@@ -1,5 +1,6 @@
 {
     'eth':'192.168.2.253',
     'wlan':'0.0.0.0',
-	'music_upload_folder':'/home/blox/Music/Uploads'
+	'music_upload_folder':'/home/blox/Music/Uploads',
+    'picture_upload_folder': '/home/blox/Pictures/Uploads',
 }

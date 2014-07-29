@@ -8,9 +8,10 @@ import subprocess
 
 
 f = open('config.txt', 'r')
-music_folder = eval(f.read())
+folder = eval(f.read())
 f.close()
-UPLOAD_FOLDER = music_folder['music_upload_folder']
+UPLOAD_FOLDER_MUSIC = folder['music_upload_folder']
+UPLOAD_FOLDER_PICTURE = folder['picture_upload_folder']
 
 
 ALLOWED_EXTENSIONS = set(['mp3'])
@@ -124,7 +125,7 @@ def upload_sample():
             for file in files:
                     if file and allowed_file(file.filename):
                             filename = secure_filename(file.filename)
-                            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                            file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
                             file.save(file_path)
                             #return redirect(url_for('uploaded_file',filename=filename))
                             os.chmod(file_path, 0755)
@@ -151,7 +152,7 @@ def upload_file():
             for file in files:
                     if file and allowed_file(file.filename):
                             filename = secure_filename(file.filename)
-                            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                            file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
                             file.save(file_path)
                             #return redirect(url_for('uploaded_file',filename=filename))
                             os.chmod(file_path, 0755)
