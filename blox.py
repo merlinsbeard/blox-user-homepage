@@ -1,7 +1,7 @@
 import os
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
-	render_template, request
+	render_template, request, flash
 from werkzeug.utils import secure_filename
 from mpd import MPDClient
 import subprocess
@@ -10,14 +10,6 @@ import subprocess
 f = open('config.txt', 'r')
 folder = eval(f.read())
 f.close()
-UPLOAD_FOLDER_MUSIC = folder['music_upload_folder']
-UPLOAD_FOLDER_PICTURE = folder['picture_upload_folder']
-
-
-ALLOWED_EXTENSIONS = set(['mp3'])
-desktop = ['bsd','linux','macos','solaris','windows']
-smartphones = ['android','iphone','ipad']
-
 # configuration
 DATABASE = False
 
@@ -26,6 +18,17 @@ app = Flask(__name__)
 
 # pulls in app configuration by looking for UPPERCASE variables
 app.config.from_object(__name__)
+app.config.update(dict(
+    USERNAME='admin',
+    PASSWORD='admin',
+    UPLOAD_FOLDER_MUSIC = folder['music_upload_folder'],
+    UPLOAD_FOLDER_PICTURE = folder['picture_upload_folder'],
+    ALLOWED_EXTENSIONS = set(['mp3']),
+    desktop = ['bsd','linux','macos','solaris','windows'],
+    smartphones = ['android','iphone','ipad'],
+    SECRET_KEY='development key',
+))
+
 
 def ip_addresses():
     '''
@@ -68,6 +71,32 @@ def connect_mpd():
     client.password('blox')
     return client
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    ALL_IP = ip_addresses()
+    dicts = {
+        'ALL_IP': ALL_IP,
+        'IP': ALL_IP['IP'],
+        'using_desktop': using_desktop(),
+        }
+    if request.method == 'POST':
+        if request.form['username'] != app.config['USERNAME']:
+        #if request.form['username'] != "admin":
+            error = 'Invalid Username'
+        elif request.form['password'] != app.config['PASSWORD']:
+            error = 'Invalid password'
+        else:
+            session['logged_in'] = True
+            flash('You were logged in')
+            return redirect(url_for('powercontrol'))
+    return render_template('login.html', error=error,dicts=dicts)
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out')
+    return redirect(url_for('index'))
 
 @app.route('/')
 def index():
@@ -88,6 +117,9 @@ def powercontrol():
         Has Power button for shutdown and
         Reboot button for reboot
     '''
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
     ALL_IP = ip_addresses()
     dicts = {
             'ALL_IP': ALL_IP,
