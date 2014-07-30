@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+<style>
+.picture_index li {width:150px;  height: 150px;}
+.picture_index li img{ width:100%}
+
+</style>
+
+{% endblock %}
+{%block body %}
+<div class="container">
+    <div class="picture_index" >
+        {{ pictures['uploads/Pictures'] }}
+        {% for root in pictures %}
+        <div class="album">
+            <h2>Album Name: <a href="{{ url_for('albums', slug=root) }}"><strong>{{ pictures[root].folder_name }}</strong></em></a></h2><br>
+            
+            <ul>
+            {% for i in pictures[root]['files'] %}
+                {% if root =="uploads-pictures" %}
+                {{ pictures[root].relative_path }}
+                <li>
+                    <a href="{{ url_for('static', filename=pictures[root].relative_path+'/'+i)}}">
+                        <img src="{{ url_for('static', filename=pictures[root].relative_path+'/'+i)}}" class="img-rounded">
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

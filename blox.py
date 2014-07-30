@@ -5,6 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 from werkzeug.utils import secure_filename
 from mpd import MPDClient
 import subprocess
+from slugify import slugify
 
 
 f = open('config.txt', 'r')
@@ -70,6 +71,29 @@ def connect_mpd():
     client.connect(IP, 6600)
     client.password('blox')
     return client
+
+def get_root_dirs_files():
+    '''
+        Returns a dict containing the paths of pictures and Pictures Folder,
+        Inside the static/uploads/pictures folder.
+    '''
+    main_path = os.path.dirname(os.path.abspath('__file__'))
+    new_path = main_path + '/static/uploads/Pictures'
+    path_subtract = main_path + '/static/'
+    dirs_files = {}
+
+    for root, dirs, files in os.walk(new_path):
+        relative_path = root.replace(path_subtract,"")
+        new_key = slugify(relative_path)
+        folder_name = relative_path.replace("uploads/Pictures/","")
+        dirs_files[new_key] = {
+                'relative_path': relative_path,
+                'dirs': dirs,
+                'files': files,
+                'folder_name': folder_name,
+                }
+    return dirs_files
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -298,6 +322,34 @@ def howto():
         'IP': ALL_IP['IP'] ,
         }
     return render_template('howto.html', dicts=dicts)
+
+@app.route('/pictures')
+def pictures():
+    r = get_root_dirs_files()
+    pictures = r
+    ALL_IP = ip_addresses()
+    dicts = {
+        'ALL_IP': ALL_IP,
+        'IP': ALL_IP['IP'],
+        'using_desktop': using_desktop(),
+        }
+    return render_template('pictures.html', dicts=dicts, pictures=pictures)
+
+@app.route('/pictures/<slug>')
+def albums(slug):
+    r = get_root_dirs_files()
+    ALL_IP = ip_addresses()
+    dicts = {
+        'ALL_IP': ALL_IP,
+        'IP': ALL_IP['IP'],
+        'using_desktop': using_desktop(),
+        }
+    try:
+        r = r[slug]
+    except:
+        return 'Album / folder not existing'
+    return render_template('albums.html', dicts=dicts, pictures=r)
+
 
 if __name__ == '__main__':
     app.debug = True

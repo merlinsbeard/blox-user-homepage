@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+<style>
+.picture_index li {width:150px;  height: 150px;}
+.picture_index li img{ width:100%}
+
+.album{ margin: 1em; overlay:hidden; min-height:10em;}
+</style>
+
+{% endblock %}
+{%block body %}
+<div class="container">
+    <div class="picture_index">
+    <ul>
+    {% for i in pictures['files'] %}
+        {{ i }}
+        <li>
+        <a href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">
+             <img src="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">
+         </a>
+         </li>
+    {% endfor %}
+</ul>
+</div>
+</div>
+{% endblock %}
