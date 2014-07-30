@@ -9,27 +9,30 @@
 {% endblock %}
 {%block body %}
 <div class="container">
-    <div class="picture_index" >
-        {{ pictures['uploads/Pictures'] }}
-        {% for root in pictures %}
-        <div class="album">
-            <h2>Album Name: <a href="{{ url_for('albums', slug=root) }}"><strong>{{ pictures[root].folder_name }}</strong></em></a></h2><br>
-            
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-xs-12 albums">
+            <h2>Albums</h2>
             <ul>
-            {% for i in pictures[root]['files'] %}
-                {% if root =="uploads-pictures" %}
-                {{ pictures[root].relative_path }}
-                <li>
-                    <a href="{{ url_for('static', filename=pictures[root].relative_path+'/'+i)}}">
-                        <img src="{{ url_for('static', filename=pictures[root].relative_path+'/'+i)}}" class="img-rounded">
-                    </a>
-                </li>
-                {% endif %}
+            {% for root in pictures %}
+                <li><a href="{{ url_for('albums', slug=root) }}">{{pictures[root].folder_name }}</li> 
             {% endfor %}
             </ul>
         </div>
-        {% endfor %}
-    </div>
 
+        <div class="col-lg-9 col-md-6 col-xs-12"> 
+            {% for root in pictures %}
+                {% for i in pictures[root]['files'] %}
+                    {% if root == "uploads-pictures" %}
+                        
+                        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
+                            <a href="{{ url_for('static', filename=pictures[root].relative_path+'/'+i) }}" class="thumbnail">
+                            <img src="{{ url_for('static', filename=pictures[root].relative_path+'/'+i) }}">
+                             </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
