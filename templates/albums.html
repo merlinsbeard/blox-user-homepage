@@ -8,6 +8,14 @@
 {% endblock %}
 {%block body %}
 <div class="container">
+
+	<form action="" method=post enctype=multipart/form-data>
+		<p><input type=file name='file[]' multiple="" id="fileupload">
+		 <input type=submit value=Upload>
+	</p>	
+	</form>
+
+
     <div class="row">
         <h2>{{ pictures['folder_name'] }} </h2>
     {% for i in pictures['files'] %}

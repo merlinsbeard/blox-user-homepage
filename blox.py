@@ -24,12 +24,15 @@ app.config.update(dict(
     PASSWORD='admin',
     UPLOAD_FOLDER_MUSIC = folder['music_upload_folder'],
     UPLOAD_FOLDER_PICTURE = folder['picture_upload_folder'],
-    ALLOWED_EXTENSIONS = set(['mp3']),
     desktop = ['bsd','linux','macos','solaris','windows'],
     smartphones = ['android','iphone','ipad'],
     SECRET_KEY='development key',
 ))
 
+ALLOWED_EXTENSIONS_MUSIC = set(['mp3']),
+
+ALLOWED_EXTENSIONS_MUSIC = set(['mp3']),
+ALLOWED_EXTENSIONS_PICTURE = set(['jpg','jpeg','png','gif']),
 
 def ip_addresses():
     '''
@@ -158,12 +161,21 @@ def powercontrol():
     return render_template('power.html',dicts=dicts)
 
 
-def allowed_file(filename):
+def allowed_file_music(filename):
     '''
         Checks if a file uploaded is an mp3 or wav
     '''
     return '.' in filename and \
-            filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
+            #filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS_MUSIC
+            filename.rsplit('.',1)[1] in ['mp3']
+
+def allowed_file_picture(filename):
+    '''
+        Checks if a file uploaded is an image
+    '''
+    ALLOWED_EXTENSIONS_PICTURE = set(['jpg','jpeg']),
+    return '.' in filename and \
+            filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS_PICTURE
 
 @app.route('/uploadsample', methods=['GET','POST'])
 def upload_sample():
@@ -179,7 +191,7 @@ def upload_sample():
     if request.method == 'POST':
             files = request.files.getlist('file[]')
             for file in files:
-                    if file and allowed_file(file.filename):
+                    if file and allowed_file_music(file.filename):
                             filename = secure_filename(file.filename)
                             file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
                             file.save(file_path)
@@ -206,7 +218,7 @@ def upload_file():
     if request.method == 'POST':
             files = request.files.getlist('file[]')
             for file in files:
-                    if file and allowed_file(file.filename):
+                    if file and allowed_file_music(file.filename):
                             filename = secure_filename(file.filename)
                             file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
                             file.save(file_path)
@@ -333,9 +345,10 @@ def pictures():
         'IP': ALL_IP['IP'],
         'using_desktop': using_desktop(),
         }
+
     return render_template('pictures.html', dicts=dicts, pictures=pictures)
 
-@app.route('/pictures/<slug>')
+@app.route('/pictures/<slug>',methods=['GET','POST'])
 def albums(slug):
     r = get_root_dirs_files()
     ALL_IP = ip_addresses()
@@ -348,6 +361,24 @@ def albums(slug):
         r = r[slug]
     except:
         return 'Album / folder not existing'
+
+    if request.method == 'POST':
+        files = request.files.getlist('file[]')
+        for file in files:
+        #if file and allowed_file_picture(file.filename):
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
+            main_path = os.path.dirname(os.path.abspath('__file__'))
+            file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
+            file.save(file_path)
+            #return redirect(url_for('uploaded_file',filename=filename))
+            os.chmod(file_path, 0755)
+            os.chown(file_path, 1000, 1000)
+        #else:
+        #    return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
+        return '<h1>Succesfully uploaded Music</h1>'
+
+
     return render_template('albums.html', dicts=dicts, pictures=r)
 
 
