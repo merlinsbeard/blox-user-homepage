@@ -10,6 +10,14 @@
 {%block body %}
 <div class="container">
     <div class="row">
+        <div class="col-xs-4">
+        <form action="{{ url_for('pictures') }}" method="post" class="form-inline">
+            <input type="text" name="directory" class="form-control" placeholder="Directory">  
+            <button type="submit" value="Login" class="btn btn-default">Create Album</button>
+        </form>
+    </div>
+    </div>
+    <div class="row">
         <div class="col-lg-3 col-md-4 col-xs-12 albums">
             <h2>Albums</h2>
             <ul>
@@ -33,6 +41,8 @@
                 {% endfor %}
             {% endfor %}
         </div>
+
+
     </div>
 </div>
 {% endblock %}

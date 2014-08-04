@@ -333,7 +333,8 @@ def howto():
         }
     return render_template('howto.html', dicts=dicts)
 
-@app.route('/pictures')
+
+@app.route('/pictures', methods=['GET', 'POST'])
 def pictures():
     r = get_root_dirs_files()
     pictures = r
@@ -343,6 +344,17 @@ def pictures():
         'IP': ALL_IP['IP'],
         'using_desktop': using_desktop(),
         }
+
+    if request.method == 'POST':
+        
+        directory = request.form['directory']
+        main_path = os.path.dirname(os.path.abspath('__file__')) \
+            + '/static/uploads/Pictures/' + directory
+
+        if not os.path.exists(main_path):
+            os.makedirs(main_path)
+            os.chown(main_path, 1000, 1000)
+            return redirect(url_for('albums', slug=slugify('uploads/Pictures'+'-'+ directory)))
 
     return render_template('pictures.html', dicts=dicts, pictures=pictures)
 
@@ -373,8 +385,9 @@ def albums(slug):
                 os.chmod(file_path, 0755)
                 os.chown(file_path, 1000, 1000)
             else:
-                return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
-        return '<h1>Succesfully uploaded Music</h1>'
+                return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
+        #return '<h1>Succesfully uploaded Music</h1>'
+        return redirect(url_for('albums',slug=slug))
 
 
     return render_template('albums.html', dicts=dicts, pictures=r)
