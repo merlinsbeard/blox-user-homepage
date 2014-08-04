@@ -29,9 +29,6 @@ app.config.update(dict(
     SECRET_KEY='development key',
 ))
 
-ALLOWED_EXTENSIONS_MUSIC = set(['mp3']),
-
-ALLOWED_EXTENSIONS_MUSIC = set(['mp3']),
 ALLOWED_EXTENSIONS_PICTURE = set(['jpg','jpeg','png','gif']),
 
 def ip_addresses():
@@ -66,7 +63,7 @@ def using_desktop():
 
 def connect_mpd():
     '''
-        Connects to MPD client
+        Connects to MPD Server
     '''
     client = MPDClient()
     IP = ip_addresses()
@@ -165,17 +162,21 @@ def allowed_file_music(filename):
     '''
         Checks if a file uploaded is an mp3 or wav
     '''
+    filename = filename.lower()
+    allowed_extensions = ['mp3', 'wav','flac']
     return '.' in filename and \
+            filename.rsplit('.',1)[1] in allowed_extensions
             #filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS_MUSIC
-            filename.rsplit('.',1)[1] in ['mp3']
 
 def allowed_file_picture(filename):
     '''
         Checks if a file uploaded is an image
     '''
-    ALLOWED_EXTENSIONS_PICTURE = set(['jpg','jpeg']),
+    filename = filename.lower()
+
+    allowed_extensions = ['jpg','jpeg','png','gif','raw',]
     return '.' in filename and \
-            filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS_PICTURE
+            filename.rsplit('.',1)[1] in allowed_extensions 
 
 @app.route('/uploadsample', methods=['GET','POST'])
 def upload_sample():
@@ -230,9 +231,6 @@ def upload_file():
             return '<h1>Succesfully uploaded Music</h1>'
 
     return render_template('upload_music.html', dicts=dicts)
-
-
-
 
 @app.route('/user-agent')
 def getUserAgent():
@@ -365,17 +363,17 @@ def albums(slug):
     if request.method == 'POST':
         files = request.files.getlist('file[]')
         for file in files:
-        #if file and allowed_file_picture(file.filename):
-            filename = secure_filename(file.filename)
-            file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
-            main_path = os.path.dirname(os.path.abspath('__file__'))
-            file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
-            file.save(file_path)
-            #return redirect(url_for('uploaded_file',filename=filename))
-            os.chmod(file_path, 0755)
-            os.chown(file_path, 1000, 1000)
-        #else:
-        #    return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
+            if file and allowed_file_picture(file.filename):
+                filename = secure_filename(file.filename)
+                file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
+                main_path = os.path.dirname(os.path.abspath('__file__'))
+                file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
+                file.save(file_path)
+                #return redirect(url_for('uploaded_file',filename=filename))
+                os.chmod(file_path, 0755)
+                os.chown(file_path, 1000, 1000)
+            else:
+                return '<h1>Failed to Upload files. Make sure the files are mp3.</h1>'
         return '<h1>Succesfully uploaded Music</h1>'
 
 
