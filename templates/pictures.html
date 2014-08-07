@@ -30,6 +30,7 @@ img {
         {% for root in pictures %}
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
+                <a href="{{ url_for('albums', slug=root) }}"><h3 class="text-center">{{pictures[root].folder_name }}</h3>
                     <img src="
                     {% if pictures[root].thumb %}
                     {{ url_for('static',filename=pictures[root].relative_path+'/'+pictures[root].thumb)}}
@@ -37,11 +38,7 @@ img {
                     {{ url_for('static',filename='images/tm.jpg') }}
                     {% endif%}
                     " data-src="holder.js/300x300">
-                <div class="caption">
-                    <h3>
-                         <a href="{{ url_for('albums', slug=root) }}">{{pictures[root].folder_name }}
-                    </h3>
-                </div>
+                </a>
             </div>
 
         </div>
