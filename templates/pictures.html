@@ -1,14 +1,22 @@
 {% extends 'layout.html' %}
 {% block extrahead %}
+<script src="{{ url_for('static', filename='js/masonry.pkgd.min.js') }}"></script>
 <style>
 .picture_index li {width:150px;  height: 150px;}
-.picture_index li img{ width:100%}
+.picture_index li img{max-width:100%; height: auto;}
+.thumbnail a>img { height: auto; max-width: 100%;}
+.thumbnail { min-height: 350px; width: auto;}
 
+img {
 </style>
 
 {% endblock %}
 {%block body %}
+
+
+
 <div class="container">
+
     <div class="row">
         <div class="col-xs-4">
         <form action="{{ url_for('pictures') }}" method="post" class="form-inline">
@@ -17,32 +25,32 @@
         </form>
     </div>
     </div>
+    <h2>ALBUMS</h2>
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-xs-12 albums">
-            <h2>Albums</h2>
-            <ul>
-            {% for root in pictures %}
-                <li><a href="{{ url_for('albums', slug=root) }}">{{pictures[root].folder_name }}</li> 
-            {% endfor %}
-            </ul>
-        </div>
+        {% for root in pictures %}
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                    <img src="
+                    {% if pictures[root].thumb %}
+                    {{ url_for('static',filename=pictures[root].relative_path+'/'+pictures[root].thumb)}}
+                    {% else %}
+                    {{ url_for('static',filename='images/tm.jpg') }}
+                    {% endif%}
+                    " data-src="holder.js/300x300">
+                <div class="caption">
+                    <h3>
+                         <a href="{{ url_for('albums', slug=root) }}">{{pictures[root].folder_name }}
+                    </h3>
+                </div>
+            </div>
 
-        <div class="col-lg-9 col-md-6 col-xs-12"> 
-            {% for root in pictures %}
-                {% for i in pictures[root]['files'] %}
-                    {% if root == "uploads-pictures" %}
-                        
-                        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
-                            <a href="{{ url_for('static', filename=pictures[root].relative_path+'/'+i) }}" class="thumbnail">
-                            <img src="{{ url_for('static', filename=pictures[root].relative_path+'/'+i) }}">
-                             </a>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
         </div>
-
+        {% endfor %}
+        
 
     </div>
+
+
 </div>
+
 {% endblock %}

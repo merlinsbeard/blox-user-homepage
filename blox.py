@@ -86,11 +86,17 @@ def get_root_dirs_files():
         relative_path = root.replace(path_subtract,"")
         new_key = slugify(relative_path)
         folder_name = relative_path.replace("uploads/Pictures/","")
+        if files:
+            tm = files[0]
+        else:
+            #tm = url_for("static",filename="images/tm.jpg")
+            tm = False
         dirs_files[new_key] = {
                 'relative_path': relative_path,
                 'dirs': dirs,
                 'files': files,
                 'folder_name': folder_name,
+                'thumb': tm,
                 }
     return dirs_files
 
@@ -176,7 +182,7 @@ def allowed_file_picture(filename):
 
     allowed_extensions = ['jpg','jpeg','png','gif','raw',]
     return '.' in filename and \
-            filename.rsplit('.',1)[1] in allowed_extensions 
+            filename.rsplit('.',1)[1] in allowed_extensions
 
 @app.route('/uploadsample', methods=['GET','POST'])
 def upload_sample():
@@ -346,7 +352,6 @@ def pictures():
         }
 
     if request.method == 'POST':
-        
         directory = request.form['directory']
         main_path = os.path.dirname(os.path.abspath('__file__')) \
             + '/static/uploads/Pictures/' + directory
@@ -373,24 +378,45 @@ def albums(slug):
         return 'Album / folder not existing'
 
     if request.method == 'POST':
-        files = request.files.getlist('file[]')
-        for file in files:
-            if file and allowed_file_picture(file.filename):
-                filename = secure_filename(file.filename)
-                file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
-                main_path = os.path.dirname(os.path.abspath('__file__'))
-                file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
-                file.save(file_path)
-                #return redirect(url_for('uploaded_file',filename=filename))
-                os.chmod(file_path, 0755)
-                os.chown(file_path, 1000, 1000)
-            else:
-                return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
-        #return '<h1>Succesfully uploaded Music</h1>'
-        return redirect(url_for('albums',slug=slug))
+        if request.form['upload']:
+            files = request.files.getlist('file[]')
+            for file in files:
+                if file and allowed_file_picture(file.filename):
+                    filename = secure_filename(file.filename)
+                    file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
+                    main_path = os.path.dirname(os.path.abspath('__file__'))
+                    file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
+                    file.save(file_path)
+                    #return redirect(url_for('uploaded_file',filename=filename))
+                    os.chmod(file_path, 0755)
+                    os.chown(file_path, 1000, 1000)
+                else:
+                    return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
+            #return '<h1>Succesfully uploaded Music</h1>'
+            return redirect(url_for('albums',slug=slug))
 
 
     return render_template('albums.html', dicts=dicts, pictures=r)
+
+@app.route('/multiple', methods=['GET','POST'])
+def multiple():
+    # sample multiple button
+    if request.method == 'POST':
+        if 'Delete' in request.form.values():
+            a = request.form['delete']
+            return a
+        elif 'Upload' in request.form.values():
+            return 'Upload'
+
+    '''
+        if request.form['delete']:
+            a = request.form['delete']
+            return a
+        elif request.form['upload']:
+            return 'upload'
+    '''
+
+    return render_template('multiple.html')
 
 
 if __name__ == '__main__':
