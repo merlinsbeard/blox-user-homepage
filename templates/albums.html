@@ -25,7 +25,7 @@ Hello
             <img src="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">
              </a>
         <form action="" method=post>
-            <button type="submit" value={{ pictures.relative_path }}/{{i}} name="delete">Delete</button>
+            <button type="submit" value="{{ pictures.relative_path }}/{{i}}" name="delete">Delete</button>
          </form>
         </div>
     {% endfor %}
