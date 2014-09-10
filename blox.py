@@ -378,7 +378,8 @@ def albums(slug):
         return 'Album / folder not existing'
 
     if request.method == 'POST':
-        if request.form['upload']:
+        #if request.form['upload']:
+        if 'upload' in request.form.values():
             files = request.files.getlist('file[]')
             for file in files:
                 if file and allowed_file_picture(file.filename):
@@ -394,7 +395,16 @@ def albums(slug):
                     return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
             #return '<h1>Succesfully uploaded Music</h1>'
             return redirect(url_for('albums',slug=slug))
-
+        elif 'rename' in request.form.values():
+            return 'rename'
+        else:
+            a = request.form.values()
+            a = a[0]
+            relative_filename =  str(a)
+            main_path = os.path.dirname(os.path.abspath('__file__'))
+            full_path = main_path+ '/' + 'static' + '/' + relative_filename
+            os.remove(full_path)
+            return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
 
     return render_template('albums.html', dicts=dicts, pictures=r)
 
