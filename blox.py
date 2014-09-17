@@ -398,13 +398,16 @@ def albums(slug):
         elif 'rename' in request.form.values():
             return 'rename'
         else:
-            a = request.form.values()
-            a = a[0]
-            relative_filename =  str(a)
-            main_path = os.path.dirname(os.path.abspath('__file__'))
-            full_path = main_path+ '/' + 'static' + '/' + relative_filename
-            os.remove(full_path)
-            return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
+            if not session.get('logged_in'):
+                return redirect(url_for('login'))
+            else:
+                a = request.form.values()
+                a = a[0]
+                relative_filename =  str(a)
+                main_path = os.path.dirname(os.path.abspath('__file__'))
+                full_path = main_path+ '/' + 'static' + '/' + relative_filename
+                os.remove(full_path)
+                return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
 
     return render_template('albums.html', dicts=dicts, pictures=r)
 

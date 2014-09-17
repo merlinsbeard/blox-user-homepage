@@ -10,9 +10,8 @@
 <div class="container">
 
 	<form action="" method=post enctype=multipart/form-data>
-		<p><input type=file name='file[]' multiple="" id="fileupload">
-		 <input type=submit value=upload name="upload">
-		 <input type="submit" value=back name="back">
+		<p><input type=file name='file[]' multiple="" id="fileupload" >
+		 <input type=submit value=upload name="upload" class="btn btn-success">
 	</p>	
 	</form>
 
@@ -24,11 +23,30 @@ Hello
             <a href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}" class="thumbnail">
             <img src="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">
              </a>
-        <form action="" method=post>
-            <button type="submit" value="{{ pictures.relative_path }}/{{i}}" name="delete">Delete</button>
-         </form>
+             <!-- Small modal -->
+             <button class="btn btn-danger" data-toggle="modal" data-target=".{{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')}}">Delete</button>
+             <div class="modal fade {{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="text-info">Confirmation</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p class="text-info">Are you sure you want to delete {{ i }} ?
+                        </div>
+                        <div class="modal-footer">
+                            <form action="" method=post>
+                                <button type="submit" value="{{ pictures.relative_path }}/{{i}}" name="delete" class="btn btn-danger">Yes</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+           </div>
         </div>
     {% endfor %}
 </div>
 </div>
+
+
 {% endblock %}
