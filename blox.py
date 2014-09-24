@@ -7,7 +7,7 @@ from mpd import MPDClient
 import subprocess
 from slugify import slugify
 import glob
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 f = open('config.txt', 'r')
@@ -107,7 +107,7 @@ def create_thumbs(directory):
         Creates thumbs for the specified directory.
         Saves the thumbs in folder static/thumbs/
     '''
-    size = 240, 240
+    size = 180,180
     thumb_directory = 'static/thumbs/'
     image_extensions = ('jpg','jpeg',
                         'png','gif',
@@ -145,8 +145,9 @@ def create_thumbs(directory):
                 # Creates a new thumbnail for none GIF
                 # Gif images are not converted just
                 # resave
-                if ext.lower() not in ('gif'):
-                    im.thumbnail(size, Image.ANTIALIAS)
+                #if ext.lower() not in ('gif'):
+                #    im.thumbnail(size, Image.ANTIALIAS)
+                im = ImageOps.fit(im, size, method=Image.ANTIALIAS)
 
                 # Save the image with its appropriate
                 # name and extension
@@ -470,6 +471,9 @@ def albums(slug):
                 relative_filename =  str(a)
                 main_path = os.path.dirname(os.path.abspath('__file__'))
                 full_path = main_path+ '/' + 'static' + '/' + relative_filename
+                thumb_image_path = main_path + '/' + 'static/thumbs/' + relative_filename
+                thumb_image_path= thumb_image_path.replace('jpg','jpeg')
+                os.remove(thumb_image_path)
                 os.remove(full_path)
                 return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
 

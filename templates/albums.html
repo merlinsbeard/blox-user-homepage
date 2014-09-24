@@ -23,9 +23,10 @@ Hello
             <a href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}" class="thumbnail">
             <img src="{{ url_for('static', filename='thumbs' + '/' + pictures.relative_path+'/'+i | replace('jpg','jpeg')) }}">
              </a>
+             <a class="btn btn-info" href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">View Full Image</a>
              <!-- Small modal -->
-             <button class="btn btn-danger" data-toggle="modal" data-target=".{{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')}}">Delete</button>
-             <div class="modal fade {{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+             <button class="btn btn-danger" data-toggle="modal" data-target=".{{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')| replace(' ','') | replace('(','')| replace(')','') }}">Delete</button>
+             <div class="modal fade {{ i | replace('.jpg', '') | replace('.png', '') | replace('.gif', '') | replace(' ','')| replace('(','')| replace(')','')}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -33,6 +34,9 @@ Hello
                         </div>
                         <div class="modal-body">
                           <p class="text-info">Are you sure you want to delete {{ i }} ?
+            <a href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}" class="thumbnail">
+            <img src="{{ url_for('static', filename='thumbs' + '/' + pictures.relative_path+'/'+i | replace('jpg','jpeg')) }}">
+             </a>
                         </div>
                         <div class="modal-footer">
                             <form action="" method=post>
