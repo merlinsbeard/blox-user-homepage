@@ -9,13 +9,15 @@
 {%block body %}
 <div class="container">
 
-	<form action="" method=post enctype=multipart/form-data>
-		<p><input type=file name='file[]' multiple="" id="fileupload" >
+	<form action="" method=post enctype=multipart/form-data role="form">
+        <div class="form-group">
+            <label>Upload your Images</label>
+		<input type=file name='file[]' multiple="" id="fileupload" > 
+        <p class="help-block"><a href=#>Having trouble? Use other methods. Click me!</a><p>
+    </div>
 		 <input type=submit value=upload name="upload" class="btn btn-success">
-	</p>	
+        	
 	</form>
-
-Hello
     <div class="row">
         <h2>{{ pictures['folder_name'] }} </h2>
     {% for i in pictures['files'] %}
