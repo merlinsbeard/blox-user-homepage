@@ -499,21 +499,21 @@ def multiple():
 
     return render_template('multiple.html')
 
-_file_directory = '/home/blox/Downloads/'
-@app.route('/download')
-def download_directory():
+_file_directory = '/home/blox/Public/'
+@app.route('/public')
+def public_directory():
     """
         Shows files in the Download directory of blox
     """
-    output_html = '<html>{0}</html>'
-    href_tag = '<a href="/download/{0}">{0}</a><br>'
+    output_html = '<html><ul>{0}<ul></html>'
+    href_tag = '<li><a href="/public/{0}">{0}</a></li>'
     file_links = ''
     for filename in os.listdir(_file_directory):
         if os.path.isfile(_file_directory + filename):
             file_links += href_tag.format(filename)
     return output_html.format(file_links)
 
-@app.route('/download/<path:filename>')
+@app.route('/public/<path:filename>')
 def send_file(filename):
     # Makes the files downloadable directyle
     return send_from_directory(_file_directory, filename)

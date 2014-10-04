@@ -8,7 +8,12 @@
 <section id="music">
 	<div class="container">
 		<h1>Music</h1>
-
+        
+        <form action="{{ url_for('upload_file') }}" method=post enctype=multipart/form-data>
+		<p><input type=file name='file[]' multiple="" id="fileupload">
+		 <input type=submit value=Upload>
+	</p>	
+	</form>
 		<div class="row">
 			<div class="col-md-6">
                 <div id="music-controls">
