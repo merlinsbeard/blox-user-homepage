@@ -153,8 +153,9 @@ def create_thumbs(directory):
                 # name and extension
                 im.save(path + "/" + filename + ext, ext[1:])
 
-@app.route('/hi')
+#@app.route('/hi')
 def hi():
+    # Used for checking if thumbs are working
     directory = "static/uploads/Pictures"
     create_thumbs(directory)
     return "success"
@@ -171,7 +172,6 @@ def login():
         }
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
-        #if request.form['username'] != "admin":
             error = 'Invalid Username'
         elif request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid password'
@@ -189,9 +189,7 @@ def logout():
 
 @app.route('/')
 def index():
-    '''
-        Index webpage
-    '''
+    # Index webpage
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
@@ -202,10 +200,9 @@ def index():
 
 @app.route('/powercontrol', methods=['GET', 'POST'])
 def powercontrol():
-    '''
-        Has Power button for shutdown and
-        Reboot button for reboot
-    '''
+    # Has Power button for shutdown and
+    # Reboot button for reboot
+
     if not session.get('logged_in'):
         return redirect(url_for('login'))
 
@@ -224,9 +221,8 @@ def powercontrol():
 
 
 def allowed_file_music(filename):
-    '''
-        Checks if a file uploaded is an mp3 or wav
-    '''
+    # Checks if a file uploaded is an mp3 ,flac, or wav
+
     filename = filename.lower()
     allowed_extensions = ['mp3', 'wav','flac']
     return '.' in filename and \
@@ -234,20 +230,18 @@ def allowed_file_music(filename):
             #filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS_MUSIC
 
 def allowed_file_picture(filename):
-    '''
-        Checks if a file uploaded is an image
-    '''
+    # Checks if a file uploaded is an image
+
     filename = filename.lower()
 
     allowed_extensions = ['jpg','jpeg','png','gif','raw',]
     return '.' in filename and \
             filename.rsplit('.',1)[1] in allowed_extensions
 
-@app.route('/uploadsample', methods=['GET','POST'])
+#@app.route('/uploadsample', methods=['GET','POST'])
 def upload_sample():
-    '''
-        Upload page for sample
-    '''
+    # Upload page for sample
+    # Used for testing purposes
     ALL_IP = ip_addresses()
     dicts = {
             'ALL_IP': ALL_IP,
@@ -272,9 +266,8 @@ def upload_sample():
 
 @app.route('/uploadmusic', methods=['GET','POST'])
 def upload_file():
-    '''
-        Upload page for Music
-    '''
+    # Upload page for Music
+
     ALL_IP = ip_addresses()
     dicts = {
             'ALL_IP': ALL_IP,
@@ -401,8 +394,8 @@ def howto():
 
 @app.route('/pictures', methods=['GET', 'POST'])
 def pictures():
-    r = get_root_dirs_files()
-    pictures = r
+    dir_and_files = get_root_dirs_files()
+    pictures = dir_and_files
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
@@ -424,7 +417,7 @@ def pictures():
 
 @app.route('/pictures/<slug>',methods=['GET','POST'])
 def albums(slug):
-    r = get_root_dirs_files()
+    dir_and_files = get_root_dirs_files()
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
@@ -432,15 +425,13 @@ def albums(slug):
         'using_desktop': using_desktop(),
         }
     try:
-        r = r[slug]
+        dir_and_files = dir_and_files[slug]
     except:
         return 'Album / folder not existing'
 
     # Put Pictures in thumbnails
-    directory_path = 'static/' + r['relative_path']
+    directory_path = 'static/' + dir_and_files['relative_path']
     create_thumbs(directory_path)
-
-
 
     if request.method == 'POST':
         #if request.form['upload']:
@@ -451,7 +442,7 @@ def albums(slug):
                     filename = secure_filename(file.filename)
                     file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
                     main_path = os.path.dirname(os.path.abspath('__file__'))
-                    file_path = main_path + '/static/' + r['relative_path'] + '/' + filename
+                    file_path = main_path + '/static/' + dir_and_files['relative_path'] + '/' + filename
                     file.save(file_path)
                     #return redirect(url_for('uploaded_file',filename=filename))
                     os.chmod(file_path, 0755)
@@ -477,25 +468,19 @@ def albums(slug):
                 os.remove(full_path)
                 return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
 
-    return render_template('albums.html', dicts=dicts, pictures=r)
+    return render_template('albums.html', dicts=dicts, pictures=dir_and_files)
 
-@app.route('/multiple', methods=['GET','POST'])
+#@app.route('/multiple', methods=['GET','POST'])
 def multiple():
     # sample multiple button
+    # testing purposes
+
     if request.method == 'POST':
         if 'Delete' in request.form.values():
             a = request.form['delete']
             return a
         elif 'Upload' in request.form.values():
             return 'Upload'
-
-    '''
-        if request.form['delete']:
-            a = request.form['delete']
-            return a
-        elif request.form['upload']:
-            return 'upload'
-    '''
 
     return render_template('multiple.html')
 
@@ -511,7 +496,14 @@ def public_directory():
     for filename in os.listdir(_file_directory):
         if os.path.isfile(_file_directory + filename):
             file_links += href_tag.format(filename)
-    return output_html.format(file_links)
+    #return output_html.format(file_links)
+    ALL_IP = ip_addresses()
+    dicts = {
+        'ALL_IP': ALL_IP,
+        'IP': ALL_IP['IP'],
+        'using_desktop': using_desktop(),
+        }
+    return render_template('public_files.html', file_links=file_links, dicts=dicts)
 
 @app.route('/public/<path:filename>')
 def send_file(filename):
