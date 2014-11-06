@@ -8,6 +8,7 @@ import subprocess
 from slugify import slugify
 import glob
 from PIL import Image, ImageOps
+from flask import request
 
 
 f = open('config.txt', 'r')
@@ -190,13 +191,16 @@ def logout():
 @app.route('/')
 def index():
     # Index webpage
+    url = request.url_root
+    url = url[7:-1]
     ALL_IP = ip_addresses()
     dicts = {
         'ALL_IP': ALL_IP,
         'IP': ALL_IP['IP'],
         'using_desktop': using_desktop(),
+        'url': url,
         }
-    return render_template('index.html', dicts=dicts)
+    return render_template('index.html', dicts=dicts,url=url)
 
 @app.route('/powercontrol', methods=['GET', 'POST'])
 def powercontrol():
@@ -205,12 +209,14 @@ def powercontrol():
 
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
             'ALL_IP': ALL_IP,
             'IP': ALL_IP['IP'],
             'using_desktop': using_desktop(),
+            'url': url,
             }
     if request.method == 'POST':
         if 'Power' in request.form.values():
@@ -243,10 +249,13 @@ def upload_sample():
     # Upload page for sample
     # Used for testing purposes
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
             'ALL_IP': ALL_IP,
             'IP': ALL_IP['IP'],
             'using_desktop': using_desktop(),
+            'url': url,
             }
     if request.method == 'POST':
             files = request.files.getlist('file[]')
@@ -269,10 +278,13 @@ def upload_file():
     # Upload page for Music
 
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
             'ALL_IP': ALL_IP,
             'IP': ALL_IP['IP'],
             'using_desktop': using_desktop(),
+            'url': url,
             }
     if request.method == 'POST':
             files = request.files.getlist('file[]')
@@ -323,10 +335,14 @@ def music():
         contains info in connecting music
     '''
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
-        'ALL_IP': ALL_IP,
-        'IP': ALL_IP['IP'],
-        }
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            'url': url,
+            }
 
     client = connect_mpd()
     STATUS = client.status()
@@ -339,10 +355,14 @@ def control_music():
         Has basic controls in music
     '''
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
-        'ALL_IP': ALL_IP,
-        'IP': ALL_IP['IP'],
-        }
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            'url': url,
+            }
 
     client = connect_mpd()
     if request.method == 'POST':
@@ -397,11 +417,14 @@ def pictures():
     dir_and_files = get_root_dirs_files()
     pictures = dir_and_files
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
-        'ALL_IP': ALL_IP,
-        'IP': ALL_IP['IP'],
-        'using_desktop': using_desktop(),
-        }
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            'url': url,
+            }
 
     if request.method == 'POST':
         directory = request.form['directory']
@@ -419,11 +442,14 @@ def pictures():
 def albums(slug):
     dir_and_files = get_root_dirs_files()
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
-        'ALL_IP': ALL_IP,
-        'IP': ALL_IP['IP'],
-        'using_desktop': using_desktop(),
-        }
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            'url': url,
+            }
     try:
         dir_and_files = dir_and_files[slug]
     except:
@@ -498,11 +524,14 @@ def public_directory():
             file_links += href_tag.format(filename)
     #return output_html.format(file_links)
     ALL_IP = ip_addresses()
+    url = request.url_root
+    url = url[7:-1]
     dicts = {
-        'ALL_IP': ALL_IP,
-        'IP': ALL_IP['IP'],
-        'using_desktop': using_desktop(),
-        }
+            'ALL_IP': ALL_IP,
+            'IP': ALL_IP['IP'],
+            'using_desktop': using_desktop(),
+            'url': url,
+            }
     return render_template('public_files.html', file_links=file_links, dicts=dicts)
 
 @app.route('/public/<path:filename>')
