@@ -23,7 +23,7 @@
     {% for i in pictures['files'] %}
         <div class="col-lg-3 col-md-4 col-xs-12 thumb">
             <a href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}" class="thumbnail">
-            <img src="{{ url_for('static', filename='thumbs' + '/' + pictures.relative_path+'/'+i | replace('jpg','jpeg')) }}">
+            <img src="{{ url_for('static', filename='thumbs' + '/' + pictures.relative_path +'/'+ i | replace('JPG','jpeg') | replace('jpg','jpeg')) }}">
              </a>
              <a class="btn btn-info" href="{{ url_for('static', filename=pictures.relative_path+'/'+i) }}">View Full Image</a>
              <!-- Small modal -->
