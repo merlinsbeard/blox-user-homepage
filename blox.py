@@ -7,7 +7,7 @@ from mpd import MPDClient
 import subprocess
 from slugify import slugify
 import glob
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageFile
 from flask import request
 
 
@@ -103,6 +103,7 @@ def get_root_dirs_files():
                 }
     return dirs_files
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 def create_thumbs(directory):
     '''
         Creates thumbs for the specified directory.

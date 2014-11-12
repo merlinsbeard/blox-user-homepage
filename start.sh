@@ -4,4 +4,5 @@
 
 cd /var/www/html/blox/blox-user-homepage
 source ../venv/bin/activate
-gunicorn -b 0.0.0.0:5000 blox:app -w 4 &
+python thumbs.py
+gunicorn -b 0.0.0.0:5000 blox:app -w 4 --log-file - &
