@@ -1,6 +1,7 @@
 import glob
 import os
 from PIL import Image, ImageOps, ImageFile
+import sys
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -16,7 +17,7 @@ def create_thumbs(directory):
                         'tiff')
 
     # Gets all files in directory
-    count =0
+    count = 0
     for infile in glob.glob(directory + "/*.*"):
         f, ext = os.path.splitext(infile)
 
@@ -64,3 +65,10 @@ def start():
         print "now switching dir to %s" % d
         path = directory + '/' + d
         create_thumbs(path)
+
+def opt(arg1):
+    option = arg1
+    start()
+
+if __name__=='__opt__':
+    sys.exit(opt(sys.argb[1]))

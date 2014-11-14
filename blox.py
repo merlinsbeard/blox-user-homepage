@@ -226,7 +226,7 @@ def powercontrol():
         elif 'Reboot' in request.form.values():
             subprocess.call('reboot')
         elif 'Thumbnails' in request.form.values():
-            thumbs.start()
+            thumbs.opt(True)
     return render_template('power.html',dicts=dicts)
 
 
