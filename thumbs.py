@@ -57,10 +57,10 @@ def create_thumbs(directory):
                 im.save(path + "/" + filename + ext, ext[1:])
                 print 'done saving %s' % filename
 
-
-directory = 'static/uploads/Pictures'
-dirs = os.walk(directory).next()[1]
-for d in dirs:
-    print "now switching dir to %s" % d
-    path = directory + '/' + d
-    create_thumbs(path)
+def start():
+    directory = 'static/uploads/Pictures'
+    dirs = os.walk(directory).next()[1]
+    for d in dirs:
+        print "now switching dir to %s" % d
+        path = directory + '/' + d
+        create_thumbs(path)

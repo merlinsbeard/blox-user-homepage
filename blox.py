@@ -9,6 +9,7 @@ from slugify import slugify
 import glob
 from PIL import Image, ImageOps, ImageFile
 from flask import request
+import thumbs
 
 
 f = open('config.txt', 'r')
@@ -224,6 +225,8 @@ def powercontrol():
             subprocess.call('poweroff')
         elif 'Reboot' in request.form.values():
             subprocess.call('reboot')
+        elif 'Thumbnails' in request.form.values():
+            thumbs.start()
     return render_template('power.html',dicts=dicts)
 
 
