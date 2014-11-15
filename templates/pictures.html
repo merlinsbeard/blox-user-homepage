@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 {% block extrahead %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">
+
 <script src="{{ url_for('static', filename='js/masonry.pkgd.min.js') }}"></script>
 <style>
 .picture_index li {width:150px;  height: 150px;}
@@ -7,7 +9,7 @@
 .thumbnail a>img { height: auto; max-width: 100%;}
 .thumbnail { min-height: 350px; width: auto;}
 
-img {
+img {}
 </style>
 
 {% endblock %}
@@ -26,11 +28,12 @@ img {
     </div>
     </div>
     <h2>ALBUMS</h2>
-    <div class="row">
+<div id="columns">
+
         {% for root in pictures %}
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a href="{{ url_for('albums', slug=root) }}"><h3 class="text-center">{{pictures[root].folder_name }}</h3>
+            <figure>
+            <a href="{{ url_for('albums', slug=root) }}">
+            <h3 class="text-center">{{pictures[root].folder_name }}</h3>
                     <img src="
                     {% if pictures[root].thumb %}
                     {{ url_for('static',filename=pictures[root].relative_path+'/'+pictures[root].thumb)}}
@@ -39,12 +42,13 @@ img {
                     {% endif%}
                     " data-src="holder.js/300x300">
                 </a>
-            </div>
-
-        </div>
+            <figcaption>{{ pictures[root].folder_name | title }}</figcaption>
+            </figure>
         {% endfor %}
-        
+        </div>
 
+
+    
     </div>
 
 
