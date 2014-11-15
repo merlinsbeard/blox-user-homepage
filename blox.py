@@ -95,7 +95,7 @@ def get_root_dirs_files():
 				new_key = slugify(relative_path)
 				folder_name = relative_path.replace("uploads/Pictures/","")
 				if files:
-						
+
 						tm = files[0]
 						pages = ceil(float(len(files))/items_per_page)
 						pages_dict = {}
@@ -112,8 +112,8 @@ def get_root_dirs_files():
 								pages_dict[initial_page].append(item)
 								if len(pages_dict[initial_page]) == items_per_page:
 										initial_page += 1
-										
-										
+
+
 
 				else:
 						pages_dict=False
@@ -525,6 +525,7 @@ def pictures():
 def pages(slug, page):
 	ALL_IP = ip_addresses()
 	url = request.url_root
+        url = url[7:-1]
 	dicts = {
 		'ALL_IP': ALL_IP,
 		'IP': ALL_IP['IP'],
@@ -568,7 +569,7 @@ def pages(slug, page):
 					os.chown(file_path, 1000, 1000)
 				else:
 					return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
-		
+
 			return redirect(url_for('albums',slug=slug))
 		elif 'rename' in request.form.values():
 			return 'rename'
@@ -583,7 +584,7 @@ def pages(slug, page):
 				full_path = main_path+ '/' + 'static' + '/' + relative_filename
 				os.remove(full_path)
 				return '<h1>Successfully deleted image</h1>'+ full_path + "</br> <a href=>back</a>"
-	
+
 
 	return render_template('pages.html', dicts=dicts,)
 

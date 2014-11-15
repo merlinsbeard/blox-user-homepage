@@ -28,7 +28,8 @@
 <header>
     <div class="container">
         <center>
-            <img src="{{ url_for('static', filename='images/logo1.png') }}"></img><br>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/logo1.png') }}"></img></a><br>
             <!--
             <div id="top-table">
                 <table class="table table-bordered">
@@ -61,7 +62,9 @@
             -->
             <div id="nav-top">
                 <ul class="nav nav-pills">
-                    <li><a href="{{ url_for('static', filename='doc/index.html') }}">How To</a></li>
+                    <!--
+                    <li><a href="{{ url_for('static', filename='doc/index.html') }}">How To</a></li>-->
+
                     <li><a href="{{ url_for('powercontrol') }}">Power</a></li>
                     <li><a href="{{ url_for('music') }}">Music</a></li>
                     <li><a href="{{ url_for('pictures') }}">Pictures</a></li>

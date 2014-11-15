@@ -17,9 +17,8 @@ div#columns figure {
 	margin: 0 2px 15px;
 	padding: 15px;
 	padding-bottom: 10px;
-	transition: opacity .4s ease-in-out;
   display: inline-block;
-  column-break-inside: avoid;
+ -webkit-column-break-inside: avoid;
 }
 
 div#columns figure img {
