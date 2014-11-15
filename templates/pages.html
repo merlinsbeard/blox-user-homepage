@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">
+
+{% endblock %}
+{% block body %}
+
+<div id="pages">
+
+<div class="container">
+	<form action="" method=post enctype=multipart/form-data role="form">
+        <div class="form-group">
+            <label>Upload your Images</label>
+		<input type=file name='file[]' multiple="" id="fileupload" > 
+        <p class="help-block"><a href=#>Having trouble? Use other methods. Click me!</a><p>
+    </div>
+		 <input type=submit value=upload name="upload" class="btn btn-success">
+        	
+	</form>
+    {% if dicts.error_message %}
+    <h1>{{ dicts.error_message }}</h1>
+    {% endif %}
+    <nav>
+        <ul class="pagination">
+            {% if dicts.previous %}
+            <li><a href="{{ url_for('pages',slug=dicts.slug, page=dicts.previous) }}"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+            {% endif %}
+        {% for key in dicts.num_of_page %}
+        <li {% if dicts.page == key %}class="active"{% endif %}><a href="{{ url_for('pages', slug=dicts.slug, page=key)  }}">{{ key }}</a></li> 
+        {% endfor %}
+    </nav>
+<div id="columns">
+    {% for picture in dicts.pictures %}
+    <figure>
+    <a href="{{ url_for('static', filename=dicts.image_url + '/' + picture) }}" >
+            <img src="{{ url_for('static', filename=dicts.image_url + '/' + picture) }}" />
+        </a>
+            <figcaption>{{ picture }}</figcaption>
+    </figure>
+    {% endfor %}
+    
+</div>
+
+<nav>
+        <ul class="pagination">
+            {% if dicts.previous %}
+            <li><a href="{{ url_for('pages',slug=dicts.slug, page=dicts.previous) }}"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+            {% endif %}
+        {% for key in dicts.num_of_page %}
+        <li><a href="{{ url_for('pages', slug=dicts.slug, page=key)  }}">{{ key }}</a></li> 
+        {% endfor %}
+    </nav>
+</div>
+{% endblock %}
