@@ -76,6 +76,20 @@ def connect_mpd():
 		client.connect(IP, 6600)
 		client.password('blox')
 		return client
+import time
+def sort_files_by_mdate(list_files, relative_path):
+	main_path = os.path.abspath('static/'+relative_path)
+	date_file_list = []
+	new_list = []
+	for f in list_files:
+		stats = os.stat(main_path+'/'+f)
+		lastmod_date = time.localtime(stats[8])
+		date_file_tuple = lastmod_date, f
+		date_file_list.append(date_file_tuple)
+	date_file_list.reverse()
+	for new_f in date_file_list:
+		new_list.append(new_f[1])
+	return new_list
 
 def get_root_dirs_files():
 		'''
@@ -95,34 +109,32 @@ def get_root_dirs_files():
 				new_key = slugify(relative_path)
 				folder_name = relative_path.replace("uploads/Pictures/","")
 				if files:
-
-						tm = files[0]
-						pages = ceil(float(len(files))/items_per_page)
-						pages_dict = {}
-						if len(files) < items_per_page:
-								pages_dict[0] = []
-								for item in files:
-									pages_dict[0].append(item)
-						else:
-							for n in range(int(pages)):
-								 pages_dict[n]=[]
-
-							initial_page = 0
+					files = sort_files_by_mdate(files, relative_path)
+					tm = files[0]
+					pages = ceil(float(len(files))/items_per_page)
+					pages_dict = {}
+					if len(files) < items_per_page:
+							pages_dict[0] = []
 							for item in files:
-								pages_dict[initial_page].append(item)
-								if len(pages_dict[initial_page]) == items_per_page:
-										initial_page += 1
+								pages_dict[0].append(item)
+					else:
+						for n in range(int(pages)):
+							 pages_dict[n]=[]
 
-
+						initial_page = 0
+						for item in sorted(files):
+							pages_dict[initial_page].append(item)
+							if len(pages_dict[initial_page]) == items_per_page:
+									initial_page += 1
 
 				else:
-						pages_dict=False
-						#tm = url_for("static",filename="images/tm.jpg")
-						tm = False
+					pages_dict=False
+					#tm = url_for("static",filename="images/tm.jpg")
+					tm = False
 
 				dirs_files[new_key] = {
 								'relative_path': relative_path,
-								'dirs': dirs,
+								'dirs': sorted(dirs),
 								'files': files,
 								'folder_name': folder_name,
 								'thumb': tm,
