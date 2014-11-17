@@ -33,7 +33,7 @@ img {}
         {% for root in pictures %}
             <figure>
             <a href="{{ url_for('albums', slug=root) }}">
-            <h3 class="text-center">{{pictures[root].folder_name }}</h3>
+            <h3 class="text-center">{{ pictures[root].folder_name|truncate(50, True) }}</h3>
                     <img src="
                     {% if pictures[root].thumb %}
                     {{ url_for('static',filename=pictures[root].relative_path+'/'+pictures[root].thumb)}}
@@ -42,7 +42,7 @@ img {}
                     {% endif%}
                     " data-src="holder.js/300x300">
                 </a>
-            <figcaption>{{ pictures[root].folder_name | title }}</figcaption>
+            <figcaption>{{ pictures[root].folder_name|truncate(40, True)|title}}</figcaption>
             </figure>
         {% endfor %}
         </div>
