@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        body { color: white; background: #412b45; }
+        header{
+            background: #2d2d2d;
+        }
+        header center img{ height: 6em; margin-top:4em; margin-bottom:1em;  }
+        #nav-top .nav {
+            padding-left: 0;
+            max-width: 310px;
+            margin: 0 auto;
+        }
+        #top-table table {
+            width: auto;
+        }
+    </style>
+    {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <center>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/logo1.png') }}"></img></a><br>
+            <!--
+            <div id="top-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                Connect using:
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://{{ dicts.IP }}/</a></strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://blox/</a></strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><a href="{{ url_for('index') }}">http://blox.local/</a></strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            -->
+            <div id="nav-top">
+                <ul class="nav nav-pills">
+                    <!--
+                    <li><a href="{{ url_for('static', filename='doc/index.html') }}">How To</a></li>-->
+
+                    <li><a href="{{ url_for('powercontrol') }}">Power</a></li>
+                    <li><a href="{{ url_for('music') }}">Music</a></li>
+                    <li><a href="{{ url_for('pictures') }}">Pictures</a></li>
+                    <li><a href="{{ url_for('public_directory') }}">Public</a></li>
+                    <li><a href="http://{{ dicts.url }}:9091">Download</a></li>
+                </ul>
+            </div>
+        </center>
+    </div>
+</header>
+{% block body %}{% endblock %}
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+{% block extrascript %}
+{% endblock %}
+</body>
+</html>

@@ -36,7 +36,61 @@
             <img src="{{ url_for('static', filename=dicts.image_url + '/' + picture) }}" />
         </a>
             <figcaption>{{ picture }}</figcaption>
+            
+    
+<br>
+    {% if session.logged_in %}
+    
+    <button class="btn btn-danger" data-toggle="modal" data-target=".{{ picture | replace('.jpg', '') | replace('.png', '') | replace('.gif', '')| replace(' ','') | replace('(','')| replace(')','') }}">Delete</button>
+
+    <form action="{{ url_for('frontimage', slug=dicts.slug, name=picture)}}" method=post>
+        <button type="submit" class="btn btn-success">
+            Front
+        </button>
+
+    </form>
+    {% endif %}
+    
+        
+
+
+
+    <div class="modal fade {{ picture | replace('.jpg', '') | replace('.png', '') | replace('.gif', '') | replace(' ','')| replace('(','')| replace(')','')}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-info">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                  <p class="text-info">Are you sure you want to delete {{ picture }} ?
+                    <a href="{{ url_for('static', filename=dicts.image_url + '/' + picture) }}" class="thumbnail">
+                        <img src="{{ url_for('static', filename=dicts.image_url + '/' + picture) }}">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <form action="" method=post>
+                        <button type="submit" value="{{ dicts.image_url + '/' + picture}}" name="delete" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+   </div>
     </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {% endfor %}
     
 </div>

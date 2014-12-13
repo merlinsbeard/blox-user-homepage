@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+{% block extrahead %}
+<style>
+.main_body { background: #412b45; padding-top: 5em; }
+.main_body li { 
+    height: 100%;
+    overflow :hidden;
+    display: inline-block;
+    background-size: 100% 100%;
+    margin: 1.5em;
+}
+p { font-size: 16px; }
+.main_body ul { margin-left: -3em; }
+.main_body li > a{ 
+    display: block;
+    height: 3.5em;
+    overflow :hidden;
+    width: 3.5em;
+}
+img { margin: 1em;}
+section.smartphone, section.desktop { margin-bottom: 8em;}
+p{ margin: 1.5em; }
+.download { width: 15em; margin: auto;height:3.5em;}
+.music { background: url({{ url_for('static', filename='images/music.png') }}) no-repeat; }
+.video { background: url({{ url_for('static', filename='images/video.png') }}) no-repeat;}
+.files { background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat;}
+.torrent{ background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat; background-size: 100% auto;}
+.sickbeard{ background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat; background-size: 100% auto;}
+footer { background: #412b45; }
+</style>
+    {% endblock %}
+    {% block body %}
+    
+    <div class="top-index">
+        <div class="container">
+            <img src="{{ dicts.banner }}">{{ dicts.message | safe }}
+        </div>
+    </div>
+
+
+
+
+<section class="main_body">
+        <div class="container">
+            <section class="smartphone">
+                <div class="row text-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        
+                        <img src="{{ url_for('static', filename='images/forsmartphones.png') }}" /><img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
+                        <p class="description">For Smartphone and Tablet Users</p>
+                        <ul>
+                            <!--
+                            <li class="music"><a href="{{ url_for('music') }}"></a></li>-->
+                            <li class="music"><a href="//{{ dicts.url }}:4040/"></a></li>
+                            <!--<li class="video"><a href="//{% if dicts.using_desktop %}blox.local{% else %}{{ dicts.url }}{% endif %}:32400/web"></a></li>-->
+                            <li class="video"><a href="//{{ dicts.url }}:32400/web"></a></li>
+                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <p>
+                        Download & install the music app 
+                        and play music faster and easy.
+                        </p>
+                        <a href="{{ url_for('music') }}" class="btn btn-default btn-lg btn-block download"><span style="display:block; margin:.5em;">Download</span></a>
+                        <p>
+                        Upload your Songs, Videos, and Files 
+                        using Blox's <a href="{{ url_for('howto') }}#files">File server</a> and play it anytime, 
+                        anywhere.
+                        </p>
+                        
+                    </div>
+                </div>
+            </section>
+<!--
+            <section class="desktop">
+                <div class="row text-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        
+                        <img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
+                        <p class="description">For Desktop and Laptop Users</p>
+                        <ul>
+                            <li class="music"><a href="{{ url_for('music') }}"></a></li>
+                            <li class="video"><a href="//blox.local:32400/web"></a></li>
+                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
+                           
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <p class="text-center">
+                        Uploads and Downloads are much faster
+                        on desktops computers. You can upload 
+                        and download directly at
+                        <strong>Network>Blox</strong>
+                        </p>
+                        <img src="{{ url_for('static', filename='images/cloud.png') }}" />
+                    </div>
+                </div>
+            </section>
+            
+-->
+
+        </div>
+    </section>
+
+    
+
+{% endblock %}

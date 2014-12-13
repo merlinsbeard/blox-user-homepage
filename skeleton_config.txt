@@ -3,4 +3,5 @@
     'wlan':'0.0.0.0',
 	'music_upload_folder':'/home/hallocaffeine/Music/Uploads',
     'picture_upload_folder': '/home/hallocaffeine/Pictures/Uploads',
+    'home_banner':'default.jpg'
 }

@@ -1,102 +1,82 @@
 {% extends 'layout.html' %}
-{% block extrahead %}
-<style>
-.main_body { background: #412b45; padding-top: 5em; }
-.main_body li { 
-    height: 100%;
-    overflow :hidden;
-    display: inline-block;
-    background-size: 100% 100%;
-    margin: 1.5em;
-}
-p { font-size: 16px; }
-.main_body ul { margin-left: -3em; }
-.main_body li > a{ 
-    display: block;
-    height: 3.5em;
-    overflow :hidden;
-    width: 3.5em;
-}
-img { margin: 1em;}
-section.smartphone, section.desktop { margin-bottom: 8em;}
-p{ margin: 1.5em; }
-.download { width: 15em; margin: auto;height:3.5em;}
-.music { background: url({{ url_for('static', filename='images/music.png') }}) no-repeat; }
-.video { background: url({{ url_for('static', filename='images/video.png') }}) no-repeat;}
-.files { background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat;}
-.torrent{ background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat; background-size: 100% auto;}
-.sickbeard{ background: url({{ url_for('static', filename='images/fileshare.png') }}) no-repeat; background-size: 100% auto;}
-footer { background: #412b45; }
-</style>
-    {% endblock %}
+{% block extrahead %}    {% endblock %}
     {% block body %}
+    <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+					<!-- Title -->
+					<header class="codrops-header">
+						<h1>Blox Browser Control <span>Control Everything</span></h1>
+					</header><!-- //Title -->
+					<!-- Device Morph -->
+					<div class="container demo-1">
+					<!-- a low-tech hack for pre-loading the images -->
+					<div class="preload" style="overflow: hidden; width: 0px; height: 0px">
+						<img src="static/images/browsercontrolpic1.jpg" />
+						<img src="static/images/browsercontrolpic2.jpg" />
+						<img src="static/images/browsercontrolpic3.jpg" />
+						<img src="static/images/browsercontrolpic3r.jpg" />
+						<img src="static/images/browsercontrolpic4.jpg" />
+						<img src="static/images/browsercontrolpic4r.jpg" />
+					</div>
+					<div class="main clearfix">
+						<div class="md-slider">
+							<div class="md-device-wrapper">
+								<div class="md-device md-device-1">
+									<a href="#"><img src="static/images/browsercontrolpic1.jpg" /></a>
+									<div class="md-border-element"></div>
+									<div class="md-base-element"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /container -->
+    {% endblock %}
 
+    {% block extrabottom %}
+<!-- Exclusive for Dashboard -->
+		<script src="{{ url_for('static', filename='js/morphingdevice.js') }}"></script>
+		<script>
+			var el = document.querySelector( '.md-slider' ),
+				settings = {
+					autoplay : true,
+					interval : 3000,
+					devices : [ 
+						{ cName : 'md-device-1', canRotate : false, imgsrc : 'static/images/browsercontrolpic1.jpg' },
+						{ cName : 'md-device-2', canRotate : false, imgsrc : 'static/images/browsercontrolpic2.jpg' },
+						{ cName : 'md-device-3', canRotate : true, imgsrc : 'static/images/browsercontrolpic3.jpg', rotatedsrc : 'static/images/browsercontrolpic3r.jpg' },
+						{ cName : 'md-device-4', canRotate : true, imgsrc : 'static/images/browsercontrolpic4.jpg', rotatedsrc : 'static/images/browsercontrolpic4r.jpg' }
+					]
+				},
+				devicesTotal = settings.devices.length,
+				ds = MorphingDevice( el, settings );
 
+			// create navigation triggers
+			var nav = document.createElement( 'nav' );
+			for( var i = 0; i < devicesTotal; ++i ) {
 
+				var trigger = document.createElement( 'a' );
+				trigger.className = i === 0 ? 'md-current' : '';
+				trigger.setAttribute( 'href', '#' );
+				trigger.setAttribute( 'pos', i );
+				trigger.onclick = function( event ) {
 
-<section class="main_body">
-        <div class="container">
-            <section class="smartphone">
-                <div class="row text-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        
-                        <img src="{{ url_for('static', filename='images/forsmartphones.png') }}" /><img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
-                        <p class="description">For Smartphone and Tablet Users</p>
-                        <ul>
-                            <!--
-                            <li class="music"><a href="{{ url_for('music') }}"></a></li>-->
-                            <li class="music"><a href="//{{ dicts.url }}:4040/"></a></li>
-                            <!--<li class="video"><a href="//{% if dicts.using_desktop %}blox.local{% else %}{{ dicts.url }}{% endif %}:32400/web"></a></li>-->
-                            <li class="video"><a href="//{{ dicts.url }}:32400/web"></a></li>
-                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <p>
-                        Download & install the music app 
-                        and play music faster and easy.
-                        </p>
-                        <a href="{{ url_for('music') }}" class="btn btn-default btn-lg btn-block download"><span style="display:block; margin:.5em;">Download</span></a>
-                        <p>
-                        Upload your Songs, Videos, and Files 
-                        using Blox's <a href="{{ url_for('howto') }}#files">File server</a> and play it anytime, 
-                        anywhere.
-                        </p>
-                    </div>
-                </div>
-            </section>
-<!--
-            <section class="desktop">
-                <div class="row text-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        
-                        <img src="{{ url_for('static', filename='images/fordesktop.png') }}" />
-                        <p class="description">For Desktop and Laptop Users</p>
-                        <ul>
-                            <li class="music"><a href="{{ url_for('music') }}"></a></li>
-                            <li class="video"><a href="//blox.local:32400/web"></a></li>
-                            <li class="files"><a href="{{ url_for('howto') }}#files"></a></li>
-                           
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <p class="text-center">
-                        Uploads and Downloads are much faster
-                        on desktops computers. You can upload 
-                        and download directly at
-                        <strong>Network>Blox</strong>
-                        </p>
-                        <img src="{{ url_for('static', filename='images/cloud.png') }}" />
-                    </div>
-                </div>
-            </section>
-            
--->
+					ds.stopSlideshow();
+					var pos = Number( event.target.getAttribute( 'pos' ) );
+					if( pos === ds.getCurrent() ) {
+						return false;
+					}
+					ds.updateCurrentTrigger( event.target );
+					ds.setCurrent( pos );
+					ds.changeDevice();
+					return false;
 
-        </div>
-    </section>
+				};
+				nav.appendChild( trigger );
 
+			}
+			el.appendChild( nav );
 
-
-{% endblock %}
+			if( settings.autoplay ) {
+				ds.startSlideshow();
+			}
+		</script><!-- //Exclusive for Dashboard -->
+    {% endblock %}
