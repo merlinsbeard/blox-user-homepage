@@ -1,0 +1,905 @@
+2014-12-14 11:47:24 [5413] [INFO] Starting gunicorn 18.0
+2014-12-14 11:47:24 [5413] [INFO] Listening at: http://0.0.0.0:5000 (5413)
+2014-12-14 11:47:24 [5413] [INFO] Using worker: sync
+2014-12-14 11:47:24 [5418] [INFO] Booting worker with pid: 5418
+2014-12-14 11:47:24 [5419] [INFO] Booting worker with pid: 5419
+2014-12-14 11:47:24 [5422] [INFO] Booting worker with pid: 5422
+2014-12-14 11:47:24 [5423] [INFO] Booting worker with pid: 5423
+2014-12-14 11:48:37 [5413] [INFO] Handling signal: term
+2014-12-14 11:48:37 [5418] [INFO] Worker exiting (pid: 5418)
+2014-12-14 11:48:37 [5419] [INFO] Worker exiting (pid: 5419)
+2014-12-14 11:48:37 [5422] [INFO] Worker exiting (pid: 5422)
+2014-12-14 11:48:37 [5423] [INFO] Worker exiting (pid: 5423)
+2014-12-14 11:48:37 [5413] [INFO] Shutting down: Master
+2014-12-14 12:09:58 [7070] [INFO] Starting gunicorn 18.0
+2014-12-14 12:09:58 [7070] [INFO] Listening at: http://0.0.0.0:5000 (7070)
+2014-12-14 12:09:58 [7070] [INFO] Using worker: sync
+2014-12-14 12:09:58 [7075] [INFO] Booting worker with pid: 7075
+2014-12-14 12:09:58 [7076] [INFO] Booting worker with pid: 7076
+2014-12-14 12:09:58 [7077] [INFO] Booting worker with pid: 7077
+2014-12-14 12:09:58 [7080] [INFO] Booting worker with pid: 7080
+2014-12-15 20:24:30 [7075] [INFO] Worker exiting (pid: 7075)
+2014-12-15 20:24:30 [7077] [INFO] Worker exiting (pid: 7077)
+2014-12-15 20:24:30 [7080] [INFO] Worker exiting (pid: 7080)
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+2014-12-15 20:24:30 [7076] [INFO] Worker exiting (pid: 7076)
+2014-12-15 20:24:30 [7070] [INFO] Handling signal: term
+2014-12-15 20:24:30 [7070] [INFO] Shutting down: Master
+2014-12-15 20:25:20 [962] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [962] [INFO] Listening at: http://0.0.0.0:5000 (962)
+2014-12-15 20:25:20 [962] [INFO] Using worker: sync
+2014-12-15 20:25:20 [945] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [945] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [945] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:20 [1101] [INFO] Booting worker with pid: 1101
+2014-12-15 20:25:20 [953] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [953] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [953] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:20 [1110] [INFO] Booting worker with pid: 1110
+2014-12-15 20:25:20 [993] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [993] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [993] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:20 [1013] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [1013] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [1013] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:20 [1121] [INFO] Booting worker with pid: 1121
+2014-12-15 20:25:20 [920] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [920] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [920] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:20 [901] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:20 [901] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:20 [901] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [909] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:21 [909] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [909] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [936] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:21 [936] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [936] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [1131] [INFO] Booting worker with pid: 1131
+2014-12-15 20:25:21 [1021] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:21 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [1021] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [1041] [INFO] Starting gunicorn 18.0
+2014-12-15 20:25:21 [1041] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [1041] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [945] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [945] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [953] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [953] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [993] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [993] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [1013] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [1013] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [920] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [920] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:21 [901] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:21 [901] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [909] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [909] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [936] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [936] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [1021] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [1041] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [1041] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [945] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [945] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [953] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [953] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [993] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [993] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [1013] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [1013] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [920] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [920] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:22 [901] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:22 [901] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [909] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [909] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [936] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [936] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [1021] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [1041] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [1041] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [945] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [945] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [953] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [953] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [993] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [993] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [1013] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [1013] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [920] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [920] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:23 [901] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:23 [901] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [909] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [909] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [936] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [936] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [1021] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [1041] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [1041] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [945] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [945] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [953] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [953] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [993] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [993] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [1013] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [1013] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [920] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [920] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:24 [901] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:24 [901] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:25 [909] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [909] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:25 [936] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [936] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:25 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [1021] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:25 [1041] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [1041] [ERROR] Retrying in 1 second.
+2014-12-15 20:25:25 [945] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [953] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [993] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [1013] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [920] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:25 [901] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:26 [909] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:26 [936] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:26 [1021] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:25:26 [1041] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:27:52 [1131] [INFO] Worker exiting (pid: 1131)
+2014-12-15 20:27:52 [1121] [INFO] Worker exiting (pid: 1121)
+2014-12-15 20:27:52 [1101] [INFO] Worker exiting (pid: 1101)
+2014-12-15 20:27:52 [1110] [INFO] Worker exiting (pid: 1110)
+2014-12-15 20:27:52 [962] [INFO] Handling signal: term
+2014-12-15 20:27:52 [962] [INFO] Shutting down: Master
+2014-12-15 20:32:48 [957] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:48 [957] [INFO] Listening at: http://0.0.0.0:5000 (957)
+2014-12-15 20:32:48 [957] [INFO] Using worker: sync
+2014-12-15 20:32:48 [984] [INFO] Booting worker with pid: 984
+2014-12-15 20:32:48 [986] [INFO] Booting worker with pid: 986
+2014-12-15 20:32:49 [997] [INFO] Booting worker with pid: 997
+2014-12-15 20:32:49 [1012] [INFO] Booting worker with pid: 1012
+2014-12-15 20:32:49 [930] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [930] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [930] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [942] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [942] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [942] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [822] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [822] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [822] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [894] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [894] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [894] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [790] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [790] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [790] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [883] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [883] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [883] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [969] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [969] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [969] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [1018] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [1018] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [1018] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:49 [1077] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:49 [1077] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:49 [1077] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [1094] [INFO] Starting gunicorn 18.0
+2014-12-15 20:32:50 [1094] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:50 [930] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [1094] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:51 [930] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [942] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [942] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [822] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [822] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [894] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:50 [790] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [790] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:51 [894] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [883] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [883] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [969] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:50 [1018] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [969] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:51 [1018] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:50 [1077] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:51 [1077] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [930] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [1094] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [930] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [1094] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [942] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [790] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [790] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [942] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [883] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [822] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [883] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [822] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [969] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [894] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [969] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [894] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [1018] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [1018] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:52 [1077] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:52 [1077] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [1094] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [930] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [1094] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [930] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [942] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [790] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [790] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [942] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [883] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [822] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [822] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [883] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [969] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [894] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [969] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [894] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [1018] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [1018] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:53 [1077] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:53 [1077] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [1094] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [790] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [1094] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [790] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [822] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [930] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [930] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [822] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [883] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [942] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [883] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [942] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [969] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [894] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [969] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [894] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [1018] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [1018] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:54 [1077] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:54 [1077] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:55 [822] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [1094] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [1094] [ERROR] Retrying in 1 second.
+2014-12-15 20:32:55 [883] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [1018] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [790] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [942] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [930] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [969] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [1077] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:55 [894] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:32:56 [1094] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [821] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [821] [INFO] Listening at: http://0.0.0.0:5000 (821)
+2014-12-15 20:42:15 [821] [INFO] Using worker: sync
+2014-12-15 20:42:15 [970] [INFO] Booting worker with pid: 970
+2014-12-15 20:42:15 [797] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [797] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [797] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:15 [846] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [846] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [846] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:15 [874] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [874] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:15 [989] [INFO] Booting worker with pid: 989
+2014-12-15 20:42:15 [895] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [895] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [895] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:15 [996] [INFO] Booting worker with pid: 996
+2014-12-15 20:42:15 [997] [INFO] Booting worker with pid: 997
+2014-12-15 20:42:15 [928] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [928] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [928] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:15 [911] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:15 [911] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:15 [911] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [995] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:16 [995] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [995] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [797] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [797] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [846] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [846] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [874] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [895] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [895] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [1024] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:16 [1024] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [1024] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [1035] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:16 [1035] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [1035] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [928] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [928] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [1086] [INFO] Starting gunicorn 18.0
+2014-12-15 20:42:16 [1086] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [1086] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:16 [911] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:16 [911] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [995] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [797] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [995] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [797] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [846] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [874] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [895] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [895] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [1024] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [1024] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [846] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [1035] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [1035] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [928] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [928] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [1086] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [1086] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:17 [911] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:17 [911] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [797] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [995] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [995] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [797] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [1035] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [1035] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [846] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [846] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [1024] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [1024] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [895] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [895] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [874] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [928] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [928] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [1086] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [1086] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:18 [911] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:18 [911] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [995] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [797] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [995] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [797] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [846] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [1035] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [846] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [1035] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [895] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [1024] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [1024] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [895] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [874] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [928] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [928] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [1086] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [1086] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:19 [911] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:19 [911] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:20 [995] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [995] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:20 [797] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [846] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [1035] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [1035] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:20 [1024] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [874] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [1024] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:20 [895] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [928] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [1086] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-15 20:42:20 [1086] [ERROR] Retrying in 1 second.
+2014-12-15 20:42:20 [911] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:21 [995] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:21 [1035] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:21 [1024] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-15 20:42:21 [1086] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-16 15:36:40 [821] [CRITICAL] WORKER TIMEOUT (pid:970)
+2014-12-16 15:36:40 [821] [CRITICAL] WORKER TIMEOUT (pid:996)
+2014-12-16 15:36:40 [821] [CRITICAL] WORKER TIMEOUT (pid:970)
+2014-12-16 15:36:40 [821] [CRITICAL] WORKER TIMEOUT (pid:996)
+2014-12-16 15:36:40 [8770] [INFO] Booting worker with pid: 8770
+2014-12-16 15:36:40 [8771] [INFO] Booting worker with pid: 8771
+2014-12-16 15:36:44 [821] [CRITICAL] WORKER TIMEOUT (pid:997)
+2014-12-16 15:36:45 [821] [CRITICAL] WORKER TIMEOUT (pid:997)
+2014-12-16 15:36:45 [8778] [INFO] Booting worker with pid: 8778
+2014-12-16 15:36:54 [821] [CRITICAL] WORKER TIMEOUT (pid:989)
+2014-12-16 15:36:54 [821] [CRITICAL] WORKER TIMEOUT (pid:989)
+2014-12-16 15:36:54 [8787] [INFO] Booting worker with pid: 8787
+2014-12-21 15:05:38 [948] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [932] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [948] [INFO] Listening at: http://0.0.0.0:5000 (948)
+2014-12-21 15:05:38 [948] [INFO] Using worker: sync
+2014-12-21 15:05:38 [932] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [932] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [940] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [940] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [940] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [874] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [1061] [INFO] Booting worker with pid: 1061
+2014-12-21 15:05:38 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [874] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [914] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [914] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [906] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [906] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [906] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [965] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [965] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [965] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [957] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [957] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [957] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [829] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [829] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [829] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [898] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [898] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [898] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [923] [INFO] Starting gunicorn 18.0
+2014-12-21 15:05:38 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:38 [923] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:38 [1081] [INFO] Booting worker with pid: 1081
+2014-12-21 15:05:38 [1084] [INFO] Booting worker with pid: 1084
+2014-12-21 15:05:38 [1088] [INFO] Booting worker with pid: 1088
+2014-12-21 15:05:39 [932] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [940] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [940] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [932] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [874] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [914] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [906] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [965] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [965] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [957] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [957] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [829] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [829] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [898] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [898] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:39 [923] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:39 [906] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [932] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [940] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [932] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [940] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [874] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [914] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [965] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [965] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [957] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [957] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [829] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [829] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [898] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [898] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [923] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:40 [906] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:40 [906] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [940] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [932] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [940] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [932] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [874] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [914] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [965] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [965] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [957] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [957] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [829] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [829] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [898] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [898] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [923] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:41 [906] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:41 [906] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [940] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [940] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [932] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [932] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [874] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [914] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [874] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [965] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [957] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [957] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [965] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [829] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [898] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [829] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [898] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [906] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 15:05:42 [906] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:42 [923] [ERROR] Retrying in 1 second.
+2014-12-21 15:05:43 [940] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [932] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [957] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [965] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [914] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [923] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [906] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [829] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [874] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 15:05:43 [898] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:09 [893] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [893] [INFO] Listening at: http://0.0.0.0:5000 (893)
+2014-12-21 18:08:10 [893] [INFO] Using worker: sync
+2014-12-21 18:08:09 [923] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [923] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [703] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:09 [849] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [849] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [703] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [849] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:10 [703] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [869] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [869] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [869] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [914] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [914] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [933] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [933] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [933] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [765] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [765] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [765] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:09 [941] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [941] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [941] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:10 [1032] [INFO] Booting worker with pid: 1032
+2014-12-21 18:08:10 [983] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [983] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [949] [INFO] Starting gunicorn 18.0
+2014-12-21 18:08:10 [983] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:10 [949] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:10 [949] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:10 [1041] [INFO] Booting worker with pid: 1041
+2014-12-21 18:08:10 [1042] [INFO] Booting worker with pid: 1042
+2014-12-21 18:08:10 [1053] [INFO] Booting worker with pid: 1053
+2014-12-21 18:08:11 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [923] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [849] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [849] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [703] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [703] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [869] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [869] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [914] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [933] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [933] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [765] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [765] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [941] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [941] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [983] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [983] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:11 [949] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:11 [949] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [923] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [849] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [849] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [703] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [703] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [869] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [869] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [914] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [933] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [933] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [765] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [765] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [941] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [941] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [983] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [983] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:12 [949] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:12 [949] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [923] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [703] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [703] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [849] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [849] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [914] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [869] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [869] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [933] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [933] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [765] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [765] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [941] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [941] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [983] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [983] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:13 [949] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:13 [949] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [923] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [923] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [703] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [849] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [703] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [849] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [914] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [914] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [869] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [869] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [933] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [933] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [765] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [765] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [941] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [941] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [983] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [983] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:14 [949] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-21 18:08:14 [949] [ERROR] Retrying in 1 second.
+2014-12-21 18:08:15 [923] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [849] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [703] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [914] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [869] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [933] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [765] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [941] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [983] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-21 18:08:15 [949] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:16 [758] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:16 [758] [INFO] Listening at: http://0.0.0.0:5000 (758)
+2014-12-22 15:20:16 [758] [INFO] Using worker: sync
+2014-12-22 15:20:16 [665] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:16 [665] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:16 [665] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:16 [842] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:16 [953] [INFO] Booting worker with pid: 953
+2014-12-22 15:20:16 [842] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:16 [842] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:16 [958] [INFO] Booting worker with pid: 958
+2014-12-22 15:20:16 [960] [INFO] Booting worker with pid: 960
+2014-12-22 15:20:16 [963] [INFO] Booting worker with pid: 963
+2014-12-22 15:20:16 [871] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:16 [871] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:16 [871] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [937] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:17 [937] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [937] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [665] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [665] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [842] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [842] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [871] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [871] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [974] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:17 [974] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [974] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:17 [1021] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:17 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:17 [1021] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [1058] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:18 [1058] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [1058] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [1068] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:18 [1068] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [1068] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [937] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [937] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [665] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [665] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [842] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [842] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [1106] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:18 [1106] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [1106] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [871] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [871] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [974] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [974] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [1129] [INFO] Starting gunicorn 18.0
+2014-12-22 15:20:18 [1129] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [1129] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:18 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:18 [1021] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [1058] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [1058] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [1068] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [1068] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [937] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [937] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [665] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [665] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [842] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [842] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [1106] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [1106] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [871] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [871] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [974] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [974] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [1129] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [1129] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:19 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:19 [1021] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [1058] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [1058] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [937] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [1068] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [937] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [1068] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [665] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [665] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [842] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [842] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [1106] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [1106] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [871] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [871] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [974] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [974] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [1129] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [1129] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:20 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:20 [1021] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [1058] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1058] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [937] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1068] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [937] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [1068] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [665] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [842] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1106] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1106] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [871] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [974] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [974] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [1129] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1129] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:21 [1021] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:21 [1021] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:22 [1058] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1058] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:22 [1068] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1068] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:22 [937] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1106] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1106] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:22 [974] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1129] [ERROR] Connection in use: ('0.0.0.0', 5000)
+2014-12-22 15:20:22 [1129] [ERROR] Retrying in 1 second.
+2014-12-22 15:20:22 [1021] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:23 [1058] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:23 [1068] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:23 [1106] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 15:20:23 [1129] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2014-12-22 20:07:40 [958] [INFO] Worker exiting (pid: 958)
+2014-12-22 20:07:40 [953] [INFO] Worker exiting (pid: 953)
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+2014-12-22 20:07:40 [960] [INFO] Worker exiting (pid: 960)
+2014-12-22 20:07:40 [963] [INFO] Worker exiting (pid: 963)
+2014-12-22 20:07:40 [758] [INFO] Handling signal: term
+2014-12-22 20:07:40 [758] [INFO] Shutting down: Master
+2014-12-22 20:07:52 [20937] [INFO] Starting gunicorn 18.0
+2014-12-22 20:07:52 [20937] [INFO] Listening at: http://0.0.0.0:5000 (20937)
+2014-12-22 20:07:52 [20937] [INFO] Using worker: sync
+2014-12-22 20:07:52 [20942] [INFO] Booting worker with pid: 20942
+2014-12-22 20:07:52 [20943] [INFO] Booting worker with pid: 20943
+2014-12-22 20:07:52 [20944] [INFO] Booting worker with pid: 20944
+2014-12-22 20:07:52 [20947] [INFO] Booting worker with pid: 20947
+2014-12-22 20:09:20 [20944] [INFO] Worker exiting (pid: 20944)
+2014-12-22 20:09:20 [20937] [INFO] Handling signal: term
+Exception SystemExit: 0 in <module 'threading' from '/usr/lib/python2.7/threading.pyc'> ignored
+2014-12-22 20:09:20 [20942] [INFO] Worker exiting (pid: 20942)
+2014-12-22 20:09:20 [20943] [INFO] Worker exiting (pid: 20943)
+2014-12-22 20:09:20 [20947] [INFO] Worker exiting (pid: 20947)
+2014-12-22 20:09:20 [20937] [INFO] Shutting down: Master
+2014-12-22 20:35:16 [22682] [INFO] Starting gunicorn 18.0
+2014-12-22 20:35:16 [22682] [INFO] Listening at: http://0.0.0.0:5000 (22682)
+2014-12-22 20:35:16 [22682] [INFO] Using worker: sync
+2014-12-22 20:35:16 [22687] [INFO] Booting worker with pid: 22687
+2014-12-22 20:35:16 [22688] [INFO] Booting worker with pid: 22688
+2014-12-22 20:35:16 [22689] [INFO] Booting worker with pid: 22689
+2014-12-22 20:35:16 [22693] [INFO] Booting worker with pid: 22693
+2014-12-22 20:39:45 [22687] [INFO] Worker exiting (pid: 22687)
+2014-12-22 20:39:45 [22682] [INFO] Handling signal: term
+2014-12-22 20:39:45 [22688] [INFO] Worker exiting (pid: 22688)
+2014-12-22 20:39:45 [22689] [INFO] Worker exiting (pid: 22689)
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+2014-12-22 20:39:45 [22693] [INFO] Worker exiting (pid: 22693)
+2014-12-22 20:39:45 [22682] [INFO] Shutting down: Master
+2014-12-22 21:07:06 [10766] [INFO] Starting gunicorn 18.0
+2014-12-22 21:07:06 [10766] [INFO] Listening at: http://0.0.0.0:5000 (10766)
+2014-12-22 21:07:06 [10766] [INFO] Using worker: sync
+2014-12-22 21:07:06 [10773] [INFO] Booting worker with pid: 10773
+2014-12-22 21:07:06 [10774] [INFO] Booting worker with pid: 10774
+2014-12-22 21:07:06 [10775] [INFO] Booting worker with pid: 10775
+2014-12-22 21:07:06 [10778] [INFO] Booting worker with pid: 10778
+2014-12-22 21:08:23 [10773] [INFO] Worker exiting (pid: 10773)
+2014-12-22 21:08:23 [10766] [INFO] Handling signal: term
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/atexit.py", line 24, in _run_exitfuncs
+2014-12-22 21:08:23 [10775] [INFO] Worker exiting (pid: 10775)
+2014-12-22 21:08:23 [10774] [INFO] Worker exiting (pid: 10774)
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+2014-12-22 21:08:23 [10778] [INFO] Worker exiting (pid: 10778)
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+create_thumbs
+Exception KeyError: KeyError(140039111669568,) in <module 'threading' from '/usr/lib/python2.7/threading.pyc'> ignored
+2014-12-22 21:08:23 [10766] [INFO] Shutting down: Master
+2014-12-22 21:08:26 [11815] [INFO] Starting gunicorn 18.0
+2014-12-22 21:08:26 [11815] [INFO] Listening at: http://0.0.0.0:5000 (11815)
+2014-12-22 21:08:26 [11815] [INFO] Using worker: sync
+2014-12-22 21:08:26 [11822] [INFO] Booting worker with pid: 11822
+2014-12-22 21:08:26 [11823] [INFO] Booting worker with pid: 11823
+2014-12-22 21:08:27 [11826] [INFO] Booting worker with pid: 11826
+2014-12-22 21:08:27 [11829] [INFO] Booting worker with pid: 11829

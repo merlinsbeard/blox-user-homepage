@@ -291,16 +291,16 @@ def index():
 	f = open('markdown.txt','r')
 	filestring = f.read()
 	filestring = markdown(filestring)
-	with open('config.txt','r') as f:
-		json_data = json.load(f)
-		banner = json_data['home_banner']
+	#with open('config.txt','r') as f:
+	#	json_data = json.load(f)
+	#	banner = json_data['home_banner']
 	dicts = {
 		'ALL_IP': ALL_IP,
 		'IP': ALL_IP['IP'],
 		'using_desktop': using_desktop(),
 		'url': url,
 		'message': filestring,
-		'banner' : banner
+		#'banner' : banner
 		}
 
 	return render_template('index.html', dicts=dicts,url=url)
@@ -578,8 +578,6 @@ def pages(slug, page):
 
 
 	if request.method == 'POST':
-		a = request.form.values()
-		return a
 		#if request.form['upload']:
 		if 'upload' in request.form.values():
 			files = request.files.getlist('file[]')
@@ -629,13 +627,13 @@ def frontimage(slug, name):
 		a = dir_and_files[slug]
 		image = url_for('static', filename=a['relative_path'] +'/'+name)
 
-		with open('config.txt', 'r+') as f:
+		with open('config.json', 'r+') as f:
 			json_data = json.load(f)
 			json_data['home_banner'] = image
 			f.seek(0)
 			f.write(json.dumps(json_data))
 			f.truncate()
-		return "successfully updated front image"
+		return "successfully updated front image <a href='/'>Back</a>"
 	else:
 		return redirect('/')
 
@@ -665,17 +663,17 @@ def albums(slug):
 		if 'upload' in request.form.values():
 			files = request.files.getlist('file[]')
 			for file in files:
-					if file and allowed_file_picture(file.filename):
-							filename = secure_filename(file.filename)
-							file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
-							main_path = os.path.dirname(os.path.abspath('__file__'))
-							file_path = main_path + '/static/' + dir_and_files['relative_path'] + '/' + filename
-							file.save(file_path)
-							#return redirect(url_for('uploaded_file',filename=filename))
-							os.chmod(file_path, 0755)
-							os.chown(file_path, 1000, 1000)
-					else:
-							return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
+                                    if file and allowed_file_picture(file.filename):
+                                                    filename = secure_filename(file.filename)
+                                                    file_path = os.path.join(app.config['UPLOAD_FOLDER_MUSIC'], filename)
+                                                    main_path = os.path.dirname(os.path.abspath('__file__'))
+                                                    file_path = main_path + '/static/' + dir_and_files['relative_path'] + '/' + filename
+                                                    file.save(file_path)
+                                                    #return redirect(url_for('uploaded_file',filename=filename))
+                                                    os.chmod(file_path, 0755)
+                                                    os.chown(file_path, 1000, 1000)
+                                    else:
+                                                    return '<h1>Failed to Upload files. Make sure the files are jpg,png,or gif.</h1>'
 			#return '<h1>Succesfully uploaded Music</h1>'
 			return redirect(url_for('albums',slug=slug))
 		elif 'rename' in request.form.values():

@@ -4,3 +4,4 @@ For the pictures to work.
 Create a symlink to static/uploads/Pictures to the pictures main folder
 
 Copy the skeleton_config.txt to config.txt
+Add a config.json file
