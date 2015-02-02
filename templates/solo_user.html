@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+  {{ solo_user }}
+  <a href="{{ url_for('changepass_user', uid=solo_user[2]) }}">Change Password</a>
+</div>
+{% endblock %}

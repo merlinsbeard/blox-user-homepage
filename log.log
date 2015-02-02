@@ -5945,3 +5945,396 @@ Exception KeyError: KeyError(139805885835072,) in <module 'threading' from '/usr
 2015-01-26 21:42:37 [758] [ERROR] Can't connect to ('0.0.0.0', 5000)
 2015-01-26 21:42:37 [774] [ERROR] Can't connect to ('0.0.0.0', 5000)
 2015-01-26 21:42:37 [742] [ERROR] Can't connect to ('0.0.0.0', 5000)
+2015-02-02 12:33:08 [20633] [INFO] Starting gunicorn 18.0
+2015-02-02 12:33:08 [20633] [INFO] Listening at: http://0.0.0.0:5000 (20633)
+2015-02-02 12:33:08 [20633] [INFO] Using worker: sync
+2015-02-02 12:33:08 [20640] [INFO] Booting worker with pid: 20640
+2015-02-02 12:33:09 [20641] [INFO] Booting worker with pid: 20641
+2015-02-02 12:33:09 [20642] [INFO] Booting worker with pid: 20642
+2015-02-02 12:33:09 [20656] [INFO] Booting worker with pid: 20656
+2015-02-02 12:33:09 [20641] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 12:33:09 [20640] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 12:33:09 [20641] [INFO] Worker exiting (pid: 20641)
+2015-02-02 12:33:09 [20640] [INFO] Worker exiting (pid: 20640)
+2015-02-02 12:33:09 [20642] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 12:33:09 [20642] [INFO] Worker exiting (pid: 20642)
+2015-02-02 12:33:09 [20656] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 12:33:09 [20656] [INFO] Worker exiting (pid: 20656)
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/bin/gunicorn", line 9, in <module>
+    load_entry_point('gunicorn==18.0', 'console_scripts', 'gunicorn')()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 71, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 143, in run
+    Arbiter(self).run()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 203, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 298, in halt
+    self.stop()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 341, in stop
+    self.reap_workers()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 452, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2015-02-02 13:10:08 [22028] [INFO] Starting gunicorn 18.0
+2015-02-02 13:10:08 [22028] [INFO] Listening at: http://0.0.0.0:5000 (22028)
+2015-02-02 13:10:08 [22028] [INFO] Using worker: sync
+2015-02-02 13:10:08 [22049] [INFO] Booting worker with pid: 22049
+2015-02-02 13:10:08 [22050] [INFO] Booting worker with pid: 22050
+2015-02-02 13:10:08 [22051] [INFO] Booting worker with pid: 22051
+2015-02-02 13:10:08 [22054] [INFO] Booting worker with pid: 22054
+2015-02-02 13:10:08 [22049] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 13:10:08 [22049] [INFO] Worker exiting (pid: 22049)
+2015-02-02 13:10:08 [22050] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 13:10:08 [22050] [INFO] Worker exiting (pid: 22050)
+2015-02-02 13:10:08 [22051] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 13:10:08 [22051] [INFO] Worker exiting (pid: 22051)
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/bin/gunicorn", line 9, in <module>
+    load_entry_point('gunicorn==18.0', 'console_scripts', 'gunicorn')()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 71, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 143, in run
+    Arbiter(self).run()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 203, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 298, in halt
+    self.stop()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 341, in stop
+    self.reap_workers()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 452, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2015-02-02 13:10:08 [22054] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+Traceback (most recent call last):
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/blackbox/Projects/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/home/blackbox/Projects/blox-user-homepage/blox.py", line 14, in <module>
+    from markdown import markdown
+ImportError: No module named markdown
+2015-02-02 13:10:08 [22054] [INFO] Worker exiting (pid: 22054)
+2015-02-02 13:10:41 [22610] [INFO] Starting gunicorn 18.0
+2015-02-02 13:10:41 [22610] [INFO] Listening at: http://0.0.0.0:5000 (22610)
+2015-02-02 13:10:41 [22610] [INFO] Using worker: sync
+2015-02-02 13:10:41 [22618] [INFO] Booting worker with pid: 22618
+2015-02-02 13:10:41 [22619] [INFO] Booting worker with pid: 22619
+2015-02-02 13:10:42 [22624] [INFO] Booting worker with pid: 22624
+2015-02-02 13:10:42 [22625] [INFO] Booting worker with pid: 22625
+useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully
+New SMB password:
+Retype new SMB password:
+Looking for files to backup/remove ...
+Removing files ...
+Removing user `dog' ...
+Warning: group `dog' has no more members.
+Done.
+2015-02-02 13:15:40 [22610] [INFO] Handling signal: term
+2015-02-02 13:15:40 [22624] [INFO] Worker exiting (pid: 22624)
+2015-02-02 13:15:40 [22619] [INFO] Worker exiting (pid: 22619)
+2015-02-02 13:15:40 [22618] [INFO] Worker exiting (pid: 22618)
+2015-02-02 13:15:40 [22625] [INFO] Worker exiting (pid: 22625)
+2015-02-02 13:15:40 [22610] [INFO] Shutting down: Master
+2015-02-02 13:15:43 [27335] [INFO] Starting gunicorn 18.0
+2015-02-02 13:15:43 [27335] [INFO] Listening at: http://0.0.0.0:5000 (27335)
+2015-02-02 13:15:43 [27335] [INFO] Using worker: sync
+2015-02-02 13:15:43 [27342] [INFO] Booting worker with pid: 27342
+2015-02-02 13:15:43 [27343] [INFO] Booting worker with pid: 27343
+2015-02-02 13:15:43 [27348] [INFO] Booting worker with pid: 27348
+2015-02-02 13:15:43 [27349] [INFO] Booting worker with pid: 27349
+2015-02-02 13:18:43 [27342] [INFO] Worker exiting (pid: 27342)
+2015-02-02 13:18:43 [27335] [INFO] Handling signal: term
+2015-02-02 13:18:43 [27343] [INFO] Worker exiting (pid: 27343)
+2015-02-02 13:18:43 [27349] [INFO] Worker exiting (pid: 27349)
+2015-02-02 13:18:43 [27348] [INFO] Worker exiting (pid: 27348)
+2015-02-02 13:18:43 [27335] [INFO] Shutting down: Master
+2015-02-02 13:18:45 [30075] [INFO] Starting gunicorn 18.0
+2015-02-02 13:18:45 [30075] [INFO] Listening at: http://0.0.0.0:5000 (30075)
+2015-02-02 13:18:45 [30075] [INFO] Using worker: sync
+2015-02-02 13:18:45 [30097] [INFO] Booting worker with pid: 30097
+2015-02-02 13:18:45 [30098] [INFO] Booting worker with pid: 30098
+2015-02-02 13:18:45 [30100] [INFO] Booting worker with pid: 30100
+2015-02-02 13:18:45 [30099] [INFO] Booting worker with pid: 30099
+2015-02-02 13:21:31 [30097] [INFO] Worker exiting (pid: 30097)
+2015-02-02 13:21:31 [30075] [INFO] Handling signal: term
+2015-02-02 13:21:31 [30100] [INFO] Worker exiting (pid: 30100)
+2015-02-02 13:21:31 [30099] [INFO] Worker exiting (pid: 30099)
+2015-02-02 13:21:31 [30098] [INFO] Worker exiting (pid: 30098)
+2015-02-02 13:21:31 [30075] [INFO] Shutting down: Master
+2015-02-02 13:21:32 [32511] [INFO] Starting gunicorn 18.0
+2015-02-02 13:21:32 [32511] [INFO] Listening at: http://0.0.0.0:5000 (32511)
+2015-02-02 13:21:32 [32511] [INFO] Using worker: sync
+2015-02-02 13:21:32 [32519] [INFO] Booting worker with pid: 32519
+2015-02-02 13:21:32 [32524] [INFO] Booting worker with pid: 32524
+2015-02-02 13:21:32 [32525] [INFO] Booting worker with pid: 32525
+2015-02-02 13:21:33 [32526] [INFO] Booting worker with pid: 32526
+2015-02-02 13:23:40 [32526] [INFO] Worker exiting (pid: 32526)
+2015-02-02 13:23:40 [32511] [INFO] Handling signal: term
+2015-02-02 13:23:40 [32524] [INFO] Worker exiting (pid: 32524)
+2015-02-02 13:23:40 [32525] [INFO] Worker exiting (pid: 32525)
+2015-02-02 13:23:40 [32519] [INFO] Worker exiting (pid: 32519)
+2015-02-02 13:23:41 [32511] [INFO] Shutting down: Master
+2015-02-02 13:23:42 [2181] [INFO] Starting gunicorn 18.0
+2015-02-02 13:23:42 [2181] [INFO] Listening at: http://0.0.0.0:5000 (2181)
+2015-02-02 13:23:42 [2181] [INFO] Using worker: sync
+2015-02-02 13:23:42 [2196] [INFO] Booting worker with pid: 2196
+2015-02-02 13:23:42 [2202] [INFO] Booting worker with pid: 2202
+2015-02-02 13:23:42 [2206] [INFO] Booting worker with pid: 2206
+2015-02-02 13:23:42 [2209] [INFO] Booting worker with pid: 2209
+2015-02-02 13:24:34 [2181] [INFO] Handling signal: term
+2015-02-02 13:24:34 [2209] [INFO] Worker exiting (pid: 2209)
+2015-02-02 13:24:34 [2206] [INFO] Worker exiting (pid: 2206)
+2015-02-02 13:24:34 [2202] [INFO] Worker exiting (pid: 2202)
+2015-02-02 13:24:34 [2196] [INFO] Worker exiting (pid: 2196)
+2015-02-02 13:24:34 [2181] [INFO] Shutting down: Master

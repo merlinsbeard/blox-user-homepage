@@ -29,9 +29,8 @@
 			<nav class="menu">
 
 				<div class="link-list">
-					<a href="#">Your Blox</a>
-					<a href="#">Your friends</a>
-					<a href="#">Personal Settings</a>
+					
+					<a href="{{ url_for('settings') }}">Settings</a>
 					<a href="#">Security &amp; Privacy</a>
 					<a href="#">Contact us</a>
 				</div>
@@ -52,7 +51,7 @@
 		<!-- Main Side Menu -->
 		<div class="st-pusher">
 			<nav class="st-menu st-effect-7" id="menu-7">
-				<h2><img src="static/images/blox_logo.png" class="navbar-brand-logo page-scroll marginleft50"></h2>
+				<h2><img src="{{ url_for('static', filename='images/blox_logo.png') }}" class="navbar-brand-logo page-scroll marginleft50"></h2>
 				<ul>
 					<li><a href="{{ url_for('index') }}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
 					<li><a href="//{{ dicts.url }}:32400/web"><i class="fa fa-video-camera"></i> Videos</a></li>
@@ -60,6 +59,12 @@
 					<li><a href="{{ url_for('pictures') }}"><i class="fa fa-picture-o"></i> Pictures</a></li>
                     <li><a href="//{{ dicts.url }}:9091"><i class="fa fa-cube"></i>Downloads</a></li>
                     <li><a href="{{ url_for('public_directory') }}"><i class="fa fa-share-alt"></i>Public</a></li>
+                    <li><a href="{{ url_for('settings') }}"><i class="fa fa-share-alt"></i>Settings</a></li>
+                    <li>{% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">log in</a>
+  {% else %}
+    <a href="{{ url_for('logout') }}">log out</a>
+  {% endif %}</li>
 					
 				</ul>
 			</nav>

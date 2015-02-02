@@ -13,6 +13,8 @@ import thumbs
 from math import ceil
 from markdown import markdown
 import json
+from os import system
+from forms import AddUser, ChangePass
 
 
 f = open('config.txt', 'r')
@@ -256,31 +258,7 @@ def hi():
 	return "success"
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-	error = None
-	ALL_IP = ip_addresses()
-	dicts = {
-		'ALL_IP': ALL_IP,
-		'IP': ALL_IP['IP'],
-		'using_desktop': using_desktop(),
-		}
-	if request.method == 'POST':
-		if request.form['username'] != app.config['USERNAME']:
-			error = 'Invalid Username'
-		elif request.form['password'] != app.config['PASSWORD']:
-			error = 'Invalid password'
-		else:
-			session['logged_in'] = True
-			flash('You were logged in')
-			return redirect(url_for('powercontrol'))
-	return render_template('login.html', error=error,dicts=dicts)
 
-@app.route('/logout')
-def logout():
-	session.pop('logged_in', None)
-	flash('You were logged out')
-	return redirect(url_for('index'))
 
 @app.route('/')
 def index():
@@ -305,30 +283,7 @@ def index():
 
 	return render_template('index.html', dicts=dicts,url=url)
 
-@app.route('/powercontrol', methods=['GET', 'POST'])
-def powercontrol():
-	# Has Power button for shutdown and
-	# Reboot button for reboot
 
-	if not session.get('logged_in'):
-		return redirect(url_for('login'))
-	ALL_IP = ip_addresses()
-	url = request.url_root
-	url = url[7:-1]
-	dicts = {
-			'ALL_IP': ALL_IP,
-			'IP': ALL_IP['IP'],
-			'using_desktop': using_desktop(),
-			'url': url,
-			}
-	if request.method == 'POST':
-		if 'Power' in request.form.values():
-			subprocess.call('poweroff')
-		elif 'Reboot' in request.form.values():
-			subprocess.call('reboot')
-		elif 'Thumbnails' in request.form.values():
-			thumbs.opt(True)
-	return render_template('power.html',dicts=dicts)
 
 
 def allowed_file_music(filename):
@@ -754,6 +709,238 @@ def message():
 	filestring = f.read()
 	filestring = markdown(filestring)
 	return render_template('message.html', dicts=dicts, filestring=filestring)
+
+
+############## SETTINGS #################
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+	error = None
+	ALL_IP = ip_addresses()
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		}
+	if request.method == 'POST':
+		if request.form['username'] != app.config['USERNAME']:
+			error = 'Invalid Username'
+		elif request.form['password'] != app.config['PASSWORD']:
+			error = 'Invalid password'
+		else:
+			session['logged_in'] = True
+			flash('You were logged in')
+			return redirect(url_for('settings'))
+	return render_template('login.html', error=error,dicts=dicts)
+
+@app.route('/logout')
+def logout():
+	session.pop('logged_in', None)
+	flash('You were logged out')
+	return redirect(url_for('index'))
+
+@app.route('/settings/powercontrol', methods=['GET', 'POST'])
+def powercontrol():
+	# Has Power button for shutdown and
+	# Reboot button for reboot
+
+	if not session.get('logged_in'):
+		return redirect(url_for('login'))
+		
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+			'ALL_IP': ALL_IP,
+			'IP': ALL_IP['IP'],
+			'using_desktop': using_desktop(),
+			'url': url,
+			}
+	if request.method == 'POST':
+		if 'Power' in request.form.values():
+			subprocess.call('poweroff')
+		elif 'Reboot' in request.form.values():
+			subprocess.call('reboot')
+		elif 'Thumbnails' in request.form.values():
+			thumbs.opt(True)
+	return render_template('power.html',dicts=dicts)
+
+
+def list_of_users():
+	# Returns Lists of home users with uid between 1000 and 2000
+	infile = '/etc/passwd'
+	
+	with open(infile) as f:
+		f = f.readlines()
+
+	users = []
+	for user in f:
+		user = user.split(':')
+
+		if int(user[2]) >= 1000 and int(user[2]) < 2000:
+			users.append(user)
+
+	return users
+
+
+@app.route('/settings')
+def settings():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	return render_template('settings.html', dicts=dicts)
+
+@app.route("/settings/usermanage")
+def all_users():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	# Shows all users
+	users = list_of_users()
+	return render_template('all_users.html', users=users, dicts=dicts)
+
+@app.route("/settings/adduser" ,methods=['GET','POST'])
+def add_user():
+	# Adds user directly to the system, including samba
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+
+	if not session.get('logged_in'):
+		return redirect(url_for('login'))
+
+	form = AddUser(request.form)
+	if request.method == 'POST':
+		if form.validate_on_submit():
+			username = form.username.data
+			password = form.password.data
+
+			users = list_of_users()
+			for u in users:
+				if username == u[0]:
+					return 'Username already existing'
+
+			cmd_useradd = "useradd " + username + " -s /bin/bash -m"
+			cmd_password = "./password.sh " + username + ' ' + password
+			system(cmd_useradd)
+			system(cmd_password)
+			return "<h2>Successfully Added Acount " + username + '. ' + '<a href="' + url_for('all_users') + '"> Go Back </a>'
+		else:
+			return 'fails'
+
+	else:
+		return render_template('add_user.html', form=form, dicts=dicts)
+
+
+@app.route("/settings/usermanage/<int:uid>", methods=['GET','POST'])
+def solo_user(uid):
+	# returns indiidual user depending on UID
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	users = list_of_users()
+	solo_user = 'User not existing'
+
+	for u in users:
+		if int(u[3]) == uid: 
+			solo_user = u
+
+	return render_template('solo_user.html', solo_user=solo_user, dicts=dicts)
+    #return render_template('user.html')
+
+@app.route("/settings/usermanage/<int:uid>/changepass", methods=['GET','POST'])
+def changepass_user(uid):
+	# CHanges password of user
+
+	if not session.get('logged_in'):
+		return redirect(url_for('login'))
+
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	form = ChangePass(request.form)
+	users = list_of_users()
+	solo_user = 'User not existing'
+
+
+
+	for u in users:
+		if int(u[3]) == uid: 
+			solo_user = u
+
+	if request.method == 'POST':
+		if form.validate_on_submit():
+			password = form.password.data
+			cmd_password = "./password.sh " + solo_user[0] + ' ' + password
+			system(cmd_password)
+			return '<h2>Successfully Changed Password. ' + '<a href="' + url_for('all_users') + '"> Go Back </a></h2>'
+
+	return render_template('change_pass.html', form=form, solo_user=solo_user, dicts=dicts)
+
+@app.route("/settings/usermanage/<int:uid>/remove", methods=['GET','POST'])
+def remove_user(uid):
+	# Removes user
+
+	if not session.get('logged_in'):
+		return redirect(url_for('login'))
+
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	users = list_of_users()
+
+	for u in users:
+		if int(u[3]) == uid: 
+			solo_user = u
+
+			if solo_user[0] == 'blox':
+				return 'Cannot Remove Blox' + '<a href="' + url_for('all_users') + '"> Go Back </a>'
+			else:
+				if request.method == 'POST':
+					cmd = 'deluser --remove-home ' + solo_user[0]
+					system(cmd)
+					return 'Removed ' + solo_user[0] + '<a href="' + url_for('all_users') + '"> Go Back </a>'
+		
+	return render_template('remove_user.html', solo_user=solo_user, dicts=dicts)
+
+
 
 
 if __name__ == '__main__':

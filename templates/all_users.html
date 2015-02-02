@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+    <h1>Account Management</h1>
+
+    {% if users %}
+    <table class="table table-striped">
+    	<thead>
+    		<tr>
+    			<td>Username</td>
+    			<td>Options</td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		{% for user in users %}
+
+			<tr>
+
+				<td><a href="{{ url_for('solo_user', uid=user[3]) }}">{{ user[0] }}</a></td>
+				<td><a href="{{ url_for('changepass_user', uid=user[3]) }}" class="btn btn-info">Change Password</a>
+				<a href="{{ url_for('remove_user', uid=user[3]) }} " class="btn btn-danger">Delete</td>
+			</tr>
+    		{% endfor %}
+    	
+
+    			<td><a href="{{ url_for('add_user') }}" class="btn btn-success btn-block">Add User</a></td>
+    	
+    	</tbody>
+    </table>
+    {% endif %}
+
+
+</div>
+{% endblock %}

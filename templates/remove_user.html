@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+	<h1>Removing User {{ solo_user[0] }}</h1>
+        <form method="POST" action="{{ url_for('remove_user', uid=solo_user[3]) }}">
+            <button type="submit" class="btn btn-default">REMOVE ACCOUNT</button>
+        </form>
+
+</div>
+{% endblock %}
