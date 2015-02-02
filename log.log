@@ -6338,3 +6338,219 @@ Done.
 2015-02-02 13:24:34 [2202] [INFO] Worker exiting (pid: 2202)
 2015-02-02 13:24:34 [2196] [INFO] Worker exiting (pid: 2196)
 2015-02-02 13:24:34 [2181] [INFO] Shutting down: Master
+2015-02-02 13:38:32 [20898] [INFO] Starting gunicorn 18.0
+2015-02-02 13:38:32 [20898] [INFO] Listening at: http://0.0.0.0:5000 (20898)
+2015-02-02 13:38:32 [20898] [INFO] Using worker: sync
+2015-02-02 13:38:32 [20903] [INFO] Booting worker with pid: 20903
+2015-02-02 13:38:32 [20904] [INFO] Booting worker with pid: 20904
+2015-02-02 13:38:32 [20907] [INFO] Booting worker with pid: 20907
+2015-02-02 13:38:32 [20908] [INFO] Booting worker with pid: 20908
+2015-02-02 13:38:32 [20904] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+2015-02-02 13:38:32 [20904] [INFO] Worker exiting (pid: 20904)
+2015-02-02 13:38:32 [20903] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+2015-02-02 13:38:32 [20903] [INFO] Worker exiting (pid: 20903)
+2015-02-02 13:38:32 [20907] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+2015-02-02 13:38:32 [20907] [INFO] Worker exiting (pid: 20907)
+2015-02-02 13:38:32 [20908] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+    return self.load_wsgiapp()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/var/www/html/blox/blox-user-homepage/blox.py", line 17, in <module>
+    from forms import AddUser, ChangePass
+  File "/var/www/html/blox/blox-user-homepage/forms.py", line 1, in <module>
+    from flask_wtf import Form
+ImportError: No module named flask_wtf
+2015-02-02 13:38:32 [20908] [INFO] Worker exiting (pid: 20908)
+Traceback (most recent call last):
+  File "/var/www/html/blox/venv/bin/gunicorn", line 9, in <module>
+    load_entry_point('gunicorn==18.0', 'console_scripts', 'gunicorn')()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 71, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 143, in run
+    Arbiter(self).run()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 203, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 298, in halt
+    self.stop()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 341, in stop
+    self.reap_workers()
+  File "/var/www/html/blox/venv/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 452, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2015-02-02 13:39:36 [20968] [INFO] Starting gunicorn 18.0
+2015-02-02 13:39:36 [20968] [INFO] Listening at: http://0.0.0.0:5000 (20968)
+2015-02-02 13:39:36 [20968] [INFO] Using worker: sync
+2015-02-02 13:39:36 [20973] [INFO] Booting worker with pid: 20973
+2015-02-02 13:39:36 [20974] [INFO] Booting worker with pid: 20974
+2015-02-02 13:39:36 [20975] [INFO] Booting worker with pid: 20975
+2015-02-02 13:39:36 [20976] [INFO] Booting worker with pid: 20976
+Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully
+New SMB password:
+Retype new SMB password:
+Added user dog.
+Looking for files to backup/remove ...
+Removing files ...
+Removing user `dog' ...
+Warning: group `dog' has no more members.
+Done.
+Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully
+New SMB password:
+Retype new SMB password:
+2015-02-02 14:42:29 [20968] [INFO] Handling signal: term
+2015-02-02 14:42:29 [20976] [INFO] Worker exiting (pid: 20976)
+2015-02-02 14:42:29 [20974] [INFO] Worker exiting (pid: 20974)
+2015-02-02 14:42:29 [20975] [INFO] Worker exiting (pid: 20975)
+2015-02-02 14:42:29 [20973] [INFO] Worker exiting (pid: 20973)
+2015-02-02 14:42:29 [20968] [INFO] Shutting down: Master
+2015-02-02 14:42:36 [23206] [INFO] Starting gunicorn 18.0
+2015-02-02 14:42:36 [23206] [INFO] Listening at: http://0.0.0.0:5000 (23206)
+2015-02-02 14:42:36 [23206] [INFO] Using worker: sync
+2015-02-02 14:42:36 [23211] [INFO] Booting worker with pid: 23211
+2015-02-02 14:42:36 [23212] [INFO] Booting worker with pid: 23212
+2015-02-02 14:42:36 [23215] [INFO] Booting worker with pid: 23215
+2015-02-02 14:42:36 [23218] [INFO] Booting worker with pid: 23218
+Looking for files to backup/remove ...
+Removing files ...
+Removing user `dog' ...
+Warning: group `dog' has no more members.
+Done.
+Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully
+New SMB password:
+Retype new SMB password:
+Added user coin.

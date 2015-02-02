@@ -839,7 +839,7 @@ def add_user():
 				if username == u[0]:
 					return 'Username already existing'
 
-			cmd_useradd = "useradd " + username + " -s /bin/bash -m"
+			cmd_useradd = "useradd -G blox " + username + " -s /bin/bash -m"
 			cmd_password = "./password.sh " + username + ' ' + password
 			system(cmd_useradd)
 			system(cmd_password)
