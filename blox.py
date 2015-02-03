@@ -948,7 +948,7 @@ def remove_user(uid):
 
 @app.route("/settings/network")
 def network_main():
-	eth = netifaces.ifaddresses('eth1')
+	eth = netifaces.ifaddresses('eth0')
 	
 	ALL_IP = ip_addresses()
 	url = request.url_root
@@ -1000,7 +1000,7 @@ def network_wlan():
 
 	form=ConnectWifi(request.form)
 	#dsadsa
-	cell = Cell.all('wlan1')
+	cell = Cell.all('wlan0')
 	ssid=[]
 	for c in cell:
 		ssid.append(c.ssid)
