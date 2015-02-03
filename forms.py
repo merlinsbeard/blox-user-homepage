@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, EqualTo
 
 from wifi import Cell
 
-cell = Cell.all('wlan1')
+cell = Cell.all('wlan0')
 ssid=[]
 CHOICES=[]
 for c in cell:

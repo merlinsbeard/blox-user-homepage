@@ -965,7 +965,7 @@ def network_main():
 	except KeyError:
 		eth = False
 
-	wlan = netifaces.ifaddresses('wlan1')
+	wlan = netifaces.ifaddresses('wlan0')
 	try:
 		wlan = wlan[2][0]
 	except:
