@@ -8,3 +8,5 @@ doc
 start.sh
 config.txt
 static/thumbs
+*.log
+

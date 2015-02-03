@@ -1,7 +1,17 @@
 from flask_wtf import Form
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, RadioField
 from wtforms.validators import DataRequired, EqualTo
 
+from wifi import Cell
+
+cell = Cell.all('wlan1')
+ssid=[]
+CHOICES=[]
+for c in cell:
+	ssid.append(c.ssid)
+
+for i in ssid:
+	CHOICES.append((i,i))
 
 class AddUser(Form):
 	username = StringField('Username', 
@@ -15,3 +25,6 @@ class ChangePass(Form):
 	password1 = PasswordField('Confirm Password', 
 		validators=[DataRequired()])
 
+class ConnectWifi(Form):
+	ssid = RadioField('ssid', choices=CHOICES)
+	password = PasswordField('Password')

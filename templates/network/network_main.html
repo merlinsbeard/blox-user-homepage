@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+    <h1>Network Management</h1>
+    <h3>Network Stats</h3>
+    <p>Use the following configuration to connect</p>
+    <ul>
+        <li>Hostname: blox.local </li>
+        <li>IP Address: {% if eth %}{{ eth.addr }}{% else %}ETH NOT CONNECTED{% endif %}</li>
+        {% if wlan %}
+        <li>WLAN: {{ wlan }}</li>
+        {% else %}
+        <li>WLAN NOT CONNECTED</li>
+        {% endif %}
+    </ul>
+   <ul>
+       <li><a href="#">LAN</a></li>
+       <li><a href="{{ url_for('network_wlan') }}">WIFI</a></li>
+   </ul>
+
+
+</div>
+{% endblock %}

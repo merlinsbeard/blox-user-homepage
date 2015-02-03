@@ -14,7 +14,9 @@ from math import ceil
 from markdown import markdown
 import json
 from os import system
-from forms import AddUser, ChangePass
+from forms import AddUser, ChangePass, ConnectWifi
+import netifaces
+from wifi import Cell
 
 
 f = open('config.txt', 'r')
@@ -941,7 +943,85 @@ def remove_user(uid):
 	return render_template('remove_user.html', solo_user=solo_user, dicts=dicts)
 
 
+################## WIFI ##################
 
+
+@app.route("/settings/network")
+def network_main():
+	eth = netifaces.ifaddresses('eth1')
+	
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+
+	try:
+		eth = eth[2][0]
+	except KeyError:
+		eth = False
+
+	wlan = netifaces.ifaddresses('wlan1')
+	try:
+		wlan = wlan[2][0]
+	except:
+		wlan = False
+	return render_template('network/network_main.html',
+		eth=eth, wlan=wlan, dicts=dicts)
+
+@app.route("/settings/network/eth")
+def network_eth():
+	pass
+
+@app.route("/settings/network/eth/static")
+def network_eth_static():
+	pass
+
+@app.route("/settings/network/eth/dhcp")
+def network_eth_static_dhcp():
+	pass
+
+@app.route("/settings/network/wlan" ,methods=['GET','POST'])
+def network_wlan():
+
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+
+	form=ConnectWifi(request.form)
+	#dsadsa
+	cell = Cell.all('wlan1')
+	ssid=[]
+	for c in cell:
+		ssid.append(c.ssid)
+
+	if request.method == 'POST':
+		wifi_name = form.ssid.data
+		password = form.password.data
+		cmd = 'nmcli dev wifi connect ' + wifi_name + ' password ' + password
+		system(cmd)
+		return cmd
+
+	return render_template('network/network_wlan.html',
+		wlan=ssid, form=form, dicts=dicts)
+
+@app.route("/settings/network/wlan/static")
+def network_wlan_static():
+	pass
+
+@app.route("/settings/network/wlan/dhcp")
+def network_wlan_dhcp():
+	pass
 
 if __name__ == '__main__':
 	app.debug = True

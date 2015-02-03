@@ -9,9 +9,16 @@
 			<li><a href="{{ url_for('all_users') }}">
 					<h3>User Management</h3>
 				</a></li>
-				<li><a href="{{ url_for('powercontrol') }}">
+				<li>
+					<a href="{{ url_for('powercontrol') }}">
 					<h3>Power Control</h3>
-				</a></li>
+					</a>
+				</li>
+				<li>
+					<a href="{{ url_for('network_main') }}">
+					<h3>Network</h3>
+					</a>
+				</li>
 				<li>
 					<h3>
 					{% if not session.logged_in %}
