@@ -1,0 +1,266 @@
+.component {
+	line-height: 1.5em;
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1000px;
+	overflow: hidden;
+}
+.component .filler {
+	font-family: "Blokk", Arial, sans-serif;
+	color: #d3d3d3;
+}
+
+.component h3, h2{
+	text-align: left;
+}
+
+.component h2 {
+	font-size: 1.7em;
+}
+
+.component h3 {
+	font-size: 1.3em;
+}
+
+.component a{
+	color: #aaa;
+}
+
+.component a:hover{
+	color: #2d2d2d;
+}
+
+.form {
+	width:94%;
+	margin: 0 auto;	
+	text-align: left;
+}
+
+.formbutton {
+	float: left;
+	margin-right: 10px;
+}
+
+.form label {
+	font-size: 1.3em;
+	font-weight: 800;
+}
+
+.password {
+	font-weight: 300;
+	font-size: 1.2em;
+	margin-top: 20px;
+}
+
+
+		.form input[type="text"],
+		.form input[type="password"] {
+			padding: 10px;
+			width: 100%;
+			border: 2px solid #D3D3D3;
+			background: transparent;
+			color: #11CA66;
+			font-weight: 300;
+			font-size: 1.2em;
+		}
+
+		.form input[type="text"]:focus,
+		.form input[type="password"]:focus {
+			border-color: #11CA66;
+			color: #11CA66;
+		}
+
+		.form input:focus {
+			outline: 0;
+		}
+
+		.form button {
+			display: block;
+			margin-top: 1em;
+			padding: .6em;
+			width: 100%;
+			border: none;
+			color: #2D2D2D;
+			font-size: 1em;
+			-webkit-appearance: button;
+			cursor: pointer;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}	
+
+		
+		.form .okbutton {
+			border: 2px solid #d3d3d3;
+			background-color: transparent;
+			border-color: #d3d3d3;
+			max-width: 250px;
+			min-width: 100px;
+			color:#d3d3d3;
+		}
+
+		.form .okbutton:focus,
+		.form .okbutton:hover {
+			border-color: #11CA66;
+			color: #11CA66;
+		}
+
+		.form .cancelbutton {
+			border: 2px solid #d3d3d3;
+			background-color: transparent;
+			border-color: #d3d3d3;
+			max-width: 250px;
+			min-width: 100px;
+			color:#d3d3d3;
+		}
+
+		.form .cancelbutton:focus,
+		.form .cancelbutton:hover {
+			border-color: #CA1111;
+			color: #CA1111;
+		}
+
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 3em;
+    width: 100%;
+    background: #fff;
+}
+td, th {
+    padding: 0.75em 1.5em;
+    text-align: left;
+}
+	td.err {
+		background-color: #e992b9;
+		color: #fff;
+		font-size: 0.75em;
+		text-align: center;
+		line-height: 1;
+	}
+th {
+    background-color: #412b45;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+tbody th {
+	background-color: #2ea879;
+}
+tbody tr:nth-child(2n-1) {
+    background-color: #f0f0f0;
+    transition: all .125s ease-in-out;
+}
+tbody tr:hover {
+    background-color: rgba(65, 43, 69, 0.1);
+}
+
+/* For appearance */
+.sticky-wrap {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+	width: 100%;
+}
+.sticky-wrap .sticky-thead,
+.sticky-wrap .sticky-col,
+.sticky-wrap .sticky-intersect {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .125s ease-in-out;
+	z-index: 50;
+	width: auto; /* Prevent table from stretching to full size */
+}
+	.sticky-wrap .sticky-thead {
+		box-shadow: 0 0.25em 0.1em -0.1em rgba(0,0,0,.125);
+		z-index: 100;
+		width: 100%; /* Force stretch */
+	}
+	.sticky-wrap .sticky-intersect {
+		opacity: 1;
+		z-index: 150;
+
+	}
+		.sticky-wrap .sticky-intersect th {
+			background-color: #666;
+			color: #eee;
+		}
+.sticky-wrap td,
+.sticky-wrap th {
+	box-sizing: border-box;
+}
+
+/* Not needed for sticky header/column functionality */
+td.host {
+	text-transform: capitalize;
+}
+
+td.host {
+	color:#412b45;
+	font-weight: 800;
+	font-size: 1.4em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+td.host a {
+	color:#7c8d87;
+	font-weight: 800;
+	font-size: 1.4em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+td.host a:hover {
+	color:#412b45;
+}
+
+.sticky-wrap.overflow-y {
+	overflow-y: auto;
+	max-height: 50px;
+}
+
+td.ip {
+	color:#412b45;
+	font-weight: 800;
+	font-size: 1.4em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+td.ip a {
+	color:#c0c0c0;
+	font-size: 1.4em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+td.ip a:hover {
+	color:#412b45;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+		.component h2 {
+			font-size: 1.5em;
+		}
+
+		.component h3 {
+			font-size: 1.2em;
+		}
+
+		.form label {
+			font-size: 1.2em;
+		}
+
+		.password {
+			font-size: 1.1em;
+		}
+
+}

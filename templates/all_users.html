@@ -1,34 +1,135 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-    <h1>Account Management</h1>
 
-    {% if users %}
-    <table class="table table-striped">
-    	<thead>
-    		<tr>
-    			<td>Username</td>
-    			<td>Options</td>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		{% for user in users %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+    <div class="scroller-inner">
 
-			<tr>
+        <!-- Top Navigation -->
+        <div class="block block-40">
+            <!-- Menu Trigger -->
+            <a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+            <a href="#" id="open-button" class="menu-buttononwhite">
+                <span class="tooltip tooltip-effect-1">
+                    <span class="tooltip-item">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </span> 
+                    <span class="tooltip-content2">
+                        <span class="tooltip-text2onwhite">Quick Menu</span>
+                    </span>
+                </span>
+            </a>
+        </div>
+                        
+        <div class="content clearfix">
+            <!-- Content Body HERE -->
+            <div class="inner-header">
+                <div class="inner-inner">
+                    <h1>Accounts</h1>
+                    {% if users %}
+                        <nav>
+                            <a href="#" class="md-trigger" data-modal="adduser"><i class="fa fa-user-plus"></i> Add User</a>
+                        </nav>{% endif %}
+                    </div>
+                </div>
 
-				<td><a href="{{ url_for('solo_user', uid=user[3]) }}">{{ user[0] }}</a></td>
-				<td><a href="{{ url_for('changepass_user', uid=user[3]) }}" class="btn btn-info">Change Password</a>
-				<a href="{{ url_for('remove_user', uid=user[3]) }} " class="btn btn-danger">Delete</td>
-			</tr>
-    		{% endfor %}
-    	
+                <div class="container table">
+                    <div class="component">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td class="user-name">
+                                    <a href="{{ url_for('solo_user', uid=user[3]) }}">{{ user[0] }}</a>
+                                </td>
+                                <td class="options">
+                                    <a href="#" class="md-trigger" data-modal="pass{{ user[3] }}">
+                                        <span class="tooltip tooltip-effect-1">
+                                            <span class="tooltip-item2">
+                                                <i class="fa fa-pencil marginlr10"></i>
+                                            </span> 
+                                            <span class="tooltip-content3 clearfix">
+                                            <span class="tooltip-text2onwhite2">Change Password</span>
+                                        </span>
+                                    </a>
+                                    {% if not session.logged_in %}
+                                    <a href="#" class="md-trigger" data-modal="loginmodal">
+                                        <i class="fa fa-user-times"></i>
+                                            {% else %}  
+                                            <a href="{{ url_for('remove_user', uid=user[3]) }}" class="md-trigger" data-modal="loginmodal">
+                                                <i class="fa fa-user-times"></i>    
+                                            </a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
 
-    			<td><a href="{{ url_for('add_user') }}" class="btn btn-success btn-block">Add User</a></td>
-    	
-    	</tbody>
-    </table>
-    {% endif %}
-
-
-</div>
+                                    <!-- Change Password -->
+                                    <div class="md-modal md-effect-1" id="pass{{ user[3] }}">
+                                    <div class="md-content">
+                                        <div class="content-style-form content-style-form-4">
+                                            <h3 class="morph-clone">Change Password</h3>
+                                            <form method="POST" action="{{ url_for('changepass_user', uid=user[3]) }} ">
+                                                {{ dicts.changepassform.hidden_tag() }}
+                                                <div class="diffform2">
+                                                    <label>New Password</label>
+                                                    <input class="margintop10" id="password" name="password" type="password" required>
+                                                </div>
+                                                <div class="diffform">
+                                                    <label>Repeat Password</label>
+                                                    <input class="margintop10" id="password1" name="password1" type="password" required>
+                                                </div>
+                                                        
+                                                <div class="centerdiv">
+                                                    <a href="#" class="inline"><button class="okbuttonm" type="submit">Ok</button></a>
+                                                    <a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div><!-- ///Change Password -->
+                                <div class="md-overlay"></div><!-- the overlay element --> 
+                                {% endfor %}
+                            </tbody>
+                            </table>
+                        </div><!-- /component -->
+                    </div><!-- /cont table -->
+                </div><!-- /content --> 
+                <div class="footer">
+                    <div class="footerinside">
+                        <img src="{{ url_for('static', filename='img/botlogo.png') }}">
+                        <p>© Blox Browser Control 2015 - 1.0</p>
+                    </div>
+                </div>
+            </div><!-- /scroller-inner -->
+        </div><!-- /scroller -->
+         <!-- Add User -->
+        <div class="md-modal md-effect-1" id="adduser">
+            <div class="md-content">
+                <div class="content-style-form content-style-form-4">
+                    <h3 class="morph-clone">Add User</h3>
+                    <form method="POST" action="{{ url_for('add_user') }} ">
+                        {{ dicts.adduserform.hidden_tag() }}
+                        <div class="diffform">
+                            <label>Username</label>
+                            <input class="margintop10" id="username" name="username" type="text" value="" required>
+                        </div>
+                        <div class="diffform">
+                            <label>Password</label>
+                            <input class="margintop10" id="password" name="password" type="password" value="" required>
+                        </div>
+                        
+                        <div class="centerdiv">
+                            <a href="#" class="inline"><button class="okbuttonm" type="submit">Ok</button></a>
+                            <a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- ///Add User -->
+        <div class="md-overlay"></div><!-- the overlay element --> 
 {% endblock %}

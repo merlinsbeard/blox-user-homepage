@@ -1,82 +1,60 @@
 {% extends 'layout.html' %}
 {% block extrahead %}    {% endblock %}
     {% block body %}
-    <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
-					<!-- Title -->
-					<header class="codrops-header">
-						<h1>Blox Browser Control <span>Control Everything</span></h1>
-					</header><!-- //Title -->
-					<!-- Device Morph -->
-					<div class="container demo-1">
-					<!-- a low-tech hack for pre-loading the images -->
-					<div class="preload" style="overflow: hidden; width: 0px; height: 0px">
-						<img src="static/images/browsercontrolpic1.jpg" />
-						<img src="static/images/browsercontrolpic2.jpg" />
-						<img src="static/images/browsercontrolpic3.jpg" />
-						<img src="static/images/browsercontrolpic3r.jpg" />
-						<img src="static/images/browsercontrolpic4.jpg" />
-						<img src="static/images/browsercontrolpic4r.jpg" />
-					</div>
-					<div class="main clearfix">
-						<div class="md-slider">
-							<div class="md-device-wrapper">
-								<div class="md-device md-device-1">
-									<a href="#"><img src="static/images/browsercontrolpic1.jpg" /></a>
-									<div class="md-border-element"></div>
-									<div class="md-base-element"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- /container -->
+
+	<!-- Content HERE -->
+
+
+    <div class="scroller-inner custombg">
+
+		<!-- Top Navigation -->
+		<div class="codrops-top clearfix">
+			<div class="block block-40 clearfix">
+				<!-- Menu Trigger -->
+				<a href="#" id="trigger" class="menu-trigger"></a><!-- //Menu Trigger -->
+				<a href="#" id="open-button" class="menu-button">
+					<span class="tooltip tooltip-effect-1">
+						<span class="tooltip-item">
+							<i class="fa fa-ellipsis-v"></i>
+						</span>	
+						<span class="tooltip-content2 clearfix">
+							<span class="tooltip-text2">Quick Menu</span>
+						</span>
+					</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="maindiv">
+			<div class="maincontent">
+				<header class="chino-header">
+					<h1 class="marginbottom30">Welcome, {{ solo_user }}</h1>
+
+						<iframe src="http://free.timeanddate.com/clock/i4ggt85s/n145/fn2/fs48/fcfff/tct/pct/ftb/ts1" frameborder="0" width="245" height="70" allowTransparency="true"></iframe><!--// Clock-->	
+				</header><!-- //Title -->
+
+					
+				<div class="content clearfix">
+					<!-- Content Body HERE -->
+
+					<a href="//{{ dicts.url }}:32400/web"><img src="static/images/video.png" class="imghome marginlr10 faa-pulse animated-hover"></a>
+					<a href="{{ url_for('pictures') }}"><img src="static/images/pic.png" class="imghome marginlr10"></a>
+					<a href="//{{ dicts.url }}:4040"><img src="static/images/music.png" class="imghome marginlr10"></a>
+
+				</div>
+			</div>
+		</div>
+	</div><!-- /scroller-inner -->
+
+
+
+
     {% endblock %}
 
     {% block extrabottom %}
-<!-- Exclusive for Dashboard -->
-		<script src="{{ url_for('static', filename='js/morphingdevice.js') }}"></script>
-		<script>
-			var el = document.querySelector( '.md-slider' ),
-				settings = {
-					autoplay : true,
-					interval : 3000,
-					devices : [ 
-						{ cName : 'md-device-1', canRotate : false, imgsrc : 'static/images/browsercontrolpic1.jpg' },
-						{ cName : 'md-device-2', canRotate : false, imgsrc : 'static/images/browsercontrolpic2.jpg' },
-						{ cName : 'md-device-3', canRotate : true, imgsrc : 'static/images/browsercontrolpic3.jpg', rotatedsrc : 'static/images/browsercontrolpic3r.jpg' },
-						{ cName : 'md-device-4', canRotate : true, imgsrc : 'static/images/browsercontrolpic4.jpg', rotatedsrc : 'static/images/browsercontrolpic4r.jpg' }
-					]
-				},
-				devicesTotal = settings.devices.length,
-				ds = MorphingDevice( el, settings );
 
-			// create navigation triggers
-			var nav = document.createElement( 'nav' );
-			for( var i = 0; i < devicesTotal; ++i ) {
+	<!-- Extra JS Here -->
 
-				var trigger = document.createElement( 'a' );
-				trigger.className = i === 0 ? 'md-current' : '';
-				trigger.setAttribute( 'href', '#' );
-				trigger.setAttribute( 'pos', i );
-				trigger.onclick = function( event ) {
 
-					ds.stopSlideshow();
-					var pos = Number( event.target.getAttribute( 'pos' ) );
-					if( pos === ds.getCurrent() ) {
-						return false;
-					}
-					ds.updateCurrentTrigger( event.target );
-					ds.setCurrent( pos );
-					ds.changeDevice();
-					return false;
 
-				};
-				nav.appendChild( trigger );
-
-			}
-			el.appendChild( nav );
-
-			if( settings.autoplay ) {
-				ds.startSlideshow();
-			}
-		</script><!-- //Exclusive for Dashboard -->
     {% endblock %}

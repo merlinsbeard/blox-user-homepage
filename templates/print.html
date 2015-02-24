@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<div class="block block-40">
+							<!-- Menu Trigger -->
+							<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+							<a href="#" id="open-button" class="menu-buttononwhite">
+								<span class="tooltip tooltip-effect-1">
+									<span class="tooltip-item">
+										<i class="fa fa-ellipsis-v"></i>
+									</span>	
+									<span class="tooltip-content2 clearfix">
+										<span class="tooltip-text2onwhite">Quick Menu
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1 class="contacthead">Printables</h1>
+									<nav>
+										<div class="astatic2">
+											<a><i class="fa fa-print fa-3x"></i></a>
+										</div>
+									</nav>
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="component form">
+
+									<h2>Print a Wi-Fi Card</h2>
+									<h3>Download one of this file and print</h3>
+									
+									<a href="static/img/wificardlarge.jpg" download="Wifi card large" class="formbutton">
+										<button class="okbutton">Large</button>
+									</a>
+
+									<a href="#" download="Wifi card large" class="formbutton">
+										<button class="okbutton">Small</button>
+									</a>
+
+								</div><!-- /component -->
+							</div><!-- /container -->
+						</div><!-- /content -->
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+						
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

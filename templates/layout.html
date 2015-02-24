@@ -7,106 +7,233 @@
 		<title>Blox Browser Control</title>
 		<meta name="author" content="chino padua">
 		<!-- Favicon--> 
-		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon3.png') }}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon5.png') }}">
 		<!-- Base--> 
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/chino.css') }}"> 
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-	    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-	    <!-- Components--> 
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/chino.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip-classic.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/network.css') }}">
+		<!-- First JS -->
+		<script src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
 		<!-- Icons--> 
     	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome-4.2.0/css/font-awesome.min.css') }}">
-    	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome-4.2.0/css/font-awesome-animation.min.css') }}">
-		<script src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
 		{% block extrahead %}{% endblock %}
 	</head>
 	<body>
 
-	<!--Lower Menu-->
 	<div class="container">
-		<div class="menu-wrap">
-			<nav class="menu">
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu">
+					<div class="mp-level">
+						<h2 class="fa fa-tachometer"><img src="{{ url_for('static', filename='images/blox_logo.png') }}" class="navbar-brand-logo page-scroll marginleft50"></h2>
+						<ul>
+							<div class="list-group">
+								<li><a class="list-group-item" href="{{ url_for('index') }}"><i class="fa fa-tachometer fa-fw"></i>&nbsp; Dashboard</a></li>
+								<li><a class="list-group-item" href="//{{ dicts.url }}:32400/web"><i class="fa fa-video-camera fa-fw"></i>&nbsp; Video</a></li>
+								<li><a class="list-group-item" href="//{{ dicts.url }}:4040"><i class="fa fa-music fa-fw"></i>&nbsp; Music</a></li>
+								<li><a class="list-group-item" href="{{ url_for('pictures') }}"><i class="fa fa-picture-o fa-fw"></i>&nbsp; Picture</a></li>
+								<li><a class="list-group-item" href="//{{ dicts.url }}:9091"><i class="fa fa-download fa-fw"></i>&nbsp; Downloads</a></li>
+								<li><a class="list-group-item" href="{{ url_for('public_directory') }}"><i class="fa fa-users fa-fw"></i>&nbsp; Public</a></li>
+								<li><a class="list-group-item" href="{{ url_for('installers') }}"><i class="fa fa-external-link-square fa-fw"></i>&nbsp; Installers</a></li>
+								<li><a class="list-group-item" href="{{ url_for('printwifi') }}"><i class="fa fa-credit-card fa-fw"></i>&nbsp; Print a Wifi Card</a></li>
+								<li><a class="list-group-item" href="{{ url_for('contactus') }}"><i class="fa fa-phone fa-fw"></i>&nbsp; Contact us</a></li>
+								<li><a class="list-group-item" href="{{ url_for('settings') }}"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a></li>
+								<li>{% if not session.logged_in %}<a class="list-group-item md-trigger" href="#" data-modal="modal-1"><i class="fa fa-power-off fa-fw"></i>&nbsp; Power</a>
+									{% else %}<a class="list-group-item" href="{{ url_for('powercontrol') }}"><i class="fa fa-power-off fa-fw"></i>&nbsp; Power</a>{% endif %}
+								</li>
+								<li>{% if not session.logged_in %}<a class="list-group-item md-trigger" href="#" data-modal="modal-4"><i class="fa fa-lock fa-fw"></i>&nbsp; Login</a>
+									{% else %}<a class="list-group-item" href="{{ url_for('logout') }}"><i class="fa fa-unlock fa-fw"></i>&nbsp; Logout</a>{% endif %}
+								</li>	
+							</div>
+						</ul>	
+					</div>
+				</nav><!-- /mp-menu -->	
 
-				<div class="link-list">
-					
-					<a href="{{ url_for('settings') }}">Settings</a>
-					<a href="#">Security &amp; Privacy</a>
-					<a href="#">Contact us</a>
-				</div>
-				<div class="icon-list">
-					<a href="https://facebook.com/bloxph" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
-					<a href="https://twitter.com/bloxph" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-					<a href="https://instagram.com/bloxph" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-fw fa-question-circle"></i></a>
-					<a href="#power" data-toggle="modal"><i class="fa fa-fw fa-power-off"></i></a>
-				</div>
-			</nav>
-		</div>
-		<button class="menu-button" id="open-button"><i class="fa fa-fw fa-cog fa-2x"></i><span>Open Menu</span></button>		
-	</div><!-- //Lower Menu -->
+				<!-- right-menu -->
+				<div class="menu-wrap">
+					<nav class="menu">
+						<div class="icon-list">
+							<ul class="rightmenu">
+								<li><a href="#" id="close-button"><i class="fa fa-times fa-2x rightmenuclose"></i></a></li>
+								<li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+								<li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+								<li><a href="https://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+								<li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+								<li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+								<li><a href="https://www.tumblr.com/" target="_blank"><i class="fa fa-tumblr fa-2x"></i></a></li>
+								<li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest fa-2x"></i></a></li>
+								<hr>
+								<li><a href="{{ url_for('editquickmenu') }}"><i class="fa fa-fw fa-cog fa-2x fa-2x"></i></a></li>
+							</ul>
+						</div>
+					</nav>
+				</div><!-- /right-menu -->
 
 
-	<div id="st-container" class="st-container">
-		<!-- Main Side Menu -->
-		<div class="st-pusher">
-			<nav class="st-menu st-effect-7" id="menu-7">
-				<h2><img src="{{ url_for('static', filename='images/blox_logo.png') }}" class="navbar-brand-logo page-scroll marginleft50"></h2>
-				<ul>
-					<li><a href="{{ url_for('index') }}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-					<li><a href="//{{ dicts.url }}:32400/web"><i class="fa fa-video-camera"></i> Videos</a></li>
-					<li><a href="//{{ dicts.url }}:4040"><i class="fa fa-music"></i> Music</a></li>
-					<li><a href="{{ url_for('pictures') }}"><i class="fa fa-picture-o"></i> Pictures</a></li>
-                    <li><a href="//{{ dicts.url }}:9091"><i class="fa fa-cube"></i>Downloads</a></li>
-                    <li><a href="{{ url_for('public_directory') }}"><i class="fa fa-share-alt"></i>Public</a></li>
-                    <li><a href="{{ url_for('settings') }}"><i class="fa fa-share-alt"></i>Settings</a></li>
-                    <li>{% if not session.logged_in %}
-    <a href="{{ url_for('login') }}">log in</a>
-  {% else %}
-    <a href="{{ url_for('logout') }}">log out</a>
-  {% endif %}</li>
-					
-				</ul>
-			</nav>
-
-				
-
-			<div class="st-content"><!-- this is the wrapper for the content -->
 				{% block body %}
-{%endblock%}
 
-				<!--Menu-->
-				<div id="st-trigger-effects" class="">
-					<button data-effect="st-effect-7"><i class="fa fa-bars"></i> Menu</button>
-				</div><!--//Menu-->	
-			</div><!-- /Device Morph -->
-		</div><!-- /st-content-pusher -->
-	</div><!-- /st-container -->
+
+				{%endblock%}
 
 
 
-	<!-- Modal Power -->
-<div class="modal fade" id="power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-  		<header class="codrops-header">
-			<h1>Blox Power Control<span>The power is yours, choose wisely</span></h1>	
-		</header>
-    	<div class="powerbuttons">
-            <a href="#" class="marginleft10 marginright10"><i class="fa fa-refresh fa-4x power"></i></i></a>
-            <a href="#" class="marginleft10 marginright10"><i class="fa fa-power-off fa-4x power"></i></a>
-        </div>
-  </div>
-</div>
-<!-- //Modal Power --> 
+			</div><!-- /pusher -->
+		</div><!-- /container -->
 
-		<script src="{{ url_for('static', filename='js/jquery-min.js') }}"></script>
+		<!--MODALS-->
+		<!-- Power -->
+		<div class="md-modal md-effect-15" id="modal-1">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3>Login</h3>
+					<form action="{{ url_for('login') }}" method="post" class="form">
+						<input class="margintop10" name="username" type="text" placeholder="Username" required>
+						<input class="margintop10" name="password" type="password" placeholder="Password" required>
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="Login">Ok</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Power -->
+
+		<!-- Upload Pictures -->
+		<div class="md-modal md-effect-1" id="modal-2">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3>Upload your images</h3>
+					
+					<form action="" method="post" enctype="multipart/form-data" role="form">
+
+				        <input class"uploadfiles" type="file" name="file[]" multiple="" id="fileupload">
+
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="upload">Upload</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Upload Pictures -->
+
+		<!-- Delete -->
+		<div class="md-modal md-effect-1" id="modal-3">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3 class="morph-clone">Are you sure you wanna <span class="tooltip tooltip-effect-1">
+						<strong><span class="tooltip-item">Delete</span></strong>
+						<span class="tooltip-content clearfix">
+							<span class="tooltip-text">If you delete it there is no way you can retrieve it.
+								<a href="#">Learn More</a>
+							</span>
+						</span>
+					</span>this file?</h3>
+					<div class="centerdiv">
+						<a href="#" class="inline"><button class="okbuttonm" type="submit" value="go to power">Yes</button></a>
+						<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- ///Delete -->
+
+		<!-- Login -->
+		<div class="md-modal md-effect-15" id="modal-4">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3>Login</h3>
+					<form action="{{ url_for('login') }}" method="post" class="form">
+						<input class="margintop10" name="username" type="text" placeholder="Username" required>
+						<input class="margintop10" name="password" type="password" placeholder="Password" required>
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="Login">Login</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Login -->
+
+		<!-- Downloads Upload -->
+		<div class="md-modal md-effect-1" id="modal-5">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3>Upload a file</h3>
+					
+					<form action="" method="post" enctype="multipart/form-data" role="form">
+
+				        <input class"uploadfiles" type="file" name="file[]" multiple="" id="fileupload">
+
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="upload">Upload</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Downloads Upload -->
+
+		<!-- Delete Confirmation -->
+		<div class="md-modal md-effect-1" id="loginmodal">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3 class="morph-clone">Were sorry but we need your</h3>
+					<form method="POST" action="{{ url_for('login') }}">
+						<input class="margintop10 form-control" name="username" type="text" placeholder="Username" required>
+						<input class="margintop10 form-control" name="password" type="password" placeholder="Password" required>
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="go to power">Ok</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Delete Confirmation -->
+
+		
+
+		<!-- Public Upload -->
+		<div class="md-modal md-effect-1" id="modal-9">
+			<div class="md-content">
+				<div class="content-style-form content-style-form-4">
+					<h3>Upload a file</h3>
+					
+					<form action="" method="post" enctype="multipart/form-data" role="form">
+
+				        <input class"uploadfiles" type="file" name="file[]" multiple="" id="fileupload">
+
+						<div class="centerdiv">
+							<a href="#" class="inline"><button class="okbuttonm" type="submit" value="upload">Upload</button></a>
+							<a href="#" class="inline"><button class="md-close cancelbuttonm" type="reset" value="Reset">Cancel</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!-- ///Public Upload -->
+
+		<div class="md-overlay"></div><!-- the overlay element --> 
+
+		
 {% block extrabottom %}{% endblock %}
 		
 
 		<!-- JS Base -->
+		<script src="{{ url_for('static', filename='js/modalEffects.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery-min.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/sidebarEffects.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/mlpushmenu.js') }}"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		</script>
+		<script src="{{ url_for('static', filename='js/rightmenu.js') }}"></script>
+		<script>
+		$(document).ready(function(){
+		  $("img").click(function(){
+		    $("#fadeinoutinstant").fadeToggle();
+		  });
+		});
+		</script>
 	</body>
 </html>

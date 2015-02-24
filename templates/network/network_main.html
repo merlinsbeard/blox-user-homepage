@@ -1,23 +1,58 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-    <h1>Network Management</h1>
-    <h3>Network Stats</h3>
-    <p>Use the following configuration to connect</p>
-    <ul>
-        <li>Hostname: blox.local </li>
-        <li>IP Address: {% if eth %}{{ eth.addr }}{% else %}ETH NOT CONNECTED{% endif %}</li>
-        {% if wlan %}
-        <li>WLAN: {{ wlan }}</li>
-        {% else %}
-        <li>WLAN NOT CONNECTED</li>
-        {% endif %}
-    </ul>
-   <ul>
-       <li><a href="#">LAN</a></li>
-       <li><a href="{{ url_for('network_wlan') }}">WIFI</a></li>
-   </ul>
-
-
-</div>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+          <div class="scroller-inner">
+            <!-- Top Navigation -->
+            <div class="block block-40">
+              <!-- Menu Trigger -->
+              <a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+              <a href="#" id="open-button" class="menu-buttononwhite">
+                <span class="tooltip tooltip-effect-1">
+                  <span class="tooltip-item">
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span> 
+                  <span class="tooltip-content2">
+                    <span class="tooltip-text2onwhite">Quick Menu
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            
+            <div class="content clearfix">
+              <!-- Content Body HERE -->
+              <div class="inner-header">
+                <div class="inner-inner">
+                  <h1>Network</h1>
+                  <nav>
+                    <div class="astatic2">
+                      <a href="#"><i class="fa fa-plug"></i> LAN</a>
+                    </div>  
+                    <a href="{{ url_for('network_wlan') }}"><i class="fa fa-wifi"></i> Wi-Fi</a>
+                  </nav>
+                </div>
+              </div>
+              <div class="container">
+                <div class="component">
+                  <h2>Network Stats</h2>
+                  <h3>Use the following configuration to connect:</h3>
+                  <div>
+                    <h3><i class="fa fa-server"></i> Hostname: <p class="value2">blox.local</p></h3>
+                    <h3><i class="fa fa-location-arrow"></i> IP Address: <p class="value2">{% if eth %}{{ eth.addr }}{% else %}ETH NOT CONNECTED{% endif %}</p></h3>
+                    <h3><i class="fa fa-wifi"></i> WLAN: <p class="value2">{{ wlan }}</p></h3>
+                    {% else %}
+                    <h3><i class="fa fa-frown-o"></i><p class="value2">WLAN NOT CONNECTED</p></h3>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div><!-- /content -->
+            <div class="footer">
+              <div class="footerinside">
+                <img src="{{ url_for('static', filename='img/botlogo.png') }}">
+                <p>© Blox Browser Control 2015 - 1.0</p>
+              </div>
+            </div>
+          </div><!-- /scroller-inner -->
+        </div><!-- /scroller -->
 {% endblock %}

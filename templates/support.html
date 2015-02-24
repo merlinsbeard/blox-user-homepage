@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<div class="block block-40">
+							<!-- Menu Trigger -->
+							<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+							<a href="#" id="open-button" class="menu-buttononwhite">
+								<span class="tooltip tooltip-effect-1">
+									<span class="tooltip-item">
+										<i class="fa fa-ellipsis-v"></i>
+									</span>	
+									<span class="tooltip-content2 clearfix">
+										<span class="tooltip-text2onwhite">Quick Menu
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1 class="contacthead">Support</h1>
+									<nav>
+										<div class="astatic2">
+											<a><i class="fa fa-phone fa-3x"></i></a>
+										</div>
+									</nav>
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="component">
+									
+									<div class="main">
+										<form class="cbp-mc-form">
+											<div class="cbp-mc-column">
+												<label for="first_name">Name</label>
+							  					<input type="text" id="first_name" name="name" placeholder="Chino Padua" required>
+							  					<label for="email">Email Address</label>
+							  					<input type="email" id="email" name="email" placeholder="myemail@awesome.com"required>
+							  				</div>
+							  		
+							  				<div class="cbp-mc-column">
+							  					<label>Category</label>
+							  					<select id="talent" name="talent"required>
+							  						<option>Choose</option>
+							  						<option>Want a support</option>
+							  						<option>Question</option>
+							  						<option>Just wanna say hi</option>
+							  					</select>
+							  					
+							  					<label for="comments">Whats your concern?</label>
+							  					<textarea id="message" name="message" placeholder="Message"required></textarea>	
+							  				</div>
+							  				<div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Send your data" /></div>
+										</form>
+									</div>
+								</div><!-- /component -->
+							</div><!-- /container -->
+						</div><!-- /content -->	
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

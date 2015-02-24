@@ -1,25 +1,55 @@
 
 {% extends 'layout.html' %}
 {% block extrahead %}
-<style>
-#music { background: #412b45; }
-</style>
 {% endblock %}
 {% block body %}
-<div class="container">
-	<h1>POWER</h1>
-	<form action="" method=post enctype=multipart/form-data>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+    <div class="scroller-inner">
+        <!-- Top Navigation -->
+        <div class="block block-40">
+            <!-- Menu Trigger -->
+            <a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+            <a href="#" id="open-button" class="menu-buttononwhite">
+                <span class="tooltip tooltip-effect-1">
+                    <span class="tooltip-item">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </span> 
+                    <span class="tooltip-content2">
+                        <span class="tooltip-text2onwhite">Quick Menu</span>
+                    </span>
+                </span>
+            </a>
+        </div>
+                                                
+        <div class="content clearfix">
+            <!-- Content Body HERE -->
+            <div class="inner-header">
+                <div class="inner-inner">
+                    <h1>Power</h1>
+                    <nav>
+                         <a href="{{ url_for('index') }}"><i class="fa fa-times"></i> Exit</a>
+                         <a href="#"><i class="fa fa-clock-o"></i> Custom Shutdown Timer</a>
+                    </nav>
+                </div>
+            </div>
 
-        <button type="submit" value ="Power" name="power"class="btn btn-large btn-success">
-        <span class="glyphicon glyphicon-off"></span>
-        </button>
-        <button type="submit" value="Reboot" name="reboot" class="btn btn-large btn-success">
-        <span class="glyphicon glyphicon-repeat"></span>
-        </button>
-        <button type="submit" value="Thumbnails" name="thumbnails" class="btn btn-large btn-success">
-        <span class="glyphicon glyphicon-repeat">Thumbnails</span>
-        </button>
-	</form>
-
-</div>
+            <div class="container">
+                <form action="" method="post" enctype="multipart/form-data" class="component" >
+                    <div class="powerdiv">
+                        <div class="powercontent">
+                            <a href="#" type="submit" value="Reboot" name="reboot"><img class="profileimg" src="{{ url_for('static', filename='img/reboot.jpg') }}" alt="profile1"></a>
+                            <a href="#" type="submit" value ="Power" name="power"><img class="profileimg" src="{{ url_for('static', filename='img/poweroff.jpg') }}" alt="profile1"></a>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /component -->
+        </div><!-- /container -->
+        <div class="footer">
+            <div class="footerinside">
+                <img src="{{ url_for('static', filename='img/botlogo.png') }}">
+                <p>© Blox Browser Control 2015 - 1.0</p>
+            </div>
+        </div>
+    </div><!-- /scroller-inner -->
+</div><!-- /scroller -->
 {% endblock %}

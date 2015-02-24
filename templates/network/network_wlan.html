@@ -1,23 +1,64 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-    <h1>WIFI</h1>
-    
-    <h3>List of SSID</h3>
-      {% if wlan %}
-       
-        <form action="" method="POST">
-        {{ form.ssid }}
-        <div class="form-group">
-                {{ form.password.label }}
-                {{ form.password(class_="form-control")}}
-               
-            </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-        </form>    
-      {% else %}
-      no wlan or ssid detected
-      {% endif %}
 
-</div>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+          <div class="scroller-inner">
+            <!-- Top Navigation -->
+            <div class="block block-40">
+              <!-- Menu Trigger -->
+              <a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+              <a href="#" id="open-button" class="menu-buttononwhite">
+                <span class="tooltip tooltip-effect-1">
+                  <span class="tooltip-item">
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span> 
+                  <span class="tooltip-content2">
+                    <span class="tooltip-text2onwhite">Quick Menu
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            
+            <div class="content clearfix">
+              <!-- Content Body HERE -->
+              <div class="inner-header">
+                <div class="inner-inner">
+                  <h1>Wi-Fi</h1>
+                  {% if wlan %}
+                  <nav>
+                    <a href="{{ url_for('network_main') }}"><i class="fa fa-plug"></i> LAN</a>
+                  </nav>
+                </div>
+              </div>
+              <div class="container">
+                <div class="connected">
+                  <h3>Currently connected to: </h3><h2 class="value">PLDTMyDSLblox</h2>
+                  {% else %}
+                  <h3>No WLAN or SSID detected</h3>
+                  {% endif %}
+                </div>  
+                <div class="component">
+                  <h2>List of SSID</h2>
+                  <form class="form" action="" method="POST">
+                    <input type="radio" label="PLDTMyDSLblox" required><!-- {{ form.password.label }} DONT KNOW-->
+                    <label>PLDTMyDSLblox</label><!-- {{ form.password(class_="form-control")}} DONT KNOW-->
+                    <div class="password">
+                      <label>Password</label>
+                      <input type="password" pattern="blox" defaultvalue required>
+                    </div>
+                    <a href="#" class="formbutton"><button class="okbutton" type="submit" value="submit">Ok</button></a>
+                    <a href="#" class="formbutton"><button class="cancelbutton" type="reset" value="Reset">Cancel</button></a>
+                  </form>
+                </div><!-- /component -->
+              </div><!-- /container -->
+            </div><!-- /content --> 
+            <div class="footer">
+              <div class="footerinside">
+                <img src="static/img/botlogo.png">
+                <p>© Blox Browser Control 2015 - v1.0</p>
+              </div>
+            </div>
+          </div><!-- /scroller-inner -->
+        </div><!-- /scroller -->
 {% endblock %}

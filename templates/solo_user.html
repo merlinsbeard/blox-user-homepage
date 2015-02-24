@@ -1,7 +1,49 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-  {{ solo_user }}
-  <a href="{{ url_for('changepass_user', uid=solo_user[2]) }}">Change Password</a>
-</div>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<div class="block block-40">
+							<!-- Menu Trigger -->
+							<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+							<a href="#" id="open-button" class="menu-buttononwhite">
+								<span class="tooltip tooltip-effect-1">
+									<span class="tooltip-item">
+										<i class="fa fa-ellipsis-v"></i>
+									</span>	
+									<span class="tooltip-content2">
+										<span class="tooltip-text2onwhite">Quick Menu
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1>{{ solo_user }}</h1>
+									<nav>
+										<a href="#" class="md-trigger" data-modal="modal-7"><i class="fa fa-pencil-square"></i> Change Password</a>
+										<a href="#" class="md-trigger" data-modal="modal-3"><i class="fa fa-times"></i> Remove Account</a>
+									</nav>
+								</div>
+							</div>
+
+							<div class="containertop">
+								<div class="contact">
+									<h2 class="mediaaccounts">Private Folder</h2>
+									<a href="#"><i class="fa fa-folder fa-3x marginlr10"></i></a>
+								</div>
+							</div><!-- /containertop -->
+						</div><!-- /content -->
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
 {% endblock %}

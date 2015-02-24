@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<div class="block block-40">
+							<!-- Menu Trigger -->
+							<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+							<a href="#" id="open-button" class="menu-buttononwhite">
+								<span class="tooltip tooltip-effect-1">
+									<span class="tooltip-item">
+										<i class="fa fa-ellipsis-v"></i>
+									</span>	
+									<span class="tooltip-content2">
+										<span class="tooltip-text2onwhite">Quick Menu
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1 class="contacthead">Installers</h1>
+									<nav>
+										<div class="astatic2">
+											<a><i class="fa fa-desktop fa-3x"></i></a>
+											<a><i class="fa fa-mobile fa-3x"></i></a>
+										</div>
+									</nav>
+								</div>
+							</div>
+
+							<div class="containertop">
+								<div class="component form">
+									<h2>Keyboard & mouse remote control</h2>
+									<h3>Blox Envy</h3>
+									<p class="side2"><a href="#">Learn more <i class="fa fa-caret-right"></i></a></p>
+									<div class="beforebutton">
+										<a href="https://play.google.com/store/apps/details?id=com.Relmtech.Remote" target="_blank" class="formbutton">
+											<button class="okbutton">Download</button>
+										</a>
+										<p class="side"><i class="fa fa-android"></i> For andriod only</p>
+									</div>
+								</div><!-- /component -->
+
+								<hr class="margintop30 marginbottom30">
+
+								<div class="component form">
+									<h2>Media remote control</h2>
+									<h3>Blox Envy & Raspberry</h3> 
+									<p class="side2"><a href="#">Learn more <i class="fa fa-caret-right"></i></a></p>
+									<div class="beforebutton">
+										<a href="https://play.google.com/store/apps/details?id=org.leetzone.android.yatsewidgetfree" target="_blank" class="formbutton">
+											<button class="okbutton">Download</button>
+										</a>
+										<p class="side"><i class="fa fa-android"></i> For andriod only</p>
+									</div>
+								</div><!-- /component -->
+
+								<hr class="margintop30 marginbottom30">
+
+								<div class="component form">
+									<h2>Mobile file transfer</h2>
+									<h3>Blox Envy & Raspberry</h3>
+									<p class="side2"><a href="#">Learn more <i class="fa fa-caret-right"></i></a></p>
+									<div class="beforebutton">
+										<a href="https://play.google.com/store/apps/details?id=com.estrongs.android.pop" target="_blank" class="formbutton">
+											<button class="okbutton">Download</button>
+										</a>
+										<p class="side"><i class="fa fa-android"></i> For andriod only</p>
+									</div>
+								</div><!-- /component -->
+								 <div class="push"></div>
+							</div><!-- /container -->
+						</div><!-- /content -->	
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

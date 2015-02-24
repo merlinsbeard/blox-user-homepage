@@ -1,1 +1,68 @@
-{{ dicts }}
+{% extends 'layout.html' %}
+{% block body %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+							<div class="block block-40">
+							<!-- Menu Trigger -->
+								<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+								<a href="#" id="open-button" class="menu-buttononwhite">
+									<span class="tooltip tooltip-effect-1">
+										<span class="tooltip-item">
+											<i class="fa fa-ellipsis-v"></i>
+										</span>	
+										<span class="tooltip-content2 clearfix">
+											<span class="tooltip-text2onwhite">Quick Menu
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1 class="contacthead">Contact us</h1>
+									<nav>
+										<a href="{{ url_for('support') }}"><i class="fa fa-phone"></i> Support</a>
+										<a href="#"><i class="fa fa-question-circle"></i> FAQs</a>
+									</nav>
+								</div>
+							</div>
+							<div class="containertop">
+								<div class="contact">
+									<h2 class="mediaaccounts">Social Media Accounts</h2>
+									<a href="https://www.facebook.com/bloxph" target="_blank"><i class="fa fa-facebook-square fa-3x marginlr10"></i></a>
+									<a href="https://www.twitter.com/bloxph" target="_blank"><i class="fa fa-twitter-square fa-3x marginlr10"></i></a>
+									<a href="http://instagram.com/bloxph/" target="_blank"><i class="fa fa-instagram fa-3x marginlr10"></i></a>
+									<div class=" margintop50">
+										<h2 class="mediaaccounts">Visit our site</h2>
+										<h2 class="mediaaccounts"><a href="http://www.bloxentertainment.com/">www.bloxentertainment.com</a></h2>
+									</div>
+								</div>
+							</div><!-- /containertop -->
+						</div><!-- /content -->
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

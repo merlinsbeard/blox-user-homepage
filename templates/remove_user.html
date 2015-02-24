@@ -1,10 +1,47 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-	<h1>Removing User {{ solo_user[0] }}</h1>
-        <form method="POST" action="{{ url_for('remove_user', uid=solo_user[3]) }}">
-            <button type="submit" class="btn btn-default">REMOVE ACCOUNT</button>
-        </form>
 
-</div>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+							<div class="block block-40">
+							<!-- Menu Trigger -->
+								<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+								<a href="#" id="open-button" class="menu-buttononwhite">
+									<span class="tooltip tooltip-effect-1">
+										<span class="tooltip-item">
+											<i class="fa fa-ellipsis-v"></i>
+										</span>	
+										<span class="tooltip-content2 clearfix">
+											<span class="tooltip-text2onwhite">Quick Menu
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							
+							<div class="containertop">
+								<div class="contact">
+									<img src="{{ url_for('static', filename='img/sad.png') }}" class="margintop50">
+									<h2 class="mediaaccounts">Are you sure you want to delete<p class="value2"> {{ solo_user[0] }}'s</p> account </h2>
+									<form class="form2" method="POST" action="{{ url_for('remove_user', uid=solo_user[3]) }}">
+										<a class="inline"><button class="okbutton" type="submit">Yes</button></a>
+										<a class="inline" href="{{ url_for('settings') }}"><button class="cancelbutton" type="reset" value="Reset">No</button></a>
+									</form>
+								</div>
+							</div><!-- /containertop -->
+						</div><!-- /content -->
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+		</div><!-- /container -->
 {% endblock %}

@@ -2,34 +2,64 @@
 
 {% block body %}
 
-<div class="settings">
-	<div class="container">
-		<h1>Settings</h1>
-		<ul>
-			<li><a href="{{ url_for('all_users') }}">
-					<h3>User Management</h3>
-				</a></li>
-				<li>
-					<a href="{{ url_for('powercontrol') }}">
-					<h3>Power Control</h3>
-					</a>
-				</li>
-				<li>
-					<a href="{{ url_for('network_main') }}">
-					<h3>Network</h3>
-					</a>
-				</li>
-				<li>
-					<h3>
-					{% if not session.logged_in %}
-    <a href="{{ url_for('login') }}">log in</a>
-  {% else %}
-    <a href="{{ url_for('logout') }}">log out</a>
-  {% endif %}</h3>
-				</li>
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+	<div class="scroller-inner">
+		<!-- Top Navigation -->
+		<div class="block block-40">
+			<!-- Menu Trigger -->
+			<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+			<a href="#" id="open-button" class="menu-buttononwhite">
+				<span class="tooltip tooltip-effect-1">
+					<span class="tooltip-item">
+						<i class="fa fa-ellipsis-v"></i>
+					</span>	
+					<span class="tooltip-content2 clearfix">
+						<span class="tooltip-text2onwhite">Quick Menu
+						</span>
+						</span>
+				</span>
+			</a>
+		</div>
+						
+		<div class="content clearfix">
+			<!-- Content Body HERE -->
+			<div class="inner-header">
+				<div class="inner-inner">
+					<h1>Settings</h1>
+					<nav>
+						<div class="astatic2">
+							<a><i class="fa fa-cogs fa-3x"></i></a>
+						</div>	
+					</nav>
+				</div>
+			</div>
 
-		</ul>
-	</div>
-</div>
+			<div class="container">
+				<div class="component">
+
+
+					<div class="settingmenu">
+						<div class="list-group">
+							<h2><a class="list-group-item" href="{{ url_for('all_users') }}"><i class="fa fa-users fa-fw"></i>&nbsp; Account Management</a></h2>
+							<h2>{% if not session.logged_in %}<a class="list-group-item md-trigger" href="#" data-modal="modal-1"><i class="fa fa-power-off fa-fw"></i>&nbsp; Power Management</a>
+							{% else %}
+							<a href="{{ url_for('powercontrol') }}"><i class="fa fa-power-off fa-fw"></i>&nbsp; Power Management</a>
+							{% endif %}</h2>
+
+
+							<h2><a class="list-group-item" href="{{ url_for('network_main') }}"><i class="fa fa-server fa-fw"></i>&nbsp; Network Management</a></h2>
+						</div>
+					</div>
+				</div><!-- /component -->
+			</div><!-- /container -->
+		</div><!-- /content -->
+		<div class="footer">
+			<div class="footerinside">
+				<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+				<p>© Blox Browser Control 2015 - 1.0</p>
+			</div>
+		</div>
+	</div><!-- /scroller-inner -->
+</div><!-- /scroller -->
 
 {% endblock %}

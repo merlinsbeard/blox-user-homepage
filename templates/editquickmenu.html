@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="scroller whitebg"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<div class="block block-40">
+							<!-- Menu Trigger -->
+							<a href="#" id="trigger" class="menu-triggeronwhite"></a><!-- //Menu Trigger -->
+							<a href="#" id="open-button" class="menu-buttononwhite">
+								<span class="tooltip tooltip-effect-1">
+									<span class="tooltip-item">
+										<i class="fa fa-ellipsis-v"></i>
+									</span>	
+									<span class="tooltip-content2">
+										<span class="tooltip-text2onwhite">Quick Menu
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						
+						<div class="content clearfix">
+							<!-- Content Body HERE -->
+							<div class="inner-header">
+								<div class="inner-inner">
+									<h1>Edit Quick Menu</h1>
+									<nav>
+										<div class="astatic2">
+											<a><i class="fa fa-ellipsis-v fa-3x"></i></a>
+										</div>	
+									</nav>
+								</div>
+							</div>
+							<div class="container">
+								<div class="component">
+									<h2>Socials</h2>
+									<h3>Edit the following to link your accounts:</h3>
+									<div class="editquick margintop50">
+										<label>Facebook</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Instagram</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Google+</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Linkedin</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Twitter</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Tumblr</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<label>Pinterest</label>
+										<input type="text" required>
+									</div>
+									<div class="editquick margintop20">
+										<a href="#" class="editquickbutton"><button class="cancelbutton" type="reset" value="Reset">Cancel</button></a>
+										<a href="#" class="editquickbutton"><button class="okbutton" type="submit" value="submit">Apply</button></a>
+									</div>
+								</div>
+							</div>
+						</div><!-- /content -->
+						<div class="footer">
+							<div class="footerinside">
+								<img src="{{ url_for('static', filename='img/botlogo.png') }}">
+								<p>© Blox Browser Control 2015 - 1.0</p>
+							</div>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

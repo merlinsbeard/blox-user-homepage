@@ -812,6 +812,10 @@ def all_users():
 		}
 	# Shows all users
 	users = list_of_users()
+	changepassform = ChangePass()
+	adduserform = AddUser()
+	dicts['changepassform'] = changepassform
+	dicts['adduserform'] = adduserform
 	return render_template('all_users.html', users=users, dicts=dicts)
 
 @app.route("/settings/adduser" ,methods=['GET','POST'])
@@ -841,7 +845,8 @@ def add_user():
 				if username == u[0]:
 					return 'Username already existing'
 
-			cmd_useradd = "useradd -G blox " + username + " -s /bin/bash -m"
+			cmd_useradd = "useradd " + username + " -s /bin/bash -m"
+			#cmd_useradd = "useradd -G blox " + username + " -s /bin/bash -m"
 			cmd_password = "./password.sh " + username + ' ' + password
 			system(cmd_useradd)
 			system(cmd_password)
@@ -907,6 +912,8 @@ def changepass_user(uid):
 			cmd_password = "./password.sh " + solo_user[0] + ' ' + password
 			system(cmd_password)
 			return '<h2>Successfully Changed Password. ' + '<a href="' + url_for('all_users') + '"> Go Back </a></h2>'
+		else:
+			return 'not validated'
 
 	return render_template('change_pass.html', form=form, solo_user=solo_user, dicts=dicts)
 
@@ -966,6 +973,7 @@ def network_main():
 		eth = False
 
 	wlan = netifaces.ifaddresses('wlan0')
+	wlan = False
 	try:
 		wlan = wlan[2][0]
 	except:
@@ -1022,6 +1030,60 @@ def network_wlan_static():
 @app.route("/settings/network/wlan/dhcp")
 def network_wlan_dhcp():
 	pass
+
+############################################
+
+@app.route("/print")
+def printwifi():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	return render_template('print.html', dicts=dicts)
+
+@app.route("/installers")
+def installers():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	return render_template('installers.html', dicts=dicts)
+
+@app.route("/support")
+def support():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	return render_template('support.html', dicts=dicts)
+
+@app.route("/editquickmenu")
+def editquickmenu():
+	ALL_IP = ip_addresses()
+	url = request.url_root
+	url = url[7:-1]
+	dicts = {
+		'ALL_IP': ALL_IP,
+		'IP': ALL_IP['IP'],
+		'using_desktop': using_desktop(),
+		'url': url,
+		}
+	return render_template('editquickmenu.html', dicts=dicts)
 
 if __name__ == '__main__':
 	app.debug = True
